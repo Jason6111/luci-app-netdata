@@ -803,12 +803,12 @@ function renderMyNetdataMenu(machinesArray) {
         html += (
             `<div class="agent-item">
                 <i class="fas fa-cog""></i>
-                <a href="#" onclick="switchRegistryModalHandler(); return false;">Switch Identity</a>
+                <a href="#" onclick="switchRegistryModalHandler(); return false;">更换标识</a>
                 <div></div>
             </div>
             <div class="agent-item">
                 <i class="fas fa-question-circle""></i>
-                <a href="https://github.com/netdata/netdata/tree/master/registry#registry" target="_blank">What is this?</a>
+                <a href="https://github.com/netdata/netdata/tree/master/registry#registry" target="_blank">这是什么?</a>
                 <div></div>
             </div>`
         )
@@ -1511,8 +1511,8 @@ function headMain(os, charts, duration) {
     if (typeof charts['system.io'] !== 'undefined') {
         head += '<div class="netdata-container" style="margin-right: 10px;" data-netdata="system.io"'
             + ' data-dimensions="in"'
-            + ' data-chart-library=""磁碟读取"'
-            + ' data-title="Disk Read"'
+            + ' data-chart-library="easypiechart""'
+            + ' data-title="磁碟读取"'
             + ' data-width="11%"'
             + ' data-before="0"'
             + ' data-after="-' + duration.toString() + '"'
@@ -1522,8 +1522,8 @@ function headMain(os, charts, duration) {
 
         head += '<div class="netdata-container" style="margin-right: 10px;" data-netdata="system.io"'
             + ' data-dimensions="out"'
-            + ' data-chart-library="磁碟写入"'
-            + ' data-title="Disk Write"'
+            + ' data-chart-library="easypiechart"'
+            + ' data-title="磁碟写入"'
             + ' data-width="11%"'
             + ' data-before="0"'
             + ' data-after="-' + duration.toString() + '"'
@@ -1823,11 +1823,11 @@ function renderPage(menus, data) {
     sidebar += '<li class=""><a href="https://learn.netdata.cloud/docs/agent/health/quickstart/" target="_blank"><i class="fas fa-plus"></i> 加入更多警报</a></li>';
     sidebar += '<li class="" style="margin:20px;color:#666;"><small>每 ' +
       ((data.update_every === 1) ? '秒' : data.update_every.toString() + ' 秒') + ', ' +
-      'Netdata collects <strong>' + data.dimensions_count.toLocaleString() + '</strong> 上的度量 ' +
-      data.hostname.toString() + ', 把它们呈现在 <strong>' +
+      '收集<strong>' + data.dimensions_count.toLocaleString() + '</strong> 上的度量 ' +
+      data.hostname.toString() + ', 把它们呈现在<strong>' +
       data.charts_count.toLocaleString() + '</strong> 图表' +
       (isMemoryModeDbEngine ? '' : ',') + // oxford comma
-      ' and monitors them with <strong>' +
+      ' 监控<strong>' +
       data.alarms_count.toLocaleString() + '</strong> 警报.';
 
     if (!isMemoryModeDbEngine) {
@@ -2039,7 +2039,7 @@ function clipboardCopyBadgeEmbed(url) {
 function alarmsUpdateModal() {
     var active = '<h3>触发警报</h3><table class="table">';
     var all = '<h3>所有作用中的警报</h3><div class="panel-group" id="alarms_all_accordion" role="tablist" aria-multiselectable="true">';
-    var footer = '<hr/><a href="https://github.com/netdata/netdata/tree/master/web/api/badges#netdata-badges" target="_blank">netdata badges</a> 会自动重新整理。不同颜色分表代表的警报状态： <span style="color: #e05d44"><b>&nbsp;红色&nbsp;</b></span> 表示重大, <span style="color:#fe7d37"><b>&nbsp;橘色&nbsp;</b></span> 表示警告, <span style="color: #4c1"><b>&nbsp;bright 绿色&nbsp;</b></span> 表示良好, <span style="color: #9f9f9f"><b>&nbsp;light 灰色&nbsp;</b></span> 表示未定义 (例如无资料或无状态), <span style="color: #000"><b>&nbsp;黑色&nbsp;</b></span> 表示尚未初始化。您可以复制这里的网址并将它们嵌入到任一个网页。<br/>netdata 能够发送这些警报通知。请参阅 <a href="https://github.com/netdata/netdata/blob/master/health/notifications/health_alarm_notify.conf" target="_blank">这个设定档</a> 了解更多资讯。';
+    var footer = '<hr/><a href="https://github.com/netdata/netdata/tree/master/web/api/badges#netdata-badges" target="_blank">netdata badges</a> 会自动重新整理。不同颜色分表代表的警报状态： <span style="color: #e05d44"><b>&nbsp;红色&nbsp;</b></span> 表示重大, <span style="color:#fe7d37"><b>&nbsp;橘色&nbsp;</b></span> 表示警告, <span style="color: #4c1"><b>&nbsp;绿色&nbsp;</b></span> 表示良好, <span style="color: #9f9f9f"><b>&nbsp;灰色&nbsp;</b></span> 表示未定义 (例如无资料或无状态), <span style="color: #000"><b>&nbsp;黑色&nbsp;</b></span> 表示尚未初始化。您可以复制这里的网址并将它们嵌入到任一个网页。<br/>netdata 能够发送这些警报通知。请参阅 <a href="https://github.com/netdata/netdata/blob/master/health/notifications/health_alarm_notify.conf" target="_blank">这个设定档</a> 了解更多资讯。';
 
     loadClipboard(function () {
     });
@@ -2316,7 +2316,7 @@ function alarmsUpdateModal() {
         all += "</div>";
 
         if (!count_active) {
-            active += '<div style="width:100%; height: 100px; text-align: center;"><span style="font-size: 50px;"><i class="fas fa-thumbs-up"></i></span><br/>Everything is normal. No raised alarms.</div>';
+            active += '<div style="width:100%; height: 100px; text-align: center;"><span style="font-size: 50px;"><i class="fas fa-thumbs-up"></i></span><br/>一切正常。没有警报。</div>';
         } else {
             active += footer;
         }
