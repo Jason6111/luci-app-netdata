@@ -1653,112 +1653,112 @@ netdataDashboard.context = {
     },
 
     'ip.ecnpkts': {
-        info: '<p>Total number of received IP packets with ECN bits set in the system.</p>'+
-        '<p><b>CEP</b> - congestion encountered. '+
-        '<b>NoECTP</b> - non ECN-capable transport. '+
-        '<b>ECTP0</b> and <b>ECTP1</b> - ECN capable transport.</p>'
+        info: '<p>系统中设置了ECN位的接收IP数据包总数。</p>'+
+        '<p><b>CEP</b> - 遇到拥堵。 '+
+        '<b>NoECTP</b> - 不支持ECN的运输。 '+
+        '<b>ECTP0</b>和<b>ECTP1</b>-支持ECN的传输。</p>'
     },
 
     'ip.tcpreorders': {
-        info: '<p>TCP prevents out-of-order packets by either sequencing them in the correct order or '+
-        'by requesting the retransmission of out-of-order packets.</p>'+
-        '<p><b>Timestamp</b> - detected re-ordering using the timestamp option. '+
-        '<b>SACK</b> - detected re-ordering using Selective Acknowledgment algorithm. '+
-        '<b>FACK</b> - detected re-ordering using Forward Acknowledgment algorithm. '+
-        '<b>Reno</b> - detected re-ordering using Fast Retransmit algorithm.</p>'
+        info: '<p>TCP通过按正确的顺序排序数据包或防止数据包失序 '+
+        '通过请求重新传输出序的数据包。</p>'+
+        '<p><b>时间戳</b> - 使用时间戳选项检测到重新排序。 '+
+        '<b>SACK</b> - 使用选择性确认算法检测到重新排序。 '+
+        '<b>FACK</b> - 使用正向确认算法检测到重新排序。 '+
+        '<b>Reno</b> - 使用快速重新传输算法检测到重新排序。</p>'
     },
 
     'ip.tcpofo': {
-        info: '<p>TCP maintains an out-of-order queue to keep the out-of-order packets in the TCP communication.</p>'+
-        '<p><b>InQueue</b> - the TCP layer receives an out-of-order packet and has enough memory to queue it. '+
-        '<b>Dropped</b> - the TCP layer receives an out-of-order packet but does not have enough memory, so drops it. '+
-        '<b>Merged</b> - the received out-of-order packet has an overlay with the previous packet. '+
-        'The overlay part will be dropped. All these packets will also be counted into <b>InQueue</b>. '+
-        '<b>Pruned</b> - packets dropped from out-of-order queue because of socket buffer overrun.</p>'
+        info: '<p>TCP维护一个无序队列，以在TCP通信中保留无序数据包。</p>'+
+        '<p><b>InQueue</b> - TCP层收到一个无序的数据包，并有足够的内存排队。 '+
+        '<b>Droppped</b> - TCP层收到一个无序的数据包，但没有足够的内存，因此将其删除。 '+
+        '<b>合并</b> - 收到的无序数据包与上一个数据包具有覆盖。 '+
+        '覆盖部分将被删除。所有这些数据包也将计入<b>InQueue</b>。 '+
+        '<b>修剪</b> - 由于套接字缓冲区溢出，数据包从无序队列中删除。</p>'
     },
 
     'ip.tcpsyncookies': {
         info: '<p><a href="https://en.wikipedia.org/wiki/SYN_cookies" target="_blank">SYN cookies</a> '+
-        'are used to mitigate SYN flood.</p>'+
-        '<p><b>Received</b> - after sending a SYN cookie, it came back to us and passed the check. '+
-        '<b>Sent</b> - an application was not able to accept a connection fast enough, so the kernel could not store '+
-        'an entry in the queue for this connection. Instead of dropping it, it sent a SYN cookie to the client. '+
-        '<b>Failed</b> - the MSS decoded from the SYN cookie is invalid. When this counter is incremented, '+
-        'the received packet won’t be treated as a SYN cookie.</p>'
+        '用于缓解SYN洪水。</p>'+
+        '<p><b>收到</b>-发送SYN Cookie后，它回到我们身边并通过了支票。'+
+        '<b>发送</b> - 应用程序无法足够快地接受连接，因此内核无法存储 '+
+        '此连接队列中的条目。它没有删除它，而是向客户端发送了一个SYN cookie。 '+
+        '<b>失败</b>-从SYN Cookie解码的MSS无效。当这个计数器递增时， '+
+        '接收的数据包不会被视为SYN Cookie。</p>'
     },
 
     'ip.tcpmemorypressures': {
-        info: 'The number of times a socket was put in memory pressure due to a non fatal memory allocation failure '+
-        '(the kernel attempts to work around this situation by reducing the send buffers, etc).'
+        info: '套接字因非致命内存分配失败而施加内存压力的次数 '+
+        '（内核试图通过减少发送缓冲区等来解决这个问题）。'
     },
 
     'ip.tcpconnaborts': {
-        info: '<p>TCP connection aborts.</p>'+
-        '<p><b>BadData</b> - happens while the connection is on FIN_WAIT1 and the kernel receives a packet '+
-        'with a sequence number beyond the last one for this connection - '+
-        'the kernel responds with RST (closes the connection). '+
-        '<b>UserClosed</b> - happens when the kernel receives data on an already closed connection and '+
-        'responds with RST. '+
-        '<b>NoMemory</b> - happens when there are too many orphaned sockets (not attached to an fd) and '+
-        'the kernel has to drop a connection - sometimes it will send an RST, sometimes it won\'t. '+
-        '<b>Timeout</b> - happens when a connection times out. '+
-        '<b>Linger</b> - happens when the kernel killed a socket that was already closed by the application and '+
-        'lingered around for long enough. '+
-        '<b>Failed</b> - happens when the kernel attempted to send an RST but failed because there was no memory available.</p>'
+        info: '<p>TCP连接中止。</p>'+
+        '<p><b>BadData</b> - 当连接在FIN_WAIT1上且内核收到数据包时发生 '+
+        '此连接的序列号超过最后一个序列号- '+
+        '内核使用RST响应（关闭连接）。 '+
+        '<b>UserClosed</b> - 当内核在已关闭的连接上接收数据并 '+
+        '用RST回复。 '+
+        '<b>NoMemory</b> - 当孤儿插座太多（未连接到fd）和 '+
+        '内核必须删除连接——有时它会发送RST，有时不会。 '+
+        '<b>超时</b> - 当连接超时发生。 '+
+        '<b>Linger</b> - 当内核杀死已被应用程序关闭的套接字并 '+
+        '徘徊了足够长的时间。 '+
+        '<b>失败</b> - 当内核尝试发送 RST 但因没有可用内存而失败时发生。</p>'
     },
 
     'ip.tcp_functions': {
         title : 'TCP calls',
-        info: 'Successful or failed calls to functions <code>tcp_sendmsg</code>, <code>tcp_cleanup_rbuf</code>, and <code>tcp_close</code>.'
+        info: '对函数<code>tcp_sendmsg</code>、<code>tcp_cleanup_rbuf</code>和<code>tcp_close</code>的调用成功或失败。'
     },
 
     'ip.total_tcp_bandwidth': {
         title : 'TCP bandwidth',
-        info: 'Bytes sent and received by functions <code>tcp_sendmsg</code> and <code>tcp_cleanup_rbuf</code>. We use <code>tcp_cleanup_rbuf</code> instead of <code>tcp_recvmsg</code>, because the last one misses <code>tcp_read_sock()</code> traffic and we would also need to have more probes to get the socket and package size.'
+        info: '由函数<code>tcp_sendmsg</code>和<code>tcp_cleanup_rbuf</code>发送和接收的字节。我们使用<code>tcp_cleanup_rbuf</code>而不是<code>tcp_recvmsg</code>，因为最后一个错过了<code>tcp_read_sock()</code>流量，我们还需要有更多的探针来获得套接字和包大小。'
     },
 
     'ip.tcp_error': {
         title : 'TCP errors',
-        info: 'Failed calls to functions <code>tcp_sendmsg</code>, <code>tcp_cleanup_rbuf</code>, and <code>tcp_close</code>.'
+        info: '对函数<code>tcp_sendmsg</code>、<code>tcp_cleanup_rbuf</code>和<code>tcp_close</code>的调用失败。'
     },
 
     'ip.tcp_retransmit': {
         title : 'TCP retransmit',
-        info: 'Number of packets retransmitted by function <code>tcp_retransmit_skb</code>.'
+        info: '通过函数<code>tcp_retransmit_skb</code>重新传输的数据包数量。'
     },
 
     'ip.udp_functions': {
         title : 'UDP calls',
-        info: 'Successful or failed calls to functions <code>udp_sendmsg</code> and <code>udp_recvmsg</code>.'
+        info: '对函数<code>udp_sendmsg</code>和<code>udp_recvmsg</code>的调用成功或失败。'
     },
 
     'ip.total_udp_bandwidth': {
         title : 'UDP bandwidth',
-        info: 'Bytes sent and received by functions <code>udp_sendmsg</code> and <code>udp_recvmsg</code>.'
+        info: '由函数<code>udp_sendmsg</code>和<code>udp_recvmsg</code>发送和接收的字节。'
     },
 
     'ip.udp_error': {
         title : 'UDP errors',
-        info: 'Failed calls to functions <code>udp_sendmsg</code> and <code>udp_recvmsg</code>.'
+        info: '对函数<code>udp_sendmsg</code>和<code>udp_recvmsg</code>的调用失败。'
     },
 
 
     'ip.tcp_syn_queue': {
-        info: '<p>The SYN queue of the kernel tracks TCP handshakes until connections get fully established. ' +
-            'It overflows when too many incoming TCP connection requests hang in the half-open state and the server ' +
-            'is not configured to fall back to SYN cookies. Overflows are usually caused by SYN flood DoS attacks.</p>' +
-            '<p><b>Drops</b> - number of connections dropped because the SYN queue was full and SYN cookies were disabled. ' +
-            '<b>Cookies</b> - number of SYN cookies sent because the SYN queue was full.</p>'
+        info: '<p>内核的SYN队列跟踪TCP握手，直到连接完全建立。 ' +
+            '当太多传入的TCP连接请求处于半开放状态和服务器时，它会溢出 ' +
+            '未配置回退到SYN Cookie。溢出通常由SYN洪水DoS攻击引起。</p>' +
+            '<p><b>Drops</b> - 由于SYN队列已满且SYN cookie被禁用，连接数量下降。 ' +
+            '<b>Cookies</b> - 由于SYN队列已满而发送的SYN Cookie数量。</p>'
     },
 
     'ip.tcp_accept_queue': {
-        info: '<p>The accept queue of the kernel holds the fully established TCP connections, waiting to be handled ' +
-            'by the listening application.</p>'+
-            '<b>Overflows</b> - the number of established connections that could not be handled because '+
-            'the receive queue of the listening application was full. '+
-            '<b>Drops</b> - number of incoming connections that could not be handled, including SYN floods, '+
-            'overflows, out of memory, security issues, no route to destination, reception of related ICMP messages, '+
-            'socket is broadcast or multicast.</p>'
+        info: '<p>内核的接受队列持有完全建立的TCP连接，等待处理 ' +
+            '通过收听应用程序。</p>'+
+            '<b>溢出</b> - 因 '+
+            '监听应用程序的接收队列已满。 '+
+            '<b>Drops</b> - 无法处理的传入连接数量，包括SYN洪水， '+
+            '溢出、内存不足、安全问题、没有前往目的地的路线、接收相关的ICMP消息、 '+
+            '套接字是广播或多播。</p>'
     },
 
 
@@ -1766,93 +1766,93 @@ netdataDashboard.context = {
     // IPv4
 
     'ipv4.packets': {
-        info: '<p>IPv4 packets statistics for this host.</p>'+
-        '<p><b>Received</b> - packets received by the IP layer. '+
-        'This counter will be increased even if the packet is dropped later. '+
-        '<b>Sent</b> - packets sent via IP layer, for both single cast and multicast packets. '+
-        'This counter does not include any packets counted in <b>Forwarded</b>. '+
-        '<b>Forwarded</b> - input packets for which this host was not their final IP destination, '+
-        'as a result of which an attempt was made to find a route to forward them to that final destination. '+
-        'In hosts which do not act as IP Gateways, this counter will include only those packets which were '+
+        info: '<p>此主机的IPv4数据包统计。</p>'+
+        '<p><b>已收到</b> - IP 层接收的数据包。 '+
+        '即使稍后删除数据包，这个计数器也会增加。 '+
+        '<b>发送</b>-通过IP层发送的数据包，适用于单播和多播数据包。 '+
+        '此计数器不包括<b>转发</b>中计算的任何数据包。 '+
+        '<b>转发</b> - 此主机不是其最终IP目的地的输入数据包， '+
+        '结果，有人试图找到一条路线将他们转发到最终目的地。 '+
+        '在不充当IP网关的主机中，此计数器将仅包括那些 '+
         '<a href="https://en.wikipedia.org/wiki/Source_routing" target="_blank">Source-Routed</a> '+
-        'and the Source-Route option processing was successful. '+
-        '<b>Delivered</b> - packets delivered to the upper layer protocols, e.g. TCP, UDP, ICMP, and so on.</p>'
+        '源路由选项处理成功。 '+
+        '<b>已交付</b> - 交付到上层协议的数据包，例如TCP、UDP、ICMP等。</p>'
     },
 
     'ipv4.fragsout': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Fragmentation" target="_blank">IPv4 fragmentation</a> '+
-        'statistics for this system.</p>'+
-        '<p><b>OK</b> - packets that have been successfully fragmented. '+
-        '<b>Failed</b> - packets that have been discarded because they needed to be fragmented '+
-        'but could not be, e.g. due to <i>Don\'t Fragment</i> (DF) flag was set. '+
-        '<b>Created</b> - fragments that have been generated as a result of fragmentation.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Fragmentation" target="_blank">IPv4碎片</a> '+
+        '此系统的统计数据。</p>'+
+        '<p><b>好的</b> - 已成功碎片化的数据包。 '+
+        '<b>失败</b> - 由于需要碎片化而被丢弃的数据包 '+
+        '但不能，例如，由于<i>Don\'t Fragment</i> (DF)标志已设置。 '+
+        '<b>创建</b>-因碎片生成的碎片。</p>'
     },
 
     'ipv4.fragsin': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Reassembly" target="_blank">IPv4 reassembly</a> '+
-        'statistics for this system.</p>'+
-        '<p><b>OK</b> - packets that have been successfully reassembled. '+
-        '<b>Failed</b> - failures detected by the IP reassembly algorithm. '+
-        'This is not necessarily a count of discarded IP fragments since some algorithms '+
-        'can lose track of the number of fragments by combining them as they are received. '+
-        '<b>All</b> - received IP fragments which needed to be reassembled.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Reassembly" target="_blank">IPv4重新组装</a> '+
+        '此系统的统计数据。</p>'+
+        '<p><b>好的</b> - 已成功重新组装的数据包。 '+
+        '<b>失败</b> - IP 重新组装算法检测到故障。 '+
+        '这不一定是被丢弃的IP片段的计数，因为一些算法 '+
+        '通过在收到碎片时进行组合，可能会丢失碎片数量。 '+
+        '<b>所有</b>-收到需要重新组装的IP片段。</p>'
     },
 
     'ipv4.errors': {
-        info: '<p>The number of discarded IPv4 packets.</p>'+
-        '<p><b>InDiscards</b>, <b>OutDiscards</b> - inbound and outbound packets which were chosen '+
-        'to be discarded even though no errors had been '+
-        'detected to prevent their being deliverable to a higher-layer protocol. '+
-        '<b>InHdrErrors</b> - input packets that have been discarded due to errors in their IP headers, including '+
-        'bad checksums, version number mismatch, other format errors, time-to-live exceeded, '+
-        'errors discovered in processing their IP options, etc. '+
-        '<b>OutNoRoutes</b> - packets that have been discarded because no route could be found '+
-        'to transmit them to their destination. This includes any packets which a host cannot route '+
-        'because all of its default gateways are down. '+
-        '<b>InAddrErrors</b> - input packets that have been discarded due to invalid IP address or '+
-        'the destination IP address is not a local address and IP forwarding is not enabled. '+
-        '<b>InUnknownProtos</b> - input packets which were discarded because of an unknown or unsupported protocol.</p>'
+        info: '<p>丢弃的IPv4数据包的数量。</p>'+
+        '<p><b>InDiscards</b>，<b>OutDiscards</b>-选择的入站和出站数据包 '+
+        '即使没有出错，也要被丢弃 '+
+        '检测到以防止它们交付到更高级别的协议。 '+
+        '<b>InHdrErrors</b> - 由于IP头错误而被丢弃的输入数据包，包括 '+
+        '校验和不好，版本号不匹配，其他格式错误，超过生存时间， '+
+        '在处理他们的IP选项等时发现的错误。 '+
+        '<b>OutNoRoutes</b> - 由于找不到路线而被丢弃的数据包 '+
+        '将它们传输到目的地。这包括主机无法路由的任何数据包 '+
+        '因为它所有的默认网关都关闭了。 '+
+        '<b>InAddrErrors</b> - 由于IP地址无效或 '+
+        '目标IP地址不是本地地址，并且没有启用IP转发。 '+
+        '<b>InUnknownProtos</b> - 由于未知或不支持的协议而被丢弃的输入数据包。</p>'
     },
 
     'ipv4.icmp': {
-        info: '<p>The number of transferred IPv4 ICMP messages.</p>'+
-        '<p><b>Received</b>, <b>Sent</b> - ICMP messages which the host received and attempted to send. '+
-        'Both these counters include errors.</p>'
+        info: '<p>传输的IPv4 ICMP消息的数量。</p>'+
+        '<p><b>收到</b>，<b>发送</b>-主机收到并试图发送的ICMP消息。 '+
+        '这两个计数器都包含错误。</p>'
     },
 
     'ipv4.icmp_errors': {
-        info: '<p>The number of IPv4 ICMP errors.</p>'+
-        '<p><b>InErrors</b> - received ICMP messages but determined as having ICMP-specific errors, '+
-        'e.g. bad ICMP checksums, bad length, etc. '+
-        '<b>OutErrors</b> - ICMP messages which this host did not send due to '+
-        'problems discovered within ICMP such as a lack of buffers. '+
-        'This counter does not include errors discovered outside the ICMP layer '+
-        'such as the inability of IP to route the resultant datagram. '+
-        '<b>InCsumErrors</b> - received ICMP messages with bad checksum.</p>'
+        info: '<p>IPv4 ICMP错误的数量。</p>'+
+        '<p><b>InErrors</b> - 收到ICMP消息，但确定存在ICMP特定错误， '+
+        '例如，ICMP校验和不好，长度不好等。 '+
+        '<b>OutErrors</b> - 此主机由于 '+
+        '在ICMP中发现的问题，如缺乏缓冲区。 '+
+        '此计数器不包括在ICMP层外发现的错误 '+
+        '例如IP无法路由生成的数据报。 '+
+        '<b>InCsumErrors</b>-收到校验和不良的ICMP消息。</p>'
     },
 
     'ipv4.icmpmsg': {
-        info: 'The number of transferred '+
-        '<a href="https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml" target="_blank">IPv4 ICMP control messages</a>.'
+        info: '转让数量 '+
+        '<a href="https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml" target="_blank">IPv4 ICMP控制消息</a>。'
     },
 
     'ipv4.udppackets': {
-        info: 'The number of transferred UDP packets.'
+        info: '传输的UDP数据包的数量。'
     },
 
     'ipv4.udperrors': {
-        info: '<p>The number of errors encountered during transferring UDP packets.</p>'+
-        '<b>RcvbufErrors</b> - receive buffer is full. '+
-        '<b>SndbufErrors</b> - send buffer is full, no kernel memory available, or '+
-        'the IP layer reported an error when trying to send the packet and no error queue has been setup. '+
-        '<b>InErrors</b> - that is an aggregated counter for all errors, excluding <b>NoPorts</b>. '+
-        '<b>NoPorts</b> - no application is listening at the destination port. '+
-        '<b>InCsumErrors</b> - a UDP checksum failure is detected. '+
-        '<b>IgnoredMulti</b> - ignored multicast packets.'
+        info: '<p>在传输UDP数据包时遇到的错误数量。</p>'+
+        '<b>RcvbufErrors</b> - 接收缓冲区已满。 '+
+        '<b>SndbufErrors</b> - 发送缓冲区已满，没有可用的内核内存，或 '+
+        'IP层在尝试发送数据包时报告了错误，并且没有设置错误队列。 '+
+        '<b>InErrors</b> - 这是所有错误的聚合计数器，不包括<b>NoPorts</b>。 '+
+        '<b>NoPorts</b> - 没有应用程序在目标端口监听。 '+
+        '<b>InCsumErrors</b> - 检测到UDP校验和失败。 '+
+        '<b>忽略多</b> - 忽略多播数据包。'
     },
 
     'ipv4.udplite': {
-        info: 'The number of transferred UDP-Lite packets.'
+        info: '传输的UDP-Lite数据包的数量。'
     },
 
     'ipv4.udplite_errors': {
@@ -6359,51 +6359,51 @@ netdataDashboard.context = {
     },
 
     'systemd.slice_unit_state': {
-        info: 'Scope units are similar to service units, but manage foreign processes instead of starting them as well. ' +
-        'See <a href="https://www.freedesktop.org/software/systemd/man/systemd.slice.html#" target="_blank"> systemd.slice(5)</a>.'
+        info: '范围单位与服务单位相似，但也管理外国流程，而不是启动它们。 ' +
+        '请参阅<a href="https://www.freedesktop.org/software/systemd/man/systemd.slice.html#" target="_blank"> systemd.slice(5)</a>。'
     },
 
     'anomaly_detection.dimensions': {
-        info: 'Total count of dimensions considered anomalous or normal. '
+        info: '被认为异常或正常的维度总数。 '
     },
 
     'anomaly_detection.anomaly_rate': {
-        info: 'Percentage of anomalous dimensions. '
+        info: '异常维度的百分比。 '
     },
 
     'anomaly_detection.detector_window': {
-        info: 'The length of the active window used by the detector. '
+        info: '探测器使用的有源窗口的长度。 '
     },
 
     'anomaly_detection.detector_events': {
-        info: 'Flags (0 or 1) to show when an anomaly event has been triggered by the detector. '
+        info: '标志（0或1），用于显示探测器何时触发异常事件。 '
     },
 
     'anomaly_detection.prediction_stats': {
-        info: 'Diagnostic metrics relating to prediction time of anomaly detection. '
+        info: '与异常检测预测时间相关的诊断指标。 '
     },
 
     'anomaly_detection.training_stats': {
-        info: 'Diagnostic metrics relating to training time of anomaly detection. '
+        info: '与异常检测培训时间相关的诊断指标。 '
     },
 
     // ------------------------------------------------------------------------
     // Supervisor
 
     'fail2ban.failed_attempts': {
-        info: '<p>The number of failed attempts.</p>'+
-        '<p>This chart reflects the number of \'Found\' lines. '+
-        'Found means a line in the service’s log file matches the failregex in its filter.</p>'
+        info: '<p>尝试失败的次数。</p>'+
+        '<p>此图表反映了\'Found\'行的数量。 '+
+        '找到意味着服务日志文件中的一行与其过滤器中的失败正则表达式匹配。</p>'
     },
 
     'fail2ban.bans': {
-        info: '<p>The number of bans.</p>'+
-        '<p>This chart reflects the number of \'Ban\' and \'Restore Ban\' lines. '+
-        'Ban action happens when the number of failed attempts (maxretry) occurred in the last configured interval (findtime).</p>'
+        info: '<p>禁令数量。</p>'+
+        '<p>此图表反映了\'Ban\'和\'Restore Ban\'行的数量。 '+
+        '当上次配置的间隔（查找时间）发生失败的尝试次数（最大尝试）时，就会发生禁用操作。</p>'
     },
 
     'fail2ban.banned_ips': {
-        info: '<p>The number of banned IP addresses.</p>'
+        info: '<p>禁用IP地址的数量。</p>'
     },
 
 };
