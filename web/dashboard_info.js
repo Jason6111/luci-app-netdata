@@ -348,7 +348,7 @@ netdataDashboard.menu = {
     'rethinkdbs': {
         title: 'RethinkDB',
         icon: '<i class="fas fa-database"></i>',
-        info: '<b>RethinkDB</b>的绩效指标。RethinkDB是第一个为实时应用程序构建的开源可扩展数据库'
+        info: '<b>rethinkdb</b>的绩效指标。RethinkDB是第一个为实时应用程序构建的开源可扩展数据库'
     },
 
     'retroshare': {
