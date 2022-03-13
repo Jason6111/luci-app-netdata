@@ -2458,191 +2458,191 @@ netdataDashboard.context = {
     },
 
     'apps.pipes': {
-        info: 'The number of open '+
-        '<a href="https://en.wikipedia.org/wiki/Anonymous_pipe#Unix" target="_blank">pipes</a>. '+
-        'A pipe is a unidirectional data channel that can be used for interprocess communication.'
+        info: '开放数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Anonymous_pipe#Unix" target="_blank">管道</a>。 '+
+        '管道是一种单向数据通道，可用于进程间通信。'
     },
     'groups.pipes': {
-        info: 'The number of open '+
-        '<a href="https://en.wikipedia.org/wiki/Anonymous_pipe#Unix" target="_blank">pipes</a>. '+
-        'A pipe is a unidirectional data channel that can be used for interprocess communication.'
+        info: '开放数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Anonymous_pipe#Unix" target="_blank">管道</a>。 '+
+        '管道是一种单向数据通道，可用于进程间通信。'
     },
     'users.pipes': {
-        info: 'The number of open '+
-        '<a href="https://en.wikipedia.org/wiki/Anonymous_pipe#Unix" target="_blank">pipes</a>. '+
-        'A pipe is a unidirectional data channel that can be used for interprocess communication.'
+        info: '开放数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Anonymous_pipe#Unix" target="_blank">管道</a>。 '+
+        '管道是一种单向数据通道，可用于进程间通信。'
     },
 
     // APPS swap
     'apps.swap': {
-        info: 'The amount of swapped-out virtual memory by anonymous private pages. '+
-        'This does not include shared swap memory.'
+        info: '匿名私人页面交换虚拟内存的数量。 '+
+        '这不包括共享交换内存。'
     },
     'groups.swap': {
-        info: 'The amount of swapped-out virtual memory by anonymous private pages. '+
-        'This does not include shared swap memory.'
+        info: '匿名私人页面交换虚拟内存的数量。 '+
+        '这不包括共享交换内存。'
     },
     'users.swap': {
-        info: 'The amount of swapped-out virtual memory by anonymous private pages. '+
-        'This does not include shared swap memory.'
+        info: '匿名私人页面交换虚拟内存的数量。 '+
+        '这不包括共享交换内存。'
     },
 
     'apps.major_faults': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Page_fault#Major" target="_blank">major faults</a> '+
-        'which have required loading a memory page from the disk. '+
-        'Major page faults occur because of the absence of the required page from the RAM. '+
-        'They are expected when a process starts or needs to read in additional data and '+
-        'in these cases do not indicate a problem condition. '+
-        'However, a major page fault can also be the result of reading memory pages that have been written out '+
-        'to the swap file, which could indicate a memory shortage.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_fault#Major" target="_blank">重大故障</a>的数量 '+
+        '需要从磁盘加载内存页面。 '+
+        '由于RAM中缺少所需的页面，会出现重大页面故障。 '+
+        '当流程开始或需要读取其他数据时，它们是正常的 '+
+        '在这些情况下，不表示问题状况。 '+
+        '然而，一个主要的页面错误也可能是阅读已写出的内存页面的结果 '+
+        '交换文件，这可能表明内存短缺。'
     },
     'groups.major_faults': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Page_fault#Major" target="_blank">major faults</a> '+
-        'which have required loading a memory page from the disk. '+
-        'Major page faults occur because of the absence of the required page from the RAM. '+
-        'They are expected when a process starts or needs to read in additional data and '+
-        'in these cases do not indicate a problem condition. '+
-        'However, a major page fault can also be the result of reading memory pages that have been written out '+
-        'to the swap file, which could indicate a memory shortage.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_fault#Major" target="_blank">重大故障</a>的数量 '+
+        '需要从磁盘加载内存页面。 '+
+        '由于RAM中缺少所需的页面，会出现重大页面故障。 '+
+        '当流程开始或需要读取其他数据时，它们是正常的 '+
+        '在这些情况下，不表示问题状况。 '+
+        '然而，一个主要的页面错误也可能是阅读已写出的内存页面的结果 '+
+        '交换文件，这可能表明内存短缺。'
     },
     'users.major_faults': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Page_fault#Major" target="_blank">major faults</a> '+
-        'which have required loading a memory page from the disk. '+
-        'Major page faults occur because of the absence of the required page from the RAM. '+
-        'They are expected when a process starts or needs to read in additional data and '+
-        'in these cases do not indicate a problem condition. '+
-        'However, a major page fault can also be the result of reading memory pages that have been written out '+
-        'to the swap file, which could indicate a memory shortage.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_fault#Major" target="_blank">重大故障</a>的数量 '+
+        '需要从磁盘加载内存页面。 '+
+        '由于RAM中缺少所需的页面，会出现重大页面故障。 '+
+        '当流程开始或需要读取其他数据时，它们是正常的 '+
+        '在这些情况下，不表示问题状况。 '+
+        '然而，一个主要的页面错误也可能是阅读已写出的内存页面的结果 '+
+        '交换文件，这可能表明内存短缺。'
     },
 
     // APPS net
     'apps.sockets': {
-        info: 'The number of open sockets. '+
-        'Sockets are a way to enable inter-process communication between programs running on a server, '+
-        'or between programs running on separate servers. This includes both network and UNIX sockets.'
+        info: '打开sockets的数量。 '+
+        'sockets是一种在服务器上运行的程序之间实现进程间通信的方式， '+
+        '或在不同服务器上运行的程序之间。这包括网络和UNIX sockets。'
     },
     'groups.sockets': {
-        info: 'The number of open sockets. '+
-        'Sockets are a way to enable inter-process communication between programs running on a server, '+
-        'or between programs running on separate servers. This includes both network and UNIX sockets.'
+        info: '打开sockets的数量。 '+
+        'sockets是一种在服务器上运行的程序之间实现进程间通信的方式， '+
+        '或在不同服务器上运行的程序之间。这包括网络和UNIX sockets。'
     },
     'users.sockets': {
-        info: 'The number of open sockets. '+
-        'Sockets are a way to enable inter-process communication between programs running on a server, '+
-        'or between programs running on separate servers. This includes both network and UNIX sockets.'
+        info: '打开sockets的数量 '+
+        'sockets是一种在服务器上运行的程序之间实现进程间通信的方式， '+
+        '或在不同服务器上运行的程序之间。这包括网络和UNIX sockets。'
     },
 
    // Apps eBPF stuff
 
     'apps.file_open': {
-        info: 'Calls to the internal function <code>do_sys_open</code> (for kernels newer than <code>5.5.19</code> we add a kprobe to <code>do_sys_openat2</code>. ), which is the common function called from' +
+        info: '对内部函数<code>do_sys_open</code>的调用（对于比<code>5.5.19</code>更新的内核，我们在<code>do_sys_openat2</code>中添加一个kprobe。），这是从' +
             ' <a href="https://www.man7.org/linux/man-pages/man2/open.2.html" target="_blank">open(2)</a> ' +
             ' and <a href="https://www.man7.org/linux/man-pages/man2/openat.2.html" target="_blank">openat(2)</a>. '
     },
 
     'apps.file_open_error': {
-        info: 'Failed calls to the internal function <code>do_sys_open</code> (for kernels newer than <code>5.5.19</code> we add a kprobe to <code>do_sys_openat2</code>. ).'
+        info: '对内部函数<code>do_sys_open</code>的调用失败（对于比<code>5.5.19</code>更新的内核，我们向<code>do_sys_openat2</code>添加了一个kprobe。）。'
     },
 
     'apps.file_closed': {
-        info: 'Calls to the internal function <a href="https://elixir.bootlin.com/linux/v5.10/source/fs/file.c#L665" target="_blank">__close_fd</a> or <a href="https://elixir.bootlin.com/linux/v5.11/source/fs/file.c#L617" target="_blank">close_fd</a> according to your kernel version, which is called from' +
+        info: '根据内核版本调用内部函数<a href="https://elixir.bootlin.com/linux/v5.10/source/fs/file.c#L665" target="_blank">__close_fd</a>或<a href="https://elixir.bootlin.com/linux/v5.11/source/fs/file.c#L617" target="_blank">close_fd</a>，该版本调用' +
             ' <a href="https://www.man7.org/linux/man-pages/man2/close.2.html" target="_blank">close(2)</a>. '
     },
 
     'apps.file_close_error': {
-        info: 'Failed calls to the internal function <a href="https://elixir.bootlin.com/linux/v5.10/source/fs/file.c#L665" target="_blank">__close_fd</a> or <a href="https://elixir.bootlin.com/linux/v5.11/source/fs/file.c#L617" target="_blank">close_fd</a> according to your kernel version.'
+        info: '根据内核版本，对内部函数<a href="https://elixir.bootlin.com/linux/v5.10/source/fs/file.c#L665" target="_blank">__close_fd</a>或<a href="https://elixir.bootlin.com/linux/v5.11/source/fs/file.c#L617" target="_blank">close_fd</a>的调用失败。'
     },
 
     'apps.file_deleted': {
-        info: 'Calls to the function <a href="https://www.kernel.org/doc/htmldocs/filesystems/API-vfs-unlink.html" target="_blank">vfs_unlink</a>. This chart does not show all events that remove files from the filesystem, because filesystems can create their own functions to remove files.'
+        info: '调用函数<a href="https://www.kernel.org/doc/htmldocs/filesystems/API-vfs-unlink.html" target="_blank">vfs_unlink</a>。此图表没有显示从文件系统中删除文件的所有事件，因为文件系统可以创建自己的功能来删除文件。'
     },
 
     'apps.vfs_write_call': {
-        info: 'Successful calls to the function <a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_write</a>. This chart may not show all filesystem events if it uses other functions to store data on disk.'
+        info: '成功调用了函数<a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_write</a>。如果此图表使用其他功能将数据存储在磁盘上，则可能不会显示所有文件系统事件。'
     },
 
     'apps.vfs_write_error': {
-        info: 'Failed calls to the function <a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_write</a>. This chart may not show all filesystem events if it uses other functions to store data on disk.'
+        info: '对函数<a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_write</a>的调用失败。如果此图表使用其他功能将数据存储在磁盘上，则可能不会显示所有文件系统事件。'
     },
 
     'apps.vfs_read_call': {
-        info: 'Successful calls to the function <a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_read</a>. This chart may not show all filesystem events if it uses other functions to store data on disk.'
+        info: '成功调用函数<a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_read</a>。如果此图表使用其他功能将数据存储在磁盘上，则可能不会显示所有文件系统事件。'
     },
 
     'apps.vfs_read_error': {
-        info: 'Failed calls to the function <a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_read</a>. This chart may not show all filesystem events if it uses other functions to store data on disk.'
+        info: '对函数<a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_read</a>的调用失败。如果此图表使用其他功能将数据存储在磁盘上，则可能不会显示所有文件系统事件。'
     },
 
     'apps.vfs_write_bytes': {
-        info: 'Total of bytes successfully written using the function <a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_write</a>.'
+        info: '使用函数<a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_write</a>成功编写的字节总数。'
     },
 
     'apps.vfs_read_bytes': {
-        info: 'Total of bytes successfully read using the function <a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_read</a>.'
+        info: '使用函数<a href="https://topic.alibabacloud.com/a/kernel-state-file-operation-__-work-information-kernel_8_8_20287135.html" target="_blank">vfs_read</a>成功读取的总字节总数。'
     },
 
     'apps.process_create': {
-        info: 'Calls to either <a href="https://programming.vip/docs/the-execution-procedure-of-do_fork-function-in-linux.html" target="_blank">do_fork</a>, or <code>kernel_clone</code> if you are running kernel newer than 5.9.16, to create a new task, which is the common name used to define process and tasks inside the kernel. This chart is provided by eBPF plugin.'
+        info: '调用<a href="https://programming.vip/docs/the-execution-procedure-of-do_fork-function-in-linux.html" target="_blank">do_fork</a>，或者<code>kernel_clone</code>（如果您运行的内核更新于5.16），以创建一个新任务，这是用于定义内核内进程和任务的常用名称。此图表由eBPF插件提供。'
     },
 
     'apps.thread_create': {
-        info: 'Calls to either <a href="https://programming.vip/docs/the-execution-procedure-of-do_fork-function-in-linux.html" target="_blank">do_fork</a>, or <code>kernel_clone</code> if you are running kernel newer than 5.9.16, to create a new task, which is the common name used to define process and tasks inside the kernel. Netdata identifies the threads monitoring tracepoint <code>sched_process_fork</code>. This chart is provided by eBPF plugin.'
+        info: '调用<a href="https://programming.vip/docs/the-execution-procedure-of-do_fork-function-in-linux.html" target="_blank">do_fork</a>，或者<code>kernel_clone</code>（如果您运行的内核更新于5.16），以创建一个新任务，这是用于定义内核内进程和任务的常用名称。Netdata标识监控跟踪点<code>sched_process_fork</code>的线程。此图表由eBPF插件提供。'
     },
 
     'apps.task_exit': {
-        info: 'Calls to the function responsible for closing (<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">do_exit</a>) tasks. This chart is provided by eBPF plugin.'
+        info: '对负责关闭的函数的调用（<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">do_exit</a>)任务。此图表由eBPF插件提供。'
     },
 
     'apps.task_close': {
-        info: 'Calls to the function responsible for releasing (<a  href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">release_task</a>) tasks. This chart is provided by eBPF plugin.'
+        info: '对负责发布功能的调用（<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">release_task</a>)任务。此图表由eBPF插件提供。'
     },
 
     'apps.task_error': {
-        info: 'Number of errors to create a new process or thread. This chart is provided by eBPF plugin.'
+        info: '创建新进程或线程的错误数量。此图表由eBPF插件提供。'
     },
 
     'apps.total_bandwidth_sent': {
-        info: 'Bytes sent by functions <code>tcp_sendmsg</code> and <code>udp_sendmsg</code>.'
+        info: '由函数<code>tcp_sendmsg</code>和<code>udp_sendmsg</code>发送的字节。'
     },
 
     'apps.total_bandwidth_recv': {
-        info: 'Bytes received by functions <code>tcp_cleanup_rbuf</code> and <code>udp_recvmsg</code>. We use <code>tcp_cleanup_rbuf</code> instead <code>tcp_recvmsg</code>, because this last misses <code>tcp_read_sock()</code> traffic and we would also need to have more probes to get the socket and package size.'
+        info: '函数<code>tcp_cleanup_rbuf</code>和<code>udp_recvmsg</code>收到的字节。我们使用<code>tcp_cleanup_rbuf</code>而不是<code>tcp_recvmsg</code>，因为这最后错过了<code>tcp_read_sock()</code>流量，我们还需要有更多的探针来获取套接字和包大小。'
     },
 
     'apps.bandwidth_tcp_send': {
-        info: 'The function <code>tcp_sendmsg</code> is used to collect number of bytes sent from TCP connections.'
+        info: '函数<code>tcp_sendmsg</code>用于收集从TCP连接发送的字节数。'
     },
 
     'apps.bandwidth_tcp_recv': {
-        info: 'The function <code>tcp_cleanup_rbuf</code> is used to collect number of bytes received from TCP connections.'
+        info: '<code>tcp_cleanup_rbuf</code>函数用于收集从TCP连接接收的字节数。'
     },
 
     'apps.bandwidth_tcp_retransmit': {
-        info: 'The function <code>tcp_retransmit_skb</code> is called when the host did not receive the expected return from a packet sent.'
+        info: '当主机没有收到发送的数据包的预期返回时，将调用函数<code>tcp_retransmit_skb</code>。'
     },
 
     'apps.bandwidth_udp_send': {
-        info: 'The function <code>udp_sendmsg</code> is used to collect number of bytes sent from UDP connections.'
+        info: '<code>udp_sendmsg</code>函数用于收集从UDP连接发送的字节数。'
     },
 
     'apps.bandwidth_udp_recv': {
-        info: 'The function <code>udp_recvmsg</code> is used to collect number of bytes received from UDP connections.'
+        info: '函数<code>udp_recvmsg</code>用于收集从UDP连接接收的字节数。'
     },
 
     'apps.dc_hit_ratio': {
-        info: 'Percentage of file accesses that were present in the directory cache. 100% means that every file that was accessed was present in the directory cache. If files are not present in the directory cache 1) they are not present in the file system, 2) the files were not accessed before. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>. Netdata also gives a summary for these charts in <a href="#menu_filesystem_submenu_directory_cache__eBPF_">Filesystem submenu</a>.'
+        info: '目录缓存中存在的文件访问百分比。100%表示访问的每个文件都存在于目录缓存中。如果目录缓存中不存在文件1）它们不存在于文件系统中，2）以前没有访问过文件。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。Netdata还在<a href="#menu_filesystem_submenu_directory_cache__eBPF_">文件系统子菜单</a>中对这些图表进行了摘要。'
     },
 
     'apps.dc_reference': {
-        info: 'Counters of file accesses. <code>Reference</code> is when there is a file access, see the <code>filesystem.dc_reference</code> chart for more context. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>.'
+        info: '文件访问计数器。<code>引用</code>是文件访问时，请参阅<code>filesystem.dc_reference</code>图表以了解更多上下文。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。'
     },
 
     'apps.dc_not_cache': {
-        info: 'Counters of file accesses. <code>Slow</code> is when there is a file access and the file is not present in the directory cache, see the <code>filesystem.dc_reference</code> chart for more context. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>.'
+        info: '文件访问计数器。<code>慢</code>是指有文件访问且目录缓存中不存在文件时，请参阅<code>filesystem.dc_reference</code>图表以了解更多上下文。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。'
     },
 
     'apps.dc_not_found': {
-        info: 'Counters of file accesses. <code>Miss</code> is when there is file access and the file is not found in the filesystem, see the <code>filesystem.dc_reference</code> chart for more context. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>.'
+        info: '文件访问计数器。<code>Miss</code>是当有文件访问且文件系统中找不到文件时，请参阅<code>filesystem.dc_reference</code>图表以获取更多上下文。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。'
     },
 
     // ------------------------------------------------------------------------
@@ -2709,20 +2709,20 @@ netdataDashboard.context = {
                     return '';
             }
         ],
-        info: 'The amount of traffic transferred by the network interface.'
+        info: '网络接口传输的流量。'
     },
     'net.packets': {
-        info: 'The number of packets transferred by the network interface. '+
-        'Received <a href="https://en.wikipedia.org/wiki/Multicast" target="_blank">multicast</a> counter is '+
-        'commonly calculated at the device level (unlike <b>received</b>) and therefore may include packets which did not reach the host.'
+        info: '网络接口传输的数据包数量。 '+
+        '收到的<a href="https://en.wikipedia.org/wiki/Multicast" target="_blank">multicast</a>计数器是 '+
+        '通常在设备级别计算（与<b>接收</b>不同），因此可能包括未到达主机的数据包。'
     },
     'net.errors': {
-        info: '<p>The number of errors encountered by the network interface.</p>'+
-        '<p><b>Inbound</b> - bad packets received on this interface. '+
-        'It includes dropped packets due to invalid length, CRC, frame alignment, and other errors. '+
-        '<b>Outbound</b> - transmit problems. '+
-        'It includes frames transmission errors due to loss of carrier, FIFO underrun/underflow, heartbeat, '+
-        'late collisions, and other problems.</p>'
+        info: '<p>网络接口遇到的错误数量。</p>'+
+        '<p><b>入站</b> - 此界面上收到的不良数据包。 '+
+        '它包括因长度无效、CRC、帧对齐和其他错误而掉落的数据包。 '+
+        '<b>出站</b> - 传输问题。 '+
+        '它包括因运营商丢失而导致的帧传输错误、FIFO超支/下流、心跳、 '+
+        '延迟碰撞和其他问题。</p>'
     },
     'net.fifo': {
         info: '<p>The number of FIFO errors encountered by the network interface.</p>'+
@@ -6353,9 +6353,9 @@ netdataDashboard.context = {
     },
 
     'systemd.scope_unit_state': {
-        info: 'Slice units may be used to group units which manage system processes (such as service and scope units) ' +
-        'in a hierarchical tree for resource management purposes. ' +
-        'See <a href="https://www.freedesktop.org/software/systemd/man/systemd.scope.html#" target="_blank"> systemd.scope(5)</a>.'
+        info: '切片单元可用于对管理系统流程的单元进行分组（如服务和范围单元） ' +
+        '在用于资源管理的分层树中。 ' +
+        '请参阅<a href="https://www.freedesktop.org/software/systemd/man/systemd.scope.html#" target="_blank"> systemd.scope(5)</a>。'
     },
 
     'systemd.slice_unit_state': {
