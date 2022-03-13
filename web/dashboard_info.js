@@ -112,14 +112,14 @@ netdataDashboard.menu = {
         title: 'IP 虚拟服务器',
         icon: '<i class="fas fa-eye"></i>',
         info: '<p><a href="http://www.linuxvirtualserver.org/software/ipvs.html" target="_blank">IPVS (IP Virtual Server)</a> '+
-        'implements transport-layer load balancing inside the Linux kernel, so called Layer-4 switching. '+
-        'IPVS running on a host acts as a load balancer at the front of a cluster of real servers, '+
-        'it can direct requests for TCP/UDP based services to the real servers, '+
-        'and makes services of the real servers to appear as a virtual service on a single IP address.</p>'+
-        '<p>Netdata collects summary statistics, reading <code>/proc/net/ip_vs_stats</code>. '+
-        'To display the statistics information of services and their servers, run <code>ipvsadm -Ln --stats</code> '+
-        'or <code>ipvsadm -Ln --rate</code> for the rate statistics. '+
-        'For details, see <a href="https://linux.die.net/man/8/ipvsadm" target="_blank">ipvsadm(8)</a>.</p>'
+        '在Linux内核内实现传输层负载平衡，即所谓的第4层切换。 '+
+        '在主机上运行的IPVS在一组真实服务器的前部充当负载平衡器， '+
+        '它可以将基于TCP/UDP的服务请求定向到真正的服务器， '+
+        '并使真实服务器的服务在单个IP地址上显示为虚拟服务。</p>'+
+        '<p>Netdata收集摘要统计数据，阅读<code>/proc/net/ip_vs_stats</code>。 '+
+        '要显示服务及其服务器的统计信息，请运行<code>ipvsadm -Ln --stats</code> '+
+        '或<code>ipvsadm -Ln --rate</code>用于费率统计。'+
+        '有关详细信息，请参阅 <a href="https://linux.die.net/man/8/ipvsadm" target="_blank">ipvsadm(8)</a>.</p>'
     },
 
     'netfilter': {
