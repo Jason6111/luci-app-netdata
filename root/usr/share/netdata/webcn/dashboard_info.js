@@ -27,39 +27,39 @@ netdataDashboard.menu = {
     },
 
     'ap': {
-        title: 'Access Points',
+        title: 'AP接入点',
         icon: '<i class="fas fa-wifi"></i>',
-        info: 'Performance metrics for the access points (i.e. wireless interfaces in AP mode) found on the system.'
+        info: '系统上找到的接入点（即AP模式下的无线接口）的指标。'
     },
 
     'tc': {
-        title: 'Quality of Service',
+        title: 'Quality服务',
         icon: '<i class="fas fa-globe"></i>',
-        info: 'Netdata collects and visualizes <code>tc</code> class utilization using its ' +
-            '<a href="https://github.com/netdata/netdata/blob/master/collectors/tc.plugin/tc-qos-helper.sh.in" target="_blank">tc-helper plugin</a>. ' +
-            'If you also use <a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a> for setting up QoS, ' +
-            'netdata automatically collects interface and class names. If your QoS configuration includes overheads ' +
-            'calculation, the values shown here will include these overheads (the total bandwidth for the same ' +
-            'interface as reported in the Network Interfaces section, will be lower than the total bandwidth ' +
-            'reported here). QoS data collection may have a slight time difference compared to the interface ' +
-            '(QoS data collection uses a BASH script, so a shift in data collection of a few milliseconds ' +
-            'should be justified).'
+        info: 'Netdata使用其收集和可视化<code>tc</code>类利用率 ' +
+            '<a href="https://github.com/netdata/netdata/blob/master/collectors/tc.plugin/tc-qos-helper.sh.in" target="_blank">Tc-helper插件</a>. ' +
+            '如果您也使用<a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>来设置QoS， ' +
+            'Netdata会自动收集接口和类名。如果您的QoS配置包含间接费用 ' +
+            '计算，这里显示的值将包括这些开销（相同的总带宽 ' +
+            '“网络接口”部分中报告的接口将低于总带宽 ' +
+            '这里报告了）。与界面相比，QoS数据收集可能略有时差 ' +
+            '（QoS数据收集使用BASH脚本，因此数据收集的转移几毫秒 ' +
+            '应该有正当理由）。'
     },
 
     'net': {
         title: '网络接口',
         icon: '<i class="fas fa-sitemap"></i>',
-        info: '<p>Performance <a href="https://www.kernel.org/doc/html/latest/networking/statistics.html" target="_blank">网路介面的效能指标。</a>.</p>'+
-        '<p>Netdata retrieves this data reading the <code>/proc/net/dev</code> file and <code>/sys/class/net/</code> directory.</p>'
+        info: '<p>运转 <a href="https://www.kernel.org/doc/html/latest/networking/statistics.html" target="_blank">网路介面的效能指标。</a>.</p>'+
+        '<p>Netdata检索读取<code>/proc/net/dev</code>文件和<code>/sys/class/net/</code>目录的数据。</p>'
     },
 
     'Infiniband': {
-        title: 'Infiniband ports',
+        title: 'Infiniband端口',
         icon: '<i class="fas fa-sitemap"></i>',
-        info: '<p>Performance and exception statistics for '+
-        '<a href="https://en.wikipedia.org/wiki/InfiniBand" target="_blank">Infiniband</a> ports. '+
-        'The individual port and hardware counter descriptions can be found in the '+
-        '<a href="https://community.mellanox.com/s/article/understanding-mlx5-linux-counters-and-status-parameters" target="_blank">Mellanox knowledge base</a>.'
+        info: '<p>绩效和例外统计 '+
+        '<a href="https://en.wikipedia.org/wiki/InfiniBand" target="_blank">Infiniband</a> 端口。 '+
+        '单个端口和硬件计数器描述可以在 '+
+        '<a href="https://community.mellanox.com/s/article/understanding-mlx5-linux-counters-and-status-parameters" target="_blank">Mellanox知识库</a>.'
     },
 
     'wireless': {
@@ -73,9 +73,9 @@ netdataDashboard.menu = {
         icon: '<i class="fas fa-cloud"></i>',
         info: function (os) {
             if (os === "linux")
-                return 'Metrics for the networking stack of the system. These metrics are collected from <code>/proc/net/netstat</code> or attaching <code>kprobes</code> to kernel functions, apply to both IPv4 and IPv6 traffic and are related to operation of the kernel networking stack.';
+                return '系统网络堆栈的指标。这些指标从<code>/proc/net/netstat</code>收集，或将<code>kprobes</code>附加到内核函数，适用于IPv4和IPv6流量，并与内核网络堆栈的操作有关。';
             else
-                return 'Metrics for the networking stack of the system.';
+                return '系统网络堆栈的指标。';
         }
     },
 
@@ -83,53 +83,53 @@ netdataDashboard.menu = {
         title: 'IPv4网路',
         icon: '<i class="fas fa-cloud"></i>',
         info: 'IPv4效能指标。' +
-            '<a href="https://en.wikipedia.org/wiki/IPv4" target="_blank">Internet Protocol version 4 (IPv4)</a> is ' +
-            'the fourth version of the Internet Protocol (IP). It is one of the core protocols of standards-based ' +
-            'internetworking methods in the Internet. IPv4 is a connectionless protocol for use on packet-switched ' +
-            'networks. It operates on a best effort delivery model, in that it does not guarantee delivery, nor does ' +
-            'it assure proper sequencing or avoidance of duplicate delivery. These aspects, including data integrity, ' +
-            'are addressed by an upper layer transport protocol, such as the Transmission Control Protocol (TCP).'
+            '<a href="https://en.wikipedia.org/wiki/IPv4" target="_blank">Internet Protocol version 4 (IPv4)</a> 是 ' +
+            '互联网协议（IP）的第四版。它是基于标准的核心协议之一 ' +
+            '互联网上的互联网工作方法。IPv4是一种用于数据包交换的无连接协议' +
+            '网络。它以最佳努力交付模式运作，因为它不保证交付，也不保证交付 ' +
+            '它确保正确的顺序或避免重复交付。这些方面，包括数据完整性，' +
+            '由上层传输协议（如传输控制协议（TCP））解决。'
     },
 
     'ipv6': {
         title: 'IPv6网路',
         icon: '<i class="fas fa-cloud"></i>',
-        info: 'IPv6效能指标。 <a href="https://en.wikipedia.org/wiki/IPv6" target="_blank">Internet Protocol version 6 (IPv6)</a> is the most recent version of the Internet Protocol (IP), the communications protocol that provides an identification and location system for computers on networks and routes traffic across the Internet. IPv6 was developed by the Internet Engineering Task Force (IETF) to deal with the long-anticipated problem of IPv4 address exhaustion. IPv6 is intended to replace IPv4.'
+        info: 'IPv6效能指标。 <a href="https://en.wikipedia.org/wiki/IPv6" target="_blank">Internet Protocol version 6 (IPv6)</a> 是互联网协议（IP）的最新版本，该通信协议为网络上的计算机和跨互联网的路由流量提供识别和定位系统。IPv6是由互联网工程特别工作组（IETF）开发的，旨在处理长期预计的IPv4地址用尽问题。IPv6旨在取代IPv4。'
     },
 
     'sctp': {
         title: 'SCTP 网路',
         icon: '<i class="fas fa-cloud"></i>',
-        info: '<p><a href="https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol" target="_blank">Stream Control Transmission Protocol (SCTP)</a> '+
-        'is a computer network protocol which operates at the transport layer and serves a role similar to the popular '+
-        'protocols TCP and UDP. SCTP provides some of the features of both UDP and TCP: it is message-oriented like UDP '+
-        'and ensures reliable, in-sequence transport of messages with congestion control like TCP. '+
-        'It differs from those protocols by providing multi-homing and redundant paths to increase resilience and reliability.</p>'+
-        '<p>Netdata collects SCTP metrics reading the <code>/proc/net/sctp/snmp</code> file.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol" target="_blank">流控传输协议（SCTP）</a> '+
+        '是一种计算机网络协议，在传输层运行，其作用类似于流行的 '+
+        '协议TCP和UDP。SCTP提供了UDP和TCP的一些功能：它像UDP一样面向消息 '+
+        '并确保具有TCP等拥塞控制的消息的可靠、无序传输。 '+
+        '它与这些协议不同，它提供了多寻址和冗余路径，以提高弹性和可靠性。</p>'+
+        '<p>Netdata收集读取<code>/proc/net/sctp/snmp</code>文件的SCTP指标。</p>'
     },
 
     'ipvs': {
         title: 'IP 虚拟服务器',
         icon: '<i class="fas fa-eye"></i>',
         info: '<p><a href="http://www.linuxvirtualserver.org/software/ipvs.html" target="_blank">IPVS (IP Virtual Server)</a> '+
-        'implements transport-layer load balancing inside the Linux kernel, so called Layer-4 switching. '+
-        'IPVS running on a host acts as a load balancer at the front of a cluster of real servers, '+
-        'it can direct requests for TCP/UDP based services to the real servers, '+
-        'and makes services of the real servers to appear as a virtual service on a single IP address.</p>'+
-        '<p>Netdata collects summary statistics, reading <code>/proc/net/ip_vs_stats</code>. '+
-        'To display the statistics information of services and their servers, run <code>ipvsadm -Ln --stats</code> '+
-        'or <code>ipvsadm -Ln --rate</code> for the rate statistics. '+
-        'For details, see <a href="https://linux.die.net/man/8/ipvsadm" target="_blank">ipvsadm(8)</a>.</p>'
+        '在Linux内核内实现传输层负载平衡，即所谓的第4层切换。 '+
+        '在主机上运行的IPVS在一组真实服务器的前部充当负载平衡器， '+
+        '它可以将基于TCP/UDP的服务请求定向到真正的服务器， '+
+        '并使真实服务器的服务在单个IP地址上显示为虚拟服务。</p>'+
+        '<p>Netdata收集摘要统计数据，阅读<code>/proc/net/ip_vs_stats</code>。 '+
+        '要显示服务及其服务器的统计信息，请运行<code>ipvsadm -Ln --stats</code> '+
+        '或<code>ipvsadm -Ln --rate</code>用于费率统计。'+
+        '有关详细信息，请参阅 <a href="https://linux.die.net/man/8/ipvsadm" target="_blank">ipvsadm(8)</a>.</p>'
     },
 
     'netfilter': {
-        title: '防火墙 (netfilter)',
+        title: '防火墙(netfilter)',
         icon: '<i class="fas fa-shield-alt"></i>',
         info: 'netfilter组件的性能指标。'
     },
 
     'ipfw': {
-        title: '防火墙 (ipfw)',
+        title: '防火墙(ipfw)',
         icon: '<i class="fas fa-shield-alt"></i>',
         info: 'ipfw规则的计数器和内存使用情况。'
     },
@@ -161,11 +161,11 @@ netdataDashboard.menu = {
     'mdstat': {
         title: 'MD arrays',
         icon: '<i class="fas fa-hdd"></i>',
-        info: '<p>RAID devices are virtual devices created from two or more real block devices. '+
-        '<a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">Linux Software RAID</a> devices are '+
-        'implemented through the md (Multiple Devices) device driver.</p>'+
-        '<p>Netdata monitors the current status of MD arrays reading <a href="https://raid.wiki.kernel.org/index.php/Mdstat" target="_blank">/proc/mdstat</a> and '+
-        '<code>/sys/block/%s/md/mismatch_cnt</code> files.</p>'
+        info: '<p>RAID 设备是由两个或更多真实块设备创建的虚拟设备。 '+
+        '<a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">Linux软件RAID</a>设备是 '+
+        '通过md（多设备）设备驱动程序实现。</p>'+
+        '<p>Netdata监控MD数组的当前状态，读取<a href="https://raid.wiki.kernel.org/index.php/Mdstat" target="_blank">/proc/mdstat</a>和 '+
+        '<code>/sys/block/%s/md/mismatch_cnt</code> 档案</p>'
     },
 
     'sensors': {
@@ -177,37 +177,37 @@ netdataDashboard.menu = {
     'ipmi': {
         title: 'IPMI',
         icon: '<i class="fas fa-leaf"></i>',
-        info: 'The Intelligent Platform Management Interface (IPMI) is a set of computer interface specifications for an autonomous computer subsystem that provides management and monitoring capabilities independently of the host system\'s CPU, firmware (BIOS or UEFI) and operating system.'
+        info: '智能平台管理接口（IPMI）是一套自主计算机子系统的计算机接口规范，独立于主机系统的CPU、固件（BIOS或UEFI）和操作系统提供管理和监控功能。'
     },
 
     'samba': {
         title: 'Samba',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the Samba file share operations of this system. Samba is a implementation of Windows services, including Windows SMB protocol file shares.'
+        info: '此系统的Samba文件共享操作的绩效指标。Samba是Windows服务的实现，包括Windows SMB协议文件共享。'
     },
 
     'nfsd': {
         title: 'NFS服器器',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the Network File Server. '+
+        info: '网络文件服务器的绩效指标。 '+
         '<a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">NFS</a> '+
-        'is a distributed file system protocol, allowing a user on a client computer to access files over a network, '+
-        'much like local storage is accessed. '+
-        'NFS, like many other protocols, builds on the Open Network Computing Remote Procedure Call (ONC RPC) system.'
+        '是一种分布式文件系统协议，允许客户端计算机上的用户通过网络访问文件， '+
+        '就像访问本地存储一样。 '+
+        '与许多其他协议一样，NFS基于开放网络计算远程过程调用（ONC RPC）系统。'
     },
 
     'nfs': {
         title: 'NFS客户端',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the '+
+        info: '绩效指标 '+
         '<a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">NFS</a> '+
-        'operations of this system, acting as an NFS client.'
+        '该系统作为NFS客户端的操作。'
     },
 
     'zfs': {
         title: 'ZFS文件系统',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the '+
+        info: '绩效指标 '+
         '<a href="https://en.wikipedia.org/wiki/ZFS#Caching_mechanisms" target="_blank">ZFS ARC and L2ARC</a>. '+
         'ZFS档案系统的效能指标。以下图表呈现来自 '+
         '<a href="https://github.com/openzfs/zfs/blob/master/cmd/arcstat/arcstat.in" target="_blank">arcstat.py</a> 与 '+
@@ -217,7 +217,7 @@ netdataDashboard.menu = {
     'zfspool': {
         title: 'ZFS pools',
         icon: '<i class="fas fa-database"></i>',
-        info: 'State of ZFS pools.'
+        info: 'ZFS的状态。'
     },
 
     'btrfs': {
@@ -229,37 +229,37 @@ netdataDashboard.menu = {
     'apps': {
         title: '应用程序',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Per application statistics are collected using '+
+        info: '每个应用程序的统计数据使用 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin" target="_blank">apps.plugin</a>. '+
-        'This plugin walks through all processes and aggregates statistics for '+
+        '这个插件会浏览所有流程，并汇总 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin#configuration" target="_blank">application groups</a>. '+
-        'The plugin also counts the resources of exited children. '+
-        'So for processes like shell scripts, the reported values include the resources used by the commands '+
-        'these scripts run within each timeframe.',
+        '该插件还计算退出子项的资源。 '+
+        '因此，对于shell脚本等进程，报告的值包括命令使用的资源 '+
+        '这些脚本在每个时间范围内运行。',
         height: 1.5
     },
 
     'groups': {
         title: '用户组',
         icon: '<i class="fas fa-user"></i>',
-        info: 'Per user group statistics are collected using '+
+        info: '每个用户组的统计数据使用 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin" target="_blank">apps.plugin</a>. '+
-        'This plugin walks through all processes and aggregates statistics per user group. '+
-        'The plugin also counts the resources of exited children. '+
-        'So for processes like shell scripts, the reported values include the resources used by the commands '+
-        'these scripts run within each timeframe.',
+        '此插件浏览所有流程，并汇总每个用户组的统计数据。 '+
+        '该插件还计算退出子项的资源。 '+
+        '因此，对于shell脚本等进程，报告的值包括命令使用的资源 '+
+        '这些脚本在每个时间范围内运行。',
         height: 1.5
     },
 
     'users': {
         title: '用户',
         icon: '<i class="fas fa-users"></i>',
-        info: 'Per user statistics are collected using '+
+        info: '每个用户的统计数据是使用 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin" target="_blank">apps.plugin</a>. '+
-        'This plugin walks through all processes and aggregates statistics per user. '+
-        'The plugin also counts the resources of exited children. '+
-        'So for processes like shell scripts, the reported values include the resources used by the commands '+
-        'these scripts run within each timeframe.',
+        '此插件浏览所有流程，并汇总每个用户的统计数据。 '+
+        '该插件还计算退出子项的资源。 '+
+        '因此，对于shell脚本等进程，报告的值包括命令使用的资源 '+
+        '这些脚本在每个时间范围内运行。',
         height: 1.5
     },
 
@@ -294,98 +294,98 @@ netdataDashboard.menu = {
     'fping': {
         title: 'fping',
         icon: '<i class="fas fa-exchange-alt"></i>',
-        info: 'Network latency statistics, via <b>fping</b>. <b>fping</b> is a program to send ICMP echo probes to network hosts, similar to <code>ping</code>, but much better performing when pinging multiple hosts. fping versions after 3.15 can be directly used as netdata plugins.'
+        info: '网络延迟统计，通过<b>fping</b>。<b>fping</b>是一个向网络主机发送ICMP回声探针的程序，类似于<code>ping</code>，但在ping多个主机时性能要好得多。3.15之后的fping版本可以直接用作netdata插件。'
     },
 
     'gearman': {
         title: 'Gearman',
         icon: '<i class="fas fa-tasks"></i>',
-        info: 'Gearman is a job server that allows you to do work in parallel, to load balance processing, and to call functions between languages.'
+        info: 'Gearman是一个工作服务器，允许您并行工作，加载平衡处理，并在语言之间调用函数。'
     },
 
     'ioping': {
         title: 'ioping',
         icon: '<i class="fas fa-exchange-alt"></i>',
-        info: 'Disk latency statistics, via <b>ioping</b>. <b>ioping</b> is a program to read/write data probes from/to a disk.'
+        info: '磁盘延迟统计，通过<b>ioping</b>。<b>ioping</b>是一个从/到磁盘读取/写入数据探针的程序。'
     },
 
     'httpcheck': {
         title: 'Http Check',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Web Service availability and latency monitoring using HTTP checks. This plugin is a specialized version of the port check plugin.'
+        info: '使用HTTP检查进行Web服务可用性和延迟监控。此插件是端口检查插件的专用版本。'
     },
 
     'memcached': {
         title: 'memcached',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>memcached</b>. Memcached is a general-purpose distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read.'
+        info: '<b>memcached</b>的绩效指标。Memcached是一个通用的分布式内存缓存系统。它通常用于通过在RAM中缓存数据和对象来加快动态数据库驱动的网站，以减少外部数据源（如数据库或API）必须读取的次数。'
     },
 
     'monit': {
         title: 'monit',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Statuses of checks in <b>monit</b>. Monit is a utility for managing and monitoring processes, programs, files, directories and filesystems on a Unix system. Monit conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.'
+        info: '<b>monit</b>中的检查状态。Monit是一个用于管理和监控Unix系统上的流程、程序、文件、目录和文件系统的实用工具。Monit进行自动维护和维修，并在错误情况下执行有意义的因果行为。'
     },
 
     'mysql': {
         title: 'MySQL',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>mysql</b>, the open-source relational database management system (RDBMS).'
+        info: '开源关系数据库管理系统（RDBMS）<b>mysql</b>的绩效指标。'
     },
 
     'postgres': {
         title: 'Postgres',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>PostgresSQL</b>, the object-relational database (ORDBMS).'
+        info: '对象关系数据库（ORDBMS）<b>PostgresSQL</b>的性能指标。'
     },
 
     'redis': {
         title: 'Redis',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>redis</b>. Redis (REmote DIctionary Server) is a software project that implements data structure servers. It is open-source, networked, in-memory, and stores keys with optional durability.'
+        info: '<b>redis</b>的绩效指标。Redis（远程字典服务器）是一个实现数据结构服务器的软件项目。它是开源的、联网的、内存的，并存储具有可选耐用性的密钥。'
     },
 
     'rethinkdbs': {
         title: 'RethinkDB',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>rethinkdb</b>. RethinkDB is the first open-source scalable database built for realtime applications'
+        info: '<b>rethinkdb</b>的绩效指标。RethinkDB是第一个为实时应用程序构建的开源可扩展数据库'
     },
 
     'retroshare': {
         title: 'RetroShare',
         icon: '<i class="fas fa-share-alt"></i>',
-        info: 'Performance metrics for <b>RetroShare</b>. RetroShare is open source software for encrypted filesharing, serverless email, instant messaging, online chat, and BBS, based on a friend-to-friend network built on GNU Privacy Guard (GPG).'
+        info: '<b>RetroShare</b>的绩效指标。RetroShare是基于基于GNU隐私保护（GPG）的朋友对朋友网络的加密文件共享、无服务器电子邮件、即时消息、在线聊天和BBS的开源软件。'
     },
 
     'riakkv': {
         title: 'Riak KV',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Metrics for <b>Riak KV</b>, the distributed key-value store.'
+        info: '<b>Riak KV</b>的指标，分布式键值存储。'
     },
 
     'ipfs': {
         title: 'IPFS',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics for the InterPlanetary File System (IPFS), a content-addressable, peer-to-peer hypermedia distribution protocol.'
+        info: 'InterPlanetary File System（IPFS）的绩效指标，IPFS是一种内容可寻址的点对点超媒体分发协议。'
     },
 
     'phpfpm': {
         title: 'PHP-FPM',
         icon: '<i class="fas fa-eye"></i>',
-        info: 'Performance metrics for <b>PHP-FPM</b>, an alternative FastCGI implementation for PHP.'
+        info: '<b>PHP-FPM</b>的绩效指标，PHP的替代FastCGI实现。'
     },
 
     'pihole': {
         title: 'Pi-hole',
         icon: '<i class="fas fa-ban"></i>',
-        info: 'Metrics for <a href="https://pi-hole.net/" target="_blank">Pi-hole</a>, a black hole for Internet advertisements.' +
-            ' The metrics returned by Pi-Hole API is all from the last 24 hours.'
+        info: '<a href="https://pi-hole.net/" target="_blank">Pi-hole</a>的指标，一个互联网广告的黑洞。' +
+            ' Pi-Hole API返回的指标都来自过去24小时。'
     },
 
     'portcheck': {
-        title: 'Port Check',
+        title: '端口检查',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Service availability and latency monitoring using port checks.'
+        info: '使用端口检查来监控服务可用性和延迟。'
     },
 
     'postfix': {
@@ -427,7 +427,7 @@ netdataDashboard.menu = {
     'web_log': {
         title: undefined,
         icon: '<i class="fas fa-file-alt"></i>',
-        info: 'Information extracted from a server log file. <code>web_log</code> plugin incrementally parses the server log file to provide, in real-time, a break down of key server performance metrics. For web servers, an extended log file format may optionally be used (for <code>nginx</code> and <code>apache</code>) offering timing information and bandwidth for both requests and responses. <code>web_log</code> plugin may also be configured to provide a break down of requests per URL pattern (check <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>).'
+        info: '从服务器日志文件中提取的信息。<code>web_log</code>插件逐步解析服务器日志文件，以实时提供关键服务器性能指标的细分。对于Web服务器，可以选择使用扩展日志文件格式（对于<code>nginx</code>和<code>apache</code>），为请求和响应提供计时信息和带宽。<code>web_log</code>插件也可以配置为按URL模式提供请求的细分（检查<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>）。'
     },
 
     'named': {
@@ -481,47 +481,47 @@ netdataDashboard.menu = {
     'go_expvar': {
         title: 'Go - expvars',
         icon: '<i class="fas fa-eye"></i>',
-        info: 'Statistics about running Go applications exposed by the <a href="https://golang.org/pkg/expvar/" target="_blank">expvar package</a>.'
+        info: '<a href="https://golang.org/pkg/expvar/" target="_blank">expvar软件包</a> 公开的运行Go应用程序的统计数据。'
     },
 
     'chrony': {
         icon: '<i class="fas fa-clock"></i>',
-        info: 'chronyd parameters about the system’s clock performance.'
+        info: '关于系统时钟性能的计时参数。'
     },
 
     'couchdb': {
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b><a href="https://couchdb.apache.org/" target="_blank">CouchDB</a></b>, the open-source, JSON document-based database with an HTTP API and multi-master replication.'
+        info: '<b><a href="https://couchdb.apache.org/" target="_blank">CouchDB</a></b>的性能指标，该数据库是基于JSON文档的开源数据库，具有HTTP API和多主复制。'
     },
 
     'beanstalk': {
         title: 'Beanstalkd',
         icon: '<i class="fas fa-tasks"></i>',
-        info: 'Provides statistics on the <b><a href="http://kr.github.io/beanstalkd/" target="_blank">beanstalkd</a></b> server and any tubes available on that server using data pulled from beanstalkc'
+        info: '使用从beanstalkc提取的数据提供有关<b><a href="http://kr.github.io/beanstalkd/" target="_blank">beanstalkd</a></b>服务器和该服务器上可用的任何管道的统计数据'
     },
 
     'rabbitmq': {
         title: 'RabbitMQ',
         icon: '<i class="fas fa-comments"></i>',
-        info: 'Performance data for the <b><a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a></b> open-source message broker.'
+        info: '<b><a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a></b>开源消息代理的性能数据。'
     },
 
     'ceph': {
         title: 'Ceph',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Provides statistics on the <b><a href="http://ceph.com/" target="_blank">ceph</a></b> cluster server, the open-source distributed storage system.'
+        info: '提供<b><a href="http://ceph.com/" target="_blank">ceph</a></b>集群服务器的统计数据，开源分布式存储系统。'
     },
 
     'ntpd': {
         title: 'ntpd',
         icon: '<i class="fas fa-clock"></i>',
-        info: 'Provides statistics for the internal variables of the Network Time Protocol daemon <b><a href="http://www.ntp.org/" target="_blank">ntpd</a></b> and optional including the configured peers (if enabled in the module configuration). The module presents the performance metrics as shown by <b><a href="http://doc.ntp.org/current-stable/ntpq.html">ntpq</a></b> (the standard NTP query program) using NTP mode 6 UDP packets to communicate with the NTP server.'
+        info: '提供网络时间协议守护程序<b><a href="http://www.ntp.org/" target="_blank">ntpd</a></b>的内部变量的统计信息，并可选包括配置的对等变量（如果在模块配置中启用）。本模块介绍了<b><a href="http://doc.ntp.org/current-stable/ntpq.html">ntpq</a></b>（标准NTP查询程序）所示的绩效指标，使用NTP模式6个UDP数据包与NTP服务器通信。'
     },
 
     'spigotmc': {
         title: 'Spigot MC',
         icon: '<i class="fas fa-eye"></i>',
-        info: 'Provides basic performance statistics for the <b><a href="https://www.spigotmc.org/" target="_blank">Spigot Minecraft</a></b> server.'
+        info: '为<b><a href="https://www.spigotmc.org/" target="_blank">Spigot Minecraft</a></b>服务器提供基本性能统计信息。'
     },
 
     'unbound': {
@@ -533,13 +533,13 @@ netdataDashboard.menu = {
     'boinc': {
         title: 'BOINC',
         icon: '<i class="fas fa-microchip"></i>',
-        info: 'Provides task counts for <b><a href="http://boinc.berkeley.edu/" target="_blank">BOINC</a></b> distributed computing clients.'
+        info: '为<b><a href="http://boinc.berkeley.edu/" target="_blank">BOINC</a></b>分布式计算客户端提供任务计数。'
     },
 
     'w1sensor': {
         title: '1-Wire Sensors',
         icon: '<i class="fas fa-thermometer-half"></i>',
-        info: 'Data derived from <a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">1-Wire</a> sensors.  Currently temperature sensors are automatically detected.'
+        info: '来自<a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">1-Wire</a>传感器的数据。目前会自动检测到温度传感器。'
     },
 
     'logind': {
@@ -549,21 +549,21 @@ netdataDashboard.menu = {
     },
 
     'powersupply': {
-        title: 'Power Supply',
+        title: '电源',
         icon: '<i class="fas fa-battery-half"></i>',
-        info: 'Statistics for the various system power supplies. Data collected from <a href="https://www.kernel.org/doc/Documentation/power/power_supply_class.txt" target="_blank">Linux power supply class</a>.'
+        info: '各种系统电源的统计数据。从<a href="https://www.kernel.org/doc/Documentation/power/power_supply_class.txt" target="_blank">Linux电源类</a>收集的数据。'
     },
 
     'xenstat': {
         title: 'Xen Node',
         icon: '<i class="fas fa-server"></i>',
-        info: 'General statistics for the Xen node. Data collected using <b>xenstat</b> library</a>.'
+        info: 'Xen节点的一般统计信息。使用<b>xenstat</b>库</a>收集的数据。'
     },
 
     'xendomain': {
         title: '',
         icon: '<i class="fas fa-th-large"></i>',
-        info: 'Xen domain resource utilization metrics. Netdata reads this information using <b>xenstat</b> library which gives access to the resource usage information (CPU, memory, disk I/O, network) for a virtual machine.'
+        info: 'Xen域资源利用率指标。Netdata使用<b>xenstat</b>库读取此信息，该库允许访问虚拟机的资源使用信息（CPU、内存、磁盘I/O、网络）。'
     },
 
     'wmi': {
@@ -575,43 +575,43 @@ netdataDashboard.menu = {
     'perf': {
         title: 'Perf Counters',
         icon: '<i class="fas fa-tachometer-alt"></i>',
-        info: 'Performance Monitoring Counters (PMC). Data collected using <b>perf_event_open()</b> system call which utilises Hardware Performance Monitoring Units (PMU).'
+        info: '性能监控计数器（PMC）。使用使用硬件性能监控单元（PMU）的<b>perf_event_open()</b>系统调用收集的数据。'
     },
 
     'vsphere': {
         title: 'vSphere',
         icon: '<i class="fas fa-server"></i>',
-        info: 'Performance statistics for ESXI hosts and virtual machines. Data collected from <a href="https://www.vmware.com/products/vcenter-server.html" target="_blank">VMware vCenter Server</a> using <code><a href="https://github.com/vmware/govmomi"> govmomi</a></code>  library.'
+        info: 'ESXI主机和虚拟机的性能统计。使用<code><a href="https://github.com/vmware/govmomi">govmomi</a></code>库从<a href="https://www.vmware.com/vcenter-server.html" target="_blank">VMware vCenter Server</a>收集的数据。'
     },
 
     'vcsa': {
         title: 'VCSA',
         icon: '<i class="fas fa-server"></i>',
-        info: 'vCenter Server Appliance health statistics. Data collected from <a href="https://vmware.github.io/vsphere-automation-sdk-rest/vsphere/index.html#SVC_com.vmware.appliance.health" target="_blank">Health API</a>.'
+        info: 'vCenter Server设备运行状况统计。从<a href="https://vmware.github.io/vsphere-automation-sdk-rest/vsphere/index.html#SVC_com.vmware.appliance.health" target="_blank">健康API</a>收集的数据。'
     },
 
     'zookeeper': {
         title: 'Zookeeper',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Provides health statistics for <b><a href="https://zookeeper.apache.org/" target="_blank">Zookeeper</a></b> server. Data collected through the command port using <code><a href="https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands">mntr</a></code> command.'
+        info: '提供<b><a href="https://zookeeper.apache.org/" target="_blank">Zookeeper</a></b>服务器的健康统计数据。使用<code><a href="https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands">mntr</a></code>命令通过命令端口收集的数据。'
     },
 
     'hdfs': {
         title: 'HDFS',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Provides <b><a href="https://hadoop.apache.org/docs/r3.2.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank">Hadoop Distributed File System</a></b> performance statistics. Module collects metrics over <code>Java Management Extensions</code> through the web interface of an <code>HDFS</code> daemon.'
+        info: '提供<b><a href="https://hadoop.apache.org/docs/r3.2.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank">Hadoop分布式文件系统</a></b>性能统计信息。模块通过<code>HDFS</code>守护进程的Web界面收集<code>Java管理扩展</code>上的指标。'
     },
 
     'am2320': {
         title: 'AM2320 Sensor',
         icon: '<i class="fas fa-thermometer-half"></i>',
-        info: 'Readings from the external AM2320 Sensor.'
+        info: '外部AM2320传感器的读数。'
     },
 
     'scaleio': {
         title: 'ScaleIO',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance and health statistics for various ScaleIO components. Data collected via VxFlex OS Gateway REST API.'
+        info: 'ScaleIO各个组件的性能和健康统计。通过VxFlex OS Gateway REST API收集的数据。'
     },
 
     'squidlog': {
@@ -623,13 +623,13 @@ netdataDashboard.menu = {
     'cockroachdb': {
         title: 'CockroachDB',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance and health statistics for various <code>CockroachDB</code> components.'
+        info: '各种<code>CockroachDB</code>组件的性能和健康状况统计。'
     },
 
     'ebpf': {
         title: 'eBPF',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Monitor system calls, internal functions, bytes read, bytes written and errors using <code>eBPF</code>.'
+        info: '使用<code>eBPF</code>监控系统调用、内部函数、字节读取、字节写入和错误。'
     },
 
     'filesystem': {
@@ -640,74 +640,74 @@ netdataDashboard.menu = {
     'vernemq': {
         title: 'VerneMQ',
         icon: '<i class="fas fa-comments"></i>',
-        info: 'Performance data for the <b><a href="https://vernemq.com/" target="_blank">VerneMQ</a></b> open-source MQTT broker.'
+        info: '<b><a href="https://vernemq.com/" target="_blank">VerneMQ</a></b>开源MQTT经纪人的性能数据。'
     },
 
     'pulsar': {
         title: 'Pulsar',
         icon: '<i class="fas fa-comments"></i>',
-        info: 'Summary, namespaces and topics performance data for the <b><a href="http://pulsar.apache.org/" target="_blank">Apache Pulsar</a></b> pub-sub messaging system.'
+        info: '<b><a href="http://pulsar.apache.org/" target="_blank">Apache Pulsar</a></b>pub-sub消息系统的摘要、命名空间和主题性能数据。'
     },
 
     'anomalies': {
         title: 'Anomalies',
         icon: '<i class="fas fa-flask"></i>',
-        info: 'Anomaly scores relating to key system metrics. A high anomaly probability indicates strange behaviour and may trigger an anomaly prediction from the trained models. Read the <a href="https://github.com/netdata/netdata/tree/master/collectors/python.d.plugin/anomalies" target="_blank">anomalies collector docs</a> for more details.'
+        info: '与关键系统指标相关的异常分数。高异常概率表示奇怪的行为，并可能触发经过训练的模型的异常预测。有关更多详细信息，请阅读<a href="https://github.com/netdata/netdata/tree/master/collectors/python.d.plugin/anomalies" target="_blank">异常收集器文档</a>。'
     },
 
     'alarms': {
         title: 'Alarms',
         icon: '<i class="fas fa-bell"></i>',
-        info: 'Charts showing alarm status over time. More details <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/alarms/README.md" target="_blank">here</a>.'
+        info: '显示警报随时间推移状态的图表。更多详细信息<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/alarms/README.md" target="_blank">此处</a>。'
     },
 
     'statsd': { 
         title: 'StatsD',
         icon: '<i class="fas fa-chart-line"></i>',
-        info:'StatsD is an industry-standard technology stack for monitoring applications and instrumenting any piece of software to deliver custom metrics. Netdata allows the user to organize the metrics in different charts and visualize any application metric easily. Read more on <a href="https://learn.netdata.cloud/docs/agent/collectors/statsd.plugin" target="_blank">Netdata Learn</a>.'
+        info:'StatsD是一个行业标准技术堆栈，用于监控应用程序和检测任何软件以提供自定义指标。Netdata允许用户在不同图表中组织指标，并轻松可视化任何应用程序指标。在<a href="https://learn.netdata.cloud/docs/agent/collectors/statsd.plugin" target="_blank">Netdata Learn</a>上阅读更多信息。'
     },
 
     'supervisord': {
         title: 'Supervisord',
         icon: '<i class="fas fa-tasks"></i>',
-        info: 'Detailed statistics for each group of processes controlled by <b><a href="http://supervisord.org/" target="_blank">Supervisor</a></b>. ' +
-        'Netdata collects these metrics using <a href="http://supervisord.org/api.html#supervisor.rpcinterface.SupervisorNamespaceRPCInterface.getAllProcessInfo" target="_blank"><code>getAllProcessInfo</code></a> method.'
+        info: '<b><a href="http://supervisord.org/" target="_blank">主管</a></b>控制的每组流程的详细统计数据。' +
+        'Netdata使用<a href="http://supervisord.org/api.html#supervisor.rpcinterface.SupervisorNamespaceRPCInterface.getAllProcessInfo" target="_blank"><code>getAllProcessInfo</code></a>方法收集这些指标。'
     },
 
     'systemdunits': {
         title: 'systemd units',
         icon: '<i class="fas fa-cogs"></i>',
-        info: '<b>systemd</b> provides a dependency system between various entities called "units" of 11 different types. ' +
-        'Units encapsulate various objects that are relevant for system boot-up and maintenance. ' +
-        'Units may be <code>active</code> (meaning started, bound, plugged in, depending on the unit type), ' +
-        'or <code>inactive</code> (meaning stopped, unbound, unplugged), ' +
-        'as well as in the process of being activated or deactivated, i.e. between the two states (these states are called <code>activating</code>, <code>deactivating</code>). ' +
-        'A special <code>failed</code> state is available as well, which is very similar to <code>inactive</code> and is entered when the service failed in some way (process returned error code on exit, or crashed, an operation timed out, or after too many restarts). ' +
-        'For details, see <a href="https://www.freedesktop.org/software/systemd/man/systemd.html" target="_blank"> systemd(1)</a>.'
+        info: '<b>systemd</b>在11种不同类型的不同实体之间提供了一个依赖系统，称为“单位”。 ' +
+        '单元封装了与系统启动和维护相关的各种对象。 ' +
+        '单元可能是<code>活动</code>（表示启动、绑定、插入，具体取决于单元类型）， ' +
+        '或<code>不活跃</code>（意味着停止、未绑定、断开连接）， ' +
+        '以及在激活或停用的过程中，即在两种状态之间（这些状态称为<code>激活</code>，<code>停用</code>）。 ' +
+        '特殊的<code>失败</code>状态也可用，这与<code>不活跃</code>非常相似，并在服务以某种方式失败时（进程在退出时、崩溃、操作超时或重新启动过多后返回错误代码）时输入。 ' +
+        '有关详细信息，请参阅<a href="https://www.freedesktop.org/software/systemd/man/systemd.html" target="_blank"> systemd(1)</a>。'
     },
     
     'changefinder': {
         title: 'ChangeFinder',
         icon: '<i class="fas fa-flask"></i>',
-        info: 'Online changepoint detection using machine learning. More details <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/changefinder/README.md" target="_blank">here</a>.'
+        info: '使用机器学习在线更改点检测。更多详细信息<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/changefinder/README.md" target="_blank">此处</a>。'
     },
 
     'zscores': {
         title: 'Z-Scores',
         icon: '<i class="fas fa-exclamation"></i>',
-        info: 'Z scores scores relating to key system metrics.'
+        info: 'Z scores与关键系统指标相关的分数。'
     },
 
     'anomaly_detection': {
         title: 'Anomaly Detection',
         icon: '<i class="fas fa-brain"></i>',
-        info: 'Charts relating to anomaly detection, increased <code>anomalous</code> dimensions or a higher than usual <code>anomaly_rate</code> could be signs of some abnormal behaviour. Read our <a href="https://learn.netdata.cloud/guides/monitor/anomaly-detection" target="_blank">anomaly detection guide</a> for more details.'
+        info: '与异常检测、<code>异常</code>尺寸增加或高于通常<code>异常率</code>相关的图表可能是一些异常行为的迹象。有关更多详细信息，请阅读我们的<a href="https://learn.netdata.cloud/guides/monitor/anomaly-detection" target="_blank">异常检测指南</a>。'
     },
 
     'fail2ban': {
         title: 'Fail2ban',
         icon: '<i class="fas fa-shield-alt"></i>',
-        info: 'Netdata keeps track of the current jail status by reading the Fail2ban log file.'
+        info: 'Netdata通过读取Fail2ban日志文件来跟踪当前的监狱状态。'
     },
 };
 
@@ -721,22 +721,22 @@ netdataDashboard.menu = {
 netdataDashboard.submenu = {
     'web_log.squid_bandwidth': {
         title: '频宽',
-        info: 'Bandwidth of responses (<code>sent</code>) by squid. This chart may present unusual spikes, since the bandwidth is accounted at the time the log line is saved by the server, even if the time needed to serve it spans across a longer duration. We suggest to use QoS (e.g. <a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>) for accurate accounting of the server bandwidth.'
+        info: 'squid响应的带宽（<code>发送</code>）。此图表可能会出现异常的峰值，因为带宽是在服务器保存日志行时核算的，即使服务日志行所需的时间跨度更长。我们建议使用QoS（例如<a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>）来准确核算服务器带宽。'
     },
 
     'web_log.squid_responses': {
         title: '回应',
-        info: 'Information related to the responses sent by squid.'
+        info: '与squid发送的回复相关的信息。'
     },
 
     'web_log.squid_requests': {
         title: '请求',
-        info: 'Information related to the requests squid has received.'
+        info: 'squid收到的与请求相关的信息。'
     },
 
     'web_log.squid_hierarchy': {
         title: '等级制度',
-        info: 'Performance metrics for the squid hierarchy used to serve the requests.'
+        info: '用于服务请求的squid层次结构的绩效指标。'
     },
 
     'web_log.squid_squid_transport': {
@@ -750,7 +750,7 @@ netdataDashboard.submenu = {
 
     'web_log.squid_timings': {
         title: 'timings',
-        info: 'Duration of squid requests. Unrealistic spikes may be reported, since squid logs the total time of the requests, when they complete. Especially for HTTPS, the clients get a tunnel from the proxy and exchange requests directly with the upstream servers, so squid cannot evaluate the individual requests and reports the total time the tunnel was open.'
+        info: 'squid请求的持续时间。可能会报告不切实际的激增，因为squid会在请求完成后记录请求的总时间。特别是对于HTTPS，客户端从代理获取隧道，并直接与上游服务器交换请求，因此squid无法评估单个请求并报告隧道打开的总时间。'
     },
 
     'web_log.squid_clients': {
@@ -758,32 +758,32 @@ netdataDashboard.submenu = {
     },
 
     'web_log.bandwidth': {
-        info: 'Bandwidth of requests (<code>received</code>) and responses (<code>sent</code>). <code>received</code> requires an extended log format (without it, the web server log does not have this information). This chart may present unusual spikes, since the bandwidth is accounted at the time the log line is saved by the web server, even if the time needed to serve it spans across a longer duration. We suggest to use QoS (e.g. <a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>) for accurate accounting of the web server bandwidth.'
+        info: '请求（<code>接收</code>）和响应（<code>发送</code>）的带宽。<code>接收</code>需要扩展日志格式（没有它，Web服务器日志没有此信息）。此图表可能会出现异常的峰值，因为带宽是在Web服务器保存日志行时核算的，即使服务日志行所需的时间跨度更长。我们建议使用QoS（例如<a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>）来准确核算Web服务器带宽。'
     },
 
     'web_log.urls': {
-        info: 'Number of requests for each <code>URL pattern</code> defined in <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>. This chart counts all requests matching the URL patterns defined, independently of the web server response codes (i.e. both successful and unsuccessful).'
+        info: '<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>中定义的每个<code>URL模式</code>的请求数量。该图表计算与定义的URL模式匹配的所有请求，独立于Web服务器响应代码（即成功和失败）。'
     },
 
     'web_log.clients': {
-        info: 'Charts showing the number of unique client IPs, accessing the web server.'
+        info: '显示访问Web服务器的唯一客户端IP数量的图表。'
     },
 
     'web_log.timings': {
-        info: 'Web server response timings - the time the web server needed to prepare and respond to requests. This requires an extended log format and its meaning is web server specific. For most web servers this accounts the time from the reception of a complete request, to the dispatch of the last byte of the response. So, it includes the network delays of responses, but it does not include the network delays of requests.'
+        info: 'Web服务器响应时间-Web服务器准备和响应请求所需的时间。这需要扩展日志格式，其含义特定于Web服务器。对于大多数Web服务器来说，这计入了从收到完整请求到发送响应最后一个字节的时间。因此，它包括响应的网络延迟，但它不包括请求的网络延迟。'
     },
 
     'mem.ksm': {
         title: 'deduper (ksm)',
-        info: '<a href="https://en.wikipedia.org/wiki/Kernel_same-page_merging" target="_blank">Kernel Same-page Merging</a> '+
-        '(KSM) performance monitoring, read from several files in <code>/sys/kernel/mm/ksm/</code>. '+
-        'KSM is a memory-saving de-duplication feature in the Linux kernel. '+
-        'The KSM daemon ksmd periodically scans those areas of user memory which have been registered with it, '+
-        'looking for pages of identical content which can be replaced by a single write-protected page.'
+        info: '<a href="https://en.wikipedia.org/wiki/Kernel_same-page_merging" target="_blank">Kernel同页合并</a> '+
+        '（KSM）性能监控，从<code>/sys/kernel/mm/ksm/</code>中的几个文件中读取。 '+
+        'KSM是Linux内核中节省内存的重复数据删除功能。 '+
+        'KSM守护进程ksmd定期扫描已注册的用户内存区域， '+
+        '寻找内容相同的页面，这些页面可以替换为单个受写保护的页面。'
     },
 
     'mem.hugepages': {
-        info: 'Hugepages is a feature that allows the kernel to utilize the multiple page size capabilities of modern hardware architectures. The kernel creates multiple pages of virtual memory, mapped from both physical RAM and swap. There is a mechanism in the CPU architecture called "Translation Lookaside Buffers" (TLB) to manage the mapping of virtual memory pages to actual physical memory addresses. The TLB is a limited hardware resource, so utilizing a large amount of physical memory with the default page size consumes the TLB and adds processing overhead. By utilizing Huge Pages, the kernel is able to create pages of much larger sizes, each page consuming a single resource in the TLB. Huge Pages are pinned to physical RAM and cannot be swapped/paged out.'
+        info: 'Hugepages是一项功能，允许内核利用现代硬件架构的多个页面大小功能。内核创建了多页虚拟内存，从物理RAM和交换进行映射。CPU架构中有一个名为“翻译Lookaside缓冲区”（TLB）的机制，用于管理虚拟内存页面与实际物理内存地址的映射。TLB是一个有限的硬件资源，因此使用默认页面大小的大量物理内存会消耗TLB并增加处理开销。通过使用大型页面，内核能够创建更大大小的页面，每个页面消耗TLB中的单个资源。大型页面被固定在物理RAM上，无法交换/分页。'
     },
 
     'mem.numa': {
@@ -791,50 +791,50 @@ netdataDashboard.submenu = {
     },
 
     'mem.ecc': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC memory</a> '+
-        'is a type of computer data storage that uses an error correction code (ECC) to detect '+
-        'and correct n-bit data corruption which occurs in memory. '+
-        'Typically, ECC memory maintains a memory system immune to single-bit errors: '+
-        'the data that is read from each word is always the same as the data that had been written to it, '+
-        'even if one of the bits actually stored has been flipped to the wrong state.</p>'+
-        '<p>Memory errors can be classified into two types: '+
-        '<b>Soft errors</b>, which randomly corrupt bits but do not leave physical damage. '+
-        'Soft errors are transient in nature and are not repeatable, can be because of electrical or '+
-        'magnetic interference. '+
-        '<b>Hard errors</b>, which corrupt bits in a repeatable manner because '+
-        'of a physical/hardware defect or an environmental problem.'
+        info: '<p><a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC内存</a>'+
+        '是一种使用错误更正代码（ECC）进行检测的计算机数据存储 '+
+        '并纠正内存中发生的n位数据损坏。 '+
+        '通常，ECC内存保持对单位错误的免疫记忆系统： '+
+        '从每个单词读取的数据始终与写入它的数据相同， '+
+        '即使实际存储的位数之一被翻转到错误的状态。</p>'+
+        '<p>内存错误可分为两类：'+
+        '<b>软错误</b>，随机损坏位数，但不留下物理损坏。 '+
+        '软错误本质上是短暂的，不可重复，可能是由于电 '+
+        '磁干扰。 '+
+        '<b>硬错误</b>，它以可重复的方式损坏位，因为 '+
+        '物理/硬件缺陷或环境问题。'
     },
 
     'mem.pagetype': {
-        info: 'Statistics of free memory available from '+
-        '<a href="https://en.wikipedia.org/wiki/Buddy_memory_allocation" target="_blank">memory buddy allocator</a>. '+
-        'The buddy allocator is the system memory allocator. '+
-        'The whole memory space is split in physical pages, which are grouped by '+
-        'NUMA node, zone, '+
-        '<a href="https://lwn.net/Articles/224254/" target="_blank">migrate type</a>, and size of the block. '+
-        'By keeping pages grouped based on their ability to move, '+
-        'the kernel can reclaim pages within a page block to satisfy a high-order allocation. '+
-        'When the kernel or an application requests some memory, the buddy allocator provides a page that matches closest the request.'
+        info: '内存统计数据可从 '+
+        '<a href="https://en.wikipedia.org/wiki/Buddy_memory_allocation" target="_blank">记忆分配器</a>。'+
+        'buddy分配器是系统内存分配器。 '+
+        '整个内存空间被分割成物理页面，这些页面按 '+
+        'NUMA节点，区域， '+
+        '<a href="https://lwn.net/Articles/224254/" target="_blank">迁移类型</a>，以及块的大小。 '+
+        '通过根据页面的移动能力对其进行分组， '+
+        '内核可以回收页面块中的页面，以满足高阶分配。 '+
+        '当内核或应用程序请求一些内存时，好友分配器会提供与请求最近的页面匹配。'
     },
 
     'ip.ecn': {
-        info: '<a href="https://en.wikipedia.org/wiki/Explicit_Congestion_Notification" target="_blank">Explicit Congestion Notification (ECN)</a> '+
-        'is an extension to the IP and to the TCP that allows end-to-end notification of network congestion without dropping packets. '+
-        'ECN is an optional feature that may be used between two ECN-enabled endpoints when '+
-        'the underlying network infrastructure also supports it.'
+        info: '<a href="https://en.wikipedia.org/wiki/Explicit_Congestion_Notification" target="_blank">显式拥堵通知（ECN）</a> '+
+        '是IP和TCP的扩展，允许在不丢失数据包的情况下端到端通知网络拥塞。 '+
+        'ECN是一项可选功能，可以在两个支持ECN的端点之间使用，当 '+
+        '基础网络基础设施也支持它。'
     },
 
     'ip.multicast': {
-        info: '<a href="https://en.wikipedia.org/wiki/Multicast" target="_blank">IP multicast</a> is a technique for '+
-        'one-to-many communication over an IP network. '+
-        'Multicast uses network infrastructure efficiently by requiring the source to send a packet only once, '+
-        'even if it needs to be delivered to a large number of receivers. '+
-        'The nodes in the network take care of replicating the packet to reach multiple receivers only when necessary.'
+        info: '<a href="https://en.wikipedia.org/wiki/Multicast" target="_blank">IP多播</a>是一种技术 '+
+        'IP 网络上的一对多通信。 '+
+        '多播高效地使用网络基础设施，要求源只发送一次数据包， '+
+        '即使它需要交付给大量接收器。 '+
+        '网络中的节点仅在必要时负责复制数据包以到达多个接收器。'
     },
     'ip.broadcast': {
-        info: 'In computer networking, '+
-        '<a href="https://en.wikipedia.org/wiki/Broadcasting_(networking)" target="_blank">broadcasting</a> refers to transmitting a packet that will be received by every device on the network. '+
-        'In practice, the scope of the broadcast is limited to a broadcast domain.'
+        info: '在计算机网络中， '+
+        '<a href="https://en.wikipedia.org/wiki/Broadcasting_(networking)" target="_blank">广播</a>是指传输网络上每台设备都将接收的数据包。 '+
+        '在实践中，广播范围仅限于广播领域。'
     },
 
     'netfilter.conntrack': {
@@ -844,86 +844,86 @@ netdataDashboard.submenu = {
 
     'netfilter.nfacct': {
         title: 'bandwidth accounting',
-        info: 'The following information is read using the <code>nfacct.plugin</code>.'
+        info: '以下信息使用<code>nfacct.plugin</code>阅读。'
     },
 
     'netfilter.synproxy': {
-        title: 'DDoS protection',
-        info: 'DDoS protection performance metrics. <a href="https://github.com/firehol/firehol/wiki/Working-with-SYNPROXY" target="_blank">SYNPROXY</a> '+
-        'is a TCP SYN packets proxy. '+
-        'It is used to protect any TCP server (like a web server) from SYN floods and similar DDoS attacks. '+
-        'SYNPROXY intercepts new TCP connections and handles the initial 3-way handshake using syncookies '+
-        'instead of conntrack to establish the connection. '+
-        'It is optimized to handle millions of packets per second utilizing all CPUs available without '+
-        'any concurrency locking between the connections. '+
-        'It can be used for any kind of TCP traffic (even encrypted), '+
-        'since it does not interfere with the content itself.'
+        title: 'DDoS保护',
+        info: 'DDoS保护性能指标。<a href="https://github.com/firehol/firehol/wiki/Working-with-SYNPROXY" target="_blank">SYNPROXY</a> '+
+        '是TCP SYN数据包代理。 '+
+        '它用于保护任何TCP服务器（如Web服务器）免受SYN洪水和类似的DDoS攻击。 '+
+        'SYNPROXY拦截新的TCP连接，并使用syncookie处理最初的3向握手 '+
+        '而不是连接来建立连接。 '+
+        '它经过优化，可以利用所有可用的CPUs处理数百万个数据包，而无需 '+
+        '连接之间的任何并发锁定。 '+
+        '它可用于任何类型的TCP流量（甚至加密）， '+
+        '因为它不会干扰内容本身。'
     },
 
     'ipfw.dynamic_rules': {
         title: 'dynamic rules',
-        info: 'Number of dynamic rules, created by correspondent stateful firewall rules.'
+        info: '由相应的有状态防火墙规则创建的动态规则数量。'
     },
 
     'system.softnet_stat': {
         title: 'softnet',
         info: function (os) {
             if (os === 'linux')
-                return '<p>Statistics for CPUs SoftIRQs related to network receive work. '+
-                'Break down per CPU core can be found at <a href="#menu_cpu_submenu_softnet_stat">CPU / softnet statistics</a>. '+
-                'More information about identifying and troubleshooting network driver related issues can be found at '+
-                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">Red Hat Enterprise Linux Network Performance Tuning Guide</a>.</p>'+
-                '<p><b>Processed</b> - packets processed. '+
-                '<b>Dropped</b> - packets dropped because the network device backlog was full. '+
-                '<b>Squeezed</b> - number of times the network device budget was consumed or the time limit was reached, '+
-                'but more work was available. '+
-                '<b>ReceivedRPS</b> - number of times this CPU has been woken up to process packets via an Inter-processor Interrupt. '+
-                '<b>FlowLimitCount</b> - number of times the flow limit has been reached (flow limiting is an optional '+
-                'Receive Packet Steering feature).</p>';
+                return '<p>与网络接收工作相关的CPU SoftIRQ的统计数据。 '+
+                '每个CPU内核的细分可以在<a href="#menu_cpu_submenu_softnet_stat">CPU/softnet统计</a>上找到。 '+
+                '有关识别网络驱动程序相关问题并进行故障诊断的更多信息，请参阅 '+
+                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">红帽企业Linux网络性能调优指南</a>。</p>'+
+                '<p><b>已处理</b> - 处理数据包。 '+
+                '<b>已删除</b> - 由于网络设备积压已满，数据包已丢失。 '+
+                '<b>挤压</b> - 网络设备预算消耗或达到时限的次数， '+
+                '但还有更多工作要做。 '+
+                '<b>ReceivedRPS</b> - 这个CPU被唤醒通过处理器间中断处理数据包的次数。 '+
+                '<b>流量限制计数</b> - 达到流量限制的次数（流量限制是可选的 '+
+                '接收数据包转向功能）。</p>';
             else
-                return 'Statistics for CPUs SoftIRQs related to network receive work.';
+                return '与网络接收工作相关的CPU SoftIRQ的统计数据。';
         }
     },
 
     'system.clock synchronization': {
         info: '<a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">NTP</a> '+
-        'lets you automatically sync your system time with a remote server. '+
-        'This keeps your machine’s time accurate by syncing with servers that are known to have accurate times.'
+        '允许您自动将系统时间与远程服务器同步。 '+
+        '这通过与已知具有准确时间的服务器同步来保持机器时间的准确性。'
     },
 
     'cpu.softnet_stat': {
         title: 'softnet',
         info: function (os) {
             if (os === 'linux')
-                return '<p>Statistics for CPUs SoftIRQs related to network receive work. '+
-                'Total for all CPU cores can be found at <a href="#menu_system_submenu_softnet_stat">System / softnet statistics</a>. '+
-                'More information about identifying and troubleshooting network driver related issues can be found at '+
-                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">Red Hat Enterprise Linux Network Performance Tuning Guide</a>.</p>'+
-                '<p><b>Processed</b> - packets processed. '+
-                '<b>Dropped</b> - packets dropped because the network device backlog was full. '+
-                '<b>Squeezed</b> - number of times the network device budget was consumed or the time limit was reached, '+
-                'but more work was available. '+
-                '<b>ReceivedRPS</b> - number of times this CPU has been woken up to process packets via an Inter-processor Interrupt. '+
-                '<b>FlowLimitCount</b> - number of times the flow limit has been reached (flow limiting is an optional '+
-                'Receive Packet Steering feature).</p>';
+                return '<p>与网络接收工作相关的CPU SoftIRQ的统计数据。 '+
+                '所有CPU内核的总和可在<a href="#menu_system_submenu_softnet_stat">系统/软网统计</a>中找到。 '+
+                '有关识别网络驱动程序相关问题并进行故障诊断的更多信息，请参阅 '+
+                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">红帽企业Linux网络性能调优指南</a>。</p>'+
+                '<p><b>已处理</b> - 处理数据包。 '+
+                '<b>已删除</b> - 由于网络设备积压已满，数据包已丢失。 '+
+                '<b>挤压</b> - 网络设备预算消耗或达到时限的次数， '+
+                '但还有更多工作要做。 '+
+                '<b>ReceivedRPS</b> - 这个CPU被唤醒通过处理器间中断处理数据包的次数。 '+
+                '<b>流量限制计数</b> - 达到流量限制的次数（流量限制是可选的 '+
+                '接收数据包转向功能）。</p>';
             else
-                return 'Statistics for per CPUs core SoftIRQs related to network receive work. Total for all CPU cores can be found at <a href="#menu_system_submenu_softnet_stat">System / softnet statistics</a>.';
+                return '与网络接收工作相关的每个CPU核心SoftIRQ的统计数据。所有CPU内核的总和可在<a href="#menu_system_submenu_softnet_stat">系统/软网统计</a>中找到。';
         }
     },
 
     'go_expvar.memstats': {
         title: 'memory statistics',
-        info: 'Go runtime memory statistics. See <a href="https://golang.org/pkg/runtime/#MemStats" target="_blank">runtime.MemStats</a> documentation for more info about each chart and the values.'
+        info: '运行时内存统计。有关每个图表和值的更多信息，请参阅<a href="https://golang.org/pkg/runtime/#MemStats" target="_blank">runtime.MemStats</a>文档。'
     },
 
     'couchdb.dbactivity': {
         title: 'db activity',
-        info: 'Overall database reads and writes for the entire server. This includes any external HTTP traffic, as well as internal replication traffic performed in a cluster to ensure node consistency.'
+        info: '整个数据库为整个服务器读取和写入。这包括任何外部HTTP流量，以及在集群中执行的内部复制流量，以确保节点一致性。'
     },
 
     'couchdb.httptraffic': {
         title: 'http traffic breakdown',
-        info: 'All HTTP traffic, broken down by type of request (<tt>GET</tt>, <tt>PUT</tt>, <tt>POST</tt>, etc.) and response status code (<tt>200</tt>, <tt>201</tt>, <tt>4xx</tt>, etc.)<br/><br/>Any <tt>5xx</tt> errors here indicate a likely CouchDB bug; check the logfile for further information.'
+        info: '所有HTTP流量，按请求类型（<tt>GET</tt>、<tt>PUT</tt>、<tt>POST</tt>等）和响应状态代码（<tt>200</tt>、<tt>201</tt>、<tt>4xx</tt>等）<br/><br/>此处的任何<tt>5xx</tt>错误都表示可能存在CouchDB错误；请查看日志文件以了解更多信息。'
     },
 
     'couchdb.ops': {
@@ -932,111 +932,111 @@ netdataDashboard.submenu = {
 
     'couchdb.perdbstats': {
         title: 'per db statistics',
-        info: 'Statistics per database. This includes <a href="http://docs.couchdb.org/en/latest/api/database/common.html#get--db" target="_blank">3 size graphs per database</a>: active (the size of live data in the database), external (the uncompressed size of the database contents), and file (the size of the file on disk, exclusive of any views and indexes). It also includes the number of documents and number of deleted documents per database.'
+        info: '每个数据库的统计数据。这包括<a href="http://docs.couchdb.org/en/latest/api/database/common.html#get--db" target="_blank">每个数据库3个大小的图表</a>：活动（数据库中实时数据的大小）、外部（数据库内容的未压缩大小）和文件（磁盘上文件的大小，不包括任何视图和索引）。它还包括每个数据库的文件数量和删除的文件数量。'
     },
 
     'couchdb.erlang': {
         title: 'erlang statistics',
-        info: 'Detailed information about the status of the Erlang VM that hosts CouchDB. These are intended for advanced users only. High values of the peak message queue (>10e6) generally indicate an overload condition.'
+        info: '有关托管CouchDB的Erlang VM状态的详细信息。这些仅适用于高级用户。峰值消息队列的高值（>10e6）通常表示重载条件。'
     },
 
     'ntpd.system': {
         title: 'system',
-        info: 'Statistics of the system variables as shown by the readlist billboard <code>ntpq -c rl</code>. System variables are assigned an association ID of zero and can also be shown in the readvar billboard <code>ntpq -c "rv 0"</code>. These variables are used in the <a href="http://doc.ntp.org/current-stable/discipline.html" target="_blank">Clock Discipline Algorithm</a>, to calculate the lowest and most stable offset.'
+        info: '阅读列表广告牌<code>ntpq -c rl</code>所示的系统变量统计信息。系统变量被分配为零的关联ID，也可以显示在readvar广告牌<code>ntpq -c“rv 0”</code>中。这些变量用于<a href="http://doc.ntp.org/current-stable/discipline.html" target="_blank">时钟纪律算法</a>，以计算最低和最稳定的偏移量。'
     },
 
     'ntpd.peers': {
         title: 'peers',
-        info: 'Statistics of the peer variables for each peer configured in <code>/etc/ntp.conf</code> as shown by the readvar billboard <code>ntpq -c "rv &lt;association&gt;"</code>, while each peer is assigned a nonzero association ID as shown by <code>ntpq -c "apeers"</code>. The module periodically scans for new/changed peers (default: every 60s). <b>ntpd</b> selects the best possible peer from the available peers to synchronize the clock. A minimum of at least 3 peers is required to properly identify the best possible peer.'
+        info: '在<code>/etc/ntp.conf</code>中配置的每个对等变量的统计信息，如readvar广告牌<code>ntpq -c“rv &lt;association&gt;”</code>所示，而每个对等方都分配了一个非零关联ID，如<code>ntpq -c“apeers”</code>所示。该模块定期扫描新的/更改的对等机（默认：每60秒一次）。<b>ntpd</b>从可用对等机中选择最佳对等机来同步时钟。至少需要3名同行才能正确识别最佳同行。'
     },
 
     'mem.page_cache': {
         title: 'page cache (eBPF)',
-        info: 'Monitor calls to functions used to manipulate <a href="https://en.wikipedia.org/wiki/Page_cache" target="_blank">Linux page cache</a>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows page cache manipulation per <a href="#menu_apps_submenu_page_cache">application</a>.'
+        info: '监控对用于操作<a href="https://en.wikipedia.org/wiki/Page_cache" target="_blank">Linux页面缓存</a>的函数的调用。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_page_cache">应用程序</a>显示页面缓存操作。'
     },
 
     'apps.page_cache': {
         title: 'page cache (eBPF)',
-        info: 'Netdata also gives a summary for these charts in <a href="#menu_mem_submenu_page_cache">Memory submenu</a>.'
+        info: 'Netdata还在<a href="#menu_mem_submenu_page_cache">内存子菜单</a>中对这些图表进行了摘要。'
     },
 
     'filesystem.vfs': {
         title: 'vfs (eBPF)',
-        info: 'Monitor calls to functions used to manipulate <a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#vfs" target="_blank">File Systems</a>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows Virtual File System per <a href="#menu_apps_submenu_vfs">application</a>.'
+        info: '监控对用于操作<a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#vfs" target="_blank">文件系统</a>的调用。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_vfs">应用程序</a>显示虚拟文件系统。'
     },
 
     'apps.vfs': {
         title: 'vfs (eBPF)',
-        info: 'Netdata also gives a summary for these charts in <a href="#menu_filesystem_submenu_vfs">Filesystem submenu</a>.'
+        info: 'Netdata还在<a href="#menu_filesystem_submenu_vfs">文件系统子菜单</a>中对这些图表进行了摘要。'
     },
 
     'filesystem.ext4_latency': {
         title: 'ext4 latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="http://www.brendangregg.com/blog/2016-10-06/linux-bcc-ext4dist-ext4slower.html" target="_blank">ext4dist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="http://www.brendangregg.com/blog/2016-10-06/linux-bcc-ext4dist-ext4slower.html" target="_blank">ext4dist</a>。'
     },
 
     'filesystem.xfs_latency': {
         title: 'xfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/xfsdist_example.txt" target="_blank">xfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/xfsdist_example.txt" target="_blank">xfsdist</a>。'
     },
 
     'filesystem.nfs_latency': {
         title: 'nfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/nfsdist_example.txt" target="_blank">nfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/nfsdist_example.txt" target="_blank">nfsdist</a>。'
     },
 
     'filesystem.zfs_latency': {
         title: 'zfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/zfsdist_example.txt" target="_blank">zfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/zfsdist_example.txt" target="_blank">zfsdist</a>。'
     },
 
     'filesystem.btrfs_latency': {
         title: 'btrfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, we get the logarithmic for the final result and we sum one value to the respective bin. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/btrfsdist_example.txt" target="_blank">btrfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，获得最终结果的对数，并将一个值相加到各自的bin。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/btrfsdist_example.txt" target="_blank">btrfsdist</a>。'
     },
 
     'filesystem.file_access': {
         title: 'file access (eBPF)',
-        info: 'When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows file access per <a href="#menu_apps_submenu_file_access">application</a>.'
+        info: '当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_file_access">应用程序</a>显示文件访问权限。'
     },
 
     'apps.file_access': {
         title: 'file access (eBPF)',
-        info: 'Netdata also gives a summary for this chart on <a href="#menu_filesystem_submenu_file_access">Filesystem submenu</a> (more details on <a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#file" target="_blank">eBPF plugin file chart section</a>).'
+        info: 'Netdata还在<a href="#menu_filesystem_submenu_file_access">文件系统子菜单</a>上提供了此图表的摘要（有关<a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#file" target="_blank">eBPF插件文件图表部分</a>的更多详细信息）。'
     },
 
     'ip.kernel': {
         title: 'kernel functions (eBPF)',
-        info: 'Next charts are made when <code>ebpf.plugin</code> is running on your host. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows calls for kernel functions per <a href="#menu_apps_submenu_net">application</a>.'
+        info: '当<code>ebpf.plugin</code>在主机上运行时，会制作下一个图表。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_net">应用程序</a>显示对内核函数的调用。'
     },
 
     'apps.net': {
         title: 'network',
-        info: 'Netdata also gives a summary for eBPF charts in <a href="#menu_ip_submenu_kernel">Networking Stack submenu</a>.'
+        info: 'Netdata还总结了<a href="#menu_ip_submenu_kernel">网络堆栈子菜单</a>中的eBPF图表。'
     },
 
     'system.ipc semaphores': {
-        info: 'System V semaphores is an inter-process communication (IPC) mechanism. '+
+        info: '系统V信号量是一种进程间通信（IPC）机制。 '+
         'It allows processes or threads within a process to synchronize their actions. '+
-        'They are often used to monitor and control the availability of system resources such as shared memory segments. ' +
-        'For details, see <a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>. ' +
-        'To see the host IPC semaphore information, run <code>ipcs -us</code>. For limits, run <code>ipcs -ls</code>.'
+        '它们通常用于监控共享内存段等系统资源的可用性。 ' +
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>。 ' +
+        '要查看主机IPC信号量信息，请运行<code>ipcs -us</code>。对于限制，请运行<code>ipcs -ls</code>。'
     },
 
     'system.ipc shared memory': {
-        info: 'System V shared memory is an inter-process communication (IPC) mechanism. '+
-        'It allows processes to communicate information by sharing a region of memory. '+
-        'It is the fastest form of inter-process communication available since no kernel involvement occurs when data is passed between the processes (no copying). '+
-        'Typically, processes must synchronize their access to a shared memory object, using, for example, POSIX semaphores. '+
-        'For details, see <a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>. '+
-        'To see the host IPC shared memory information, run <code>ipcs -um</code>. For limits, run <code>ipcs -lm</code>.'
+        info: '系统共享内存是一种进程间通信（IPC）机制。 '+
+        '它允许进程通过共享内存区域来通信信息。 '+
+        '这是可用的最快进程间通信形式，因为当数据在进程之间传递时（没有复制），不会发生内核参与。 '+
+        '通常，进程必须同步对共享内存对象的访问，例如使用POSIX信号量。 '+
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>。 '+
+        '要查看主机IPC共享内存信息，请运行<code>ipcs -um</code>。对于限制，请运行<code>ipcs -lm</code>。'
     },
 
     'system.ipc message queues': {
-        info: 'System V message queues is an inter-process communication (IPC) mechanism. '+
-        'It allow processes to exchange data in the form of messages. '+
-        'For details, see <a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>. ' +
-        'To see the host IPC messages information, run <code>ipcs -uq</code>. For limits, run <code>ipcs -lq</code>.'
+        info: '系统消息队列是一种进程间通信（IPC）机制。 '+
+        '它允许进程以消息形式交换数据。 '+
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>。 ' +
+        '要查看主机IPC消息信息，请运行<code>ipcs -uq</code>。对于限制，请运行<code>ipcs -lq</code>。'
     },
 
     'system.interrupts': {
@@ -1050,12 +1050,12 @@ netdataDashboard.submenu = {
     },
 
     'system.softirqs': {
-        info: 'Software interrupts (or "softirqs") are one of the oldest deferred-execution mechanisms in the kernel. '+
-        'Several tasks among those executed by the kernel are not critical: '+
-        'they can be deferred for a long period of time, if necessary. '+
-        'The deferrable tasks can execute with all interrupts enabled '+
-        '(softirqs are patterned after hardware interrupts). '+
-        'Taking them out of the interrupt handler helps keep kernel response time small.'
+        info: '软件中断（或“softirqs”）是内核中最古老的延迟执行机制之一。 '+
+        '内核执行的几项任务并不重要： '+
+        '如有必要，它们可以被长时间推迟。 '+
+        '在启用所有中断的情况下，可以执行可执行的任务 '+
+        '（软件在硬件中断后模式化）。 '+
+        '将它们从中断处理程序中取出有助于保持内核响应时间小。'
     },
 
     'cpu.softirqs': {
@@ -1064,19 +1064,19 @@ netdataDashboard.submenu = {
     },
 
     'cpu.interrupts': {
-        info: 'Total number of interrupts per CPU. '+
-        'To see the total number for the system check the <a href="#menu_system_submenu_interrupts">interrupts</a> section. '+
-        'The last column in <code>/proc/interrupts</code> provides an interrupt description or the device name that registered the handler for that interrupt.'
+        info: '每个CPU的中断总数。 '+
+        '要查看系统的总数，请查看<a href="#menu_system_submenu_interrupts">中断</a>部分。 '+
+        '<code>/proc/interrupts</code>的最后一列提供了中断描述或注册该中断处理程序的设备名称。'
     },
 
     'cpu.throttling': {
-        info: ' CPU throttling is commonly used to automatically slow down the computer '+
-        'when possible to use less energy and conserve battery.'
+        info: ' CPU节流通常用于自动减慢计算机的速度 '+
+        '在可能的情况下减少能源消耗并节省电池电量。'
     },
 
     'cpu.cpuidle': {
-        info: '<a href="https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Processor_states" target="_blank">Idle States (C-states)</a> '+
-        'are used to save power when the processor is idle.'
+        info: '<a href="https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Processor_states" target="_blank">空闲状态（C-states）</a> '+
+        '用于在处理器闲置时节省电力。'
     },
 
     'services.net': {
@@ -1128,28 +1128,28 @@ netdataDashboard.context = {
     },
 
     'system.cpu_pressure': {
-        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">Pressure Stall Information</a> ' +
-            'identifies and quantifies the disruptions caused by resource contentions. ' +
-            'The "some" line indicates the share of time in which at least <b>some</b> tasks are stalled on CPU. ' +
-            'The ratios (in %) are tracked as recent trends over 10-, 60-, and 300-second windows.'
+        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">压力信息</a> ' +
+            '识别和量化资源争用造成的中断。 ' +
+            '“一些”行表示CPU上至少<b>一些</b>任务停滞的时间份额。 ' +
+            '这些比率（以%为单位）被跟踪为10秒、60秒和300秒windows的近期趋势。'
     },
 
     'system.memory_some_pressure': {
-        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">Pressure Stall Information</a> ' +
-            'identifies and quantifies the disruptions caused by resource contentions. ' +
-            'The "some" line indicates the share of time in which at least <b>some</b> tasks are stalled on memory. ' +
-            'The "full" line indicates the share of time in which <b>all non-idle</b> tasks are stalled on memory simultaneously. ' +
-            'In this state actual CPU cycles are going to waste, and a workload that spends extended time in this state is considered to be thrashing. ' +
-            'The ratios (in %) are tracked as recent trends over 10-, 60-, and 300-second windows.'
+        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">压力信息</a> ' +
+            '识别和量化资源争用造成的中断。 ' +
+            '“一些”行表示至少<b>一些</b>任务在内存上停滞的时间份额。 ' +
+            '“全”行表示<b>所有非空闲</b>任务同时在内存上停滞的时间份额。 ' +
+            '在这种状态下，实际的CPU周期将被浪费，在这个状态下花费很长时间的工作负载被认为是鞭打。 ' +
+            '这些比率（以%为单位）被跟踪为10秒、60秒和300秒windows的近期趋势。'
     },
 
     'system.io_some_pressure': {
-        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">Pressure Stall Information</a> ' +
-            'identifies and quantifies the disruptions caused by resource contentions. ' +
-            'The "some" line indicates the share of time in which at least <b>some</b> tasks are stalled on I/O. ' +
-            'The "full" line indicates the share of time in which <b>all non-idle</b> tasks are stalled on I/O simultaneously. ' +
-            'In this state actual CPU cycles are going to waste, and a workload that spends extended time in this state is considered to be thrashing. ' +
-            'The ratios (in %) are tracked as recent trends over 10-, 60-, and 300-second windows.'
+        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">压力信息</a> ' +
+            '识别和量化资源争用造成的中断。' +
+            '“一些”行表示至少<b>一些</b>任务在I/O上停滞的时间份额。 ' +
+            '“全”行表示<b>所有非空闲</b>任务同时在I/O上停滞的时间份额。 ' +
+            '在这种状态下，实际的CPU周期将被浪费，在这个状态下花费很长时间的工作负载被认为是鞭打。 ' +
+            '这些比率（以%为单位）被跟踪为10秒、60秒和300秒windows的近期趋势。'
     },
 
     'system.io': {
@@ -1169,12 +1169,12 @@ netdataDashboard.context = {
 
     'system.swapio': {
         info: '<p>所有的 Swap I/O.</p>'+
-        '<b>输入</b> - pages the system has swapped in from disk to RAM. '+
-        '<b>输出</b> - pages the system has swapped out from RAM to disk.'
+        '<b>输入</b>-系统从磁盘交换到RAM的页面。 '+
+        '<b>输出</b> - 系统已从 RAM 交换到磁盘的页面。'
     },
 
     'system.pgfaults': {
-        info: '所有的 Page 错误. <b>Major page faults</b> indicates that the system is using its swap. You can find which applications use the swap at the <a href="#menu_apps">Applications Monitoring</a> section.'
+        info: '所有的页面错误。<b>主要页面错误</b>表示系统正在使用其交换。您可以在<a href="#menu_apps">应用程序监控</a>部分找到哪些应用程序使用交换。'
     },
 
     'system.entropy': {
@@ -1183,19 +1183,19 @@ netdataDashboard.context = {
     },
 
     'system.clock_sync_state': {
-        info:'<p>The system clock synchronization state. '+
-        'It is strongly recommended having the clock in sync with reliable NTP servers. Otherwise, '+
-        'it leads to unpredictable problems. '+
-        'It can take several minutes (usually up to 17) before NTP daemon selects a server to synchronize with. '+
-        '<p><b>State map</b>: 0 - not synchronized, 1 - synchronized.</p>'
+        info:'<p>系统时钟同步状态。 '+
+        '强烈建议时钟与可靠的NTP服务器同步。否则， '+
+        '这会导致不可预测的问题。 '+
+        'NTP守护进程可能需要几分钟（通常最多17分钟）才能选择要同步的服务器。 '+
+        '<p><b>状态图</b>：0-不同步，1-同步。</p>'
     },
 
     'system.clock_sync_offset': {
-        info: 'A typical NTP client regularly polls one or more NTP servers. '+
-        'The client must compute its '+
-        '<a href="https://en.wikipedia.org/wiki/Network_Time_Protocol#Clock_synchronization_algorithm" target="_blank">time offset</a> '+
-        'and round-trip delay. '+
-        'Time offset is the difference in absolute time between the two clocks.'
+        info: '典型的NTP客户端定期轮询一个或多个NTP服务器。 '+
+        '客户必须计算其 '+
+        '<a href="https://en.wikipedia.org/wiki/Network_Time_Protocol#Clock_synchronization_algorithm" target="_blank">时间偏移</a> '+
+        '和往返延迟。 '+
+        '时间偏移是两个时钟之间绝对时间的差异。'
     },
 
     'system.forks': {
@@ -1210,30 +1210,30 @@ netdataDashboard.context = {
 
     'system.interrupts': {
         info: 'CPU 中断的细节。在 <a href="#menu_cpu">CPUs</a> 区段中，依据每个 CPU 核心分析中断。 <a href="#menu_cpu_submenu_interrupts">per CPU core</a>. '+
-        'The last column in <code>/proc/interrupts</code> provides an interrupt description or the device name that registered the handler for that interrupt.'
+        '<code>/proc/interrupts</code>的最后一列提供了中断描述或注册该中断处理程序的设备名称。'
     },
 
     'system.hardirq_latency': {
-        info: 'Total time spent servicing hardware interrupts. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/hardirqs_example.txt" target="_blank">hardirqs</a> from BCC tools.'
+        info: '维修硬件中断的总时间。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/hardirqs_example.txt" target="_blank">hardirqs</a>。'
     },
 
     'system.softirqs': {
-        info: '<p>Total number of software interrupts in the system. '+
-        'At the <a href="#menu_cpu">CPUs</a> section, softirqs are analyzed <a href="#menu_cpu_submenu_softirqs">per CPU core</a>.</p>'+
-        '<p><b>HI</b> - high priority tasklets. '+
-        '<b>TIMER</b> - tasklets related to timer interrupts. '+
-        '<b>NET_TX</b>, <b>NET_RX</b> - used for network transmit and receive processing. '+
-        '<b>BLOCK</b> - handles block I/O completion events. '+
-        '<b>IRQ_POLL</b> - used by the IO subsystem to increase performance (a NAPI like approach for block devices). '+
-        '<b>TASKLET</b> - handles regular tasklets. '+
-        '<b>SCHED</b> - used by the scheduler to perform load-balancing and other scheduling tasks. '+
-        '<b>HRTIMER</b> - used for high-resolution timers. '+
-        '<b>RCU</b> - performs read-copy-update (RCU) processing.</p>'
+        info: '<p>系统中的软件中断总数。 '+
+        '在<a href="#menu_cpu">CPU</a>部分，对每个CPU内核</a href="#menu_cpu_submenu_softirqs">进行了分析。</p>'+
+        '<p><b>HI</b> - 高优先级任务组。 '+
+        '<b>TIMER</b> - 与计时器中断相关的任务组。 '+
+        '<b>NET_TX</b>，<b>NET_RX</b>-用于网络传输和接收处理。 '+
+        '<b>BLOCK</b> - 处理阻止I/O完成事件。 '+
+        '<b>IRQ_POLL</b> - IO子系统用于提高性能（块设备的一种类似NAPI的方法）。 '+
+        '<b>TASKLET</b> - 处理常规任务。 '+
+        '<b>SCHED</b> - 调度程序用于执行负载平衡和其他调度任务。 '+
+        '<b>HRTIMER</b> - 用于高分辨率计时器。 '+
+        '<b>RCU</b> - 执行读拷贝更新 (RCU) 处理。</p>'
 
     },
 
     'system.softirq_latency': {
-        info: 'Total time spent servicing software interrupts. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/softirqs_example.txt" target="_blank">softirqs</a> from BCC tools.'
+        info: '维修软件中断的总时间。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/softirqs_example.txt" target="_blank">softirqs</a>。'
     },
 
     'system.processes': {
@@ -1286,40 +1286,40 @@ netdataDashboard.context = {
     },
 
     'system.swapcalls': {
-        info: 'Monitor calls to functions <code>swap_readpage</code> and <code>swap_writepage</code>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows swap access per <a href="#menu_apps_submenu_swap">application</a>.'
+        info: '监控对函数<code>swap_readpage</code>和<code>swap_writepage</code>的调用。当<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还显示<a href="#menu_apps_submenu_swap">应用程序</a>的交换访问权限。'
     },
 
     'system.ipc_semaphores': {
-        info: 'Number of allocated System V IPC semaphores. '+
-        'The system-wide limit on the number of semaphores in all semaphore sets is specified in <code>/proc/sys/kernel/sem</code> file (2nd field).'
+        info: '分配的系统V IPC信号量。 '+
+        '<code>/proc/sys/kernel/sem</code>文件（第二个字段）规定了所有信号量集中信号量的系统范围限制。'
     },
 
     'system.ipc_semaphore_arrays': {
-        info: 'Number of used System V IPC semaphore arrays (sets). Semaphores support semaphore sets where each one is a counting semaphore. '+
-        'So when an application requests semaphores, the kernel releases them in sets. '+
-        'The system-wide limit on the maximum number of semaphore sets is specified in <code>/proc/sys/kernel/sem</code> file (4th field).'
+        info: '使用过的System V IPC信号量阵列（集）的数量。信号量支持信号量集，其中每个信号量都是计数信号量。 '+
+        '因此，当应用程序请求信号量时，内核会以集合的方式释放它们。 '+
+        '<code>/proc/sys/kernel/sem</code>文件（第4个字段）中指定了信号量集最大数量的系统范围限制。'
     },
 
     'system.shared_memory_segments': {
-        info: 'Number of allocated System V IPC memory segments. '+
-        'The system-wide maximum number of shared memory segments that can be created is specified in <code>/proc/sys/kernel/shmmni</code> file.'
+        info: '分配的System V IPC内存段数。 '+
+        '<code>/proc/sys/kernel/shmmni</code>文件中指定了可以创建的系统范围内共享内存段的最大数量。'
     },
 
     'system.shared_memory_bytes': {
-        info: 'Amount of memory currently used by System V IPC memory segments. '+
-        'The run-time limit on the maximum  shared memory segment size that can be created is specified in <code>/proc/sys/kernel/shmmax</code> file.'
+        info: 'System V IPC内存段目前使用的内存量。 '+
+        '可以创建的最大共享内存段大小的运行时限制在<code>/proc/sys/kernel/shmmax</code>文件中指定。'
     },
 
     'system.shared_memory_calls': {
-        info: 'Monitor calls to functions <code>shmget</code>, <code>shmat</code>, <code>shmdt</code>, and <code>shmctl</code>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows shared memory system call usage <a href="#menu_apps_submenu_ipc_shared_memory">per application</a>.'
+        info: '监控对函数<code>shmget</code>、<code>shmat</code>、<code>shmdt</code>和<code>shmctl</code>的调用。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还显示每个应用程序的共享内存系统调用使用情况<a href="#menu_apps_submenu_ipc_shared_memory"></a>。'
     },
 
     'system.message_queue_messages': {
-        info: 'Number of messages that are currently present in System V IPC message queues.'
+        info: '系统V IPC消息队列中当前存在的消息数量。'
     },
 
     'system.message_queue_bytes': {
-        info: 'Amount of memory currently used by messages in System V IPC message queues.'
+        info: '系统V IPC消息队列中消息当前使用的内存量。'
     },
 
     'system.uptime': {
@@ -1328,22 +1328,22 @@ netdataDashboard.context = {
 
     'system.process_thread': {
         title : 'Task creation',
-        info: 'Number of times that either <a href="https://www.ece.uic.edu/~yshi1/linux/lkse/node4.html#SECTION00421000000000000000" target="_blank">do_fork</a>, or <code>kernel_clone</code> if you are running kernel newer than 5.9.16, is called to create a new task, which is the common name used to define process and tasks inside the kernel. Netdata identifies the threads monitoring tracepoint <code>sched_process_fork</code>. This chart is provided by eBPF plugin.'
+        info: '<a href="https://www.ece.uic.edu/~yshi1/linux/lkse/node4.html#SECTION00421000000000000000" target="_blank">do_fork</a>，或者<code>kernel_clone</code>（如果您运行的内核更新于5.16）来创建新任务的次数，这是用于定义内核内进程和任务的常用名称。Netdata标识监控跟踪点<code>sched_process_fork</code>的线程。此图表由eBPF插件提供。'
     },
 
     'system.exit': {
         title : 'Exit monitoring',
-        info: 'Calls for the functions responsible for closing (<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">do_exit</a>) and releasing (<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">release_task</a>) tasks. This chart is provided by eBPF plugin.'
+        info: '呼吁负责关闭的功能（<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">do_exit</a>）和发布（<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">release_task</a>)任务。此图表由eBPF插件提供。'
     },
 
     'system.task_error': {
         title : 'Task error',
-        info: 'Number of errors to create a new process or thread. This chart is provided by eBPF plugin.'
+        info: '创建新进程或线程的错误数量。此图表由eBPF插件提供。'
     },
 
     'system.process_status': {
         title : 'Task status',
-        info: 'Difference between the number of process created and the number of threads created per period(<code>process</code> dimension), it also shows the number of possible zombie process running on system. This chart is provided by eBPF plugin.'
+        info: '创建的进程数量和每个周期创建的线程数量（<code>process</code>维度）之间的差异，它还显示了在系统上运行的可能僵尸进程的数量。此图表由eBPF插件提供。'
     },
 
     // ------------------------------------------------------------------------
@@ -1371,11 +1371,11 @@ netdataDashboard.context = {
     },
 
     'cpu.core_throttling': {
-        info: 'The number of adjustments made to the clock speed of the CPU based on it\'s core temperature.'
+        info: '根据CPU的核心温度对CPU的时钟速度所做的调整次数。'
     },
 
     'cpu.package_throttling': {
-        info: 'The number of adjustments made to the clock speed of the CPU based on it\'s package (chip) temperature.'
+        info: '根据CPU的封装（芯片）温度对CPU的时钟速度进行的调整次数。'
     },
 
     'cpufreq.cpufreq': {
@@ -1390,22 +1390,22 @@ netdataDashboard.context = {
     // MEMORY
 
     'mem.ksm': {
-        info: '<p>Memory pages merging statistics. '+
-        'A high ratio of <b>Sharing</b> to <b>Shared</b> indicates good sharing, '+
-        'but a high ratio of <b>Unshared</b> to <b>Sharing</b> indicates wasted effort.</p>'+
-        '<p><b>Shared</b> - used shared pages. '+
-        '<b>Unshared</b> - memory no longer shared (pages are unique but repeatedly checked for merging). '+
-        '<b>Sharing</b> - memory currently shared (how many more sites are sharing the pages, i.e. how much saved). '+
-        '<b>Volatile</b> - volatile pages (changing too fast to be placed in a tree).</p>'
+        info: '<p>内存页面合并统计数据。 '+
+        '<b>共享</b>与<b>共享</b>的高比率表示良好的共享， '+
+        '但<b>未共享</b>与<b>共享</b>的高比率表明浪费了精力。</p>'+
+        '<p><b>共享</b> - 使用共享页面。 '+
+        '<b>未共享</b> - 内存不再共享（页面是唯一的，但反复检查合并）。 '+
+        '<b>共享</b>-当前共享的内存（有多少个网站正在共享页面，即保存了多少）。 '+
+        '<b>易变</b> - 易变页面（变化太快，无法放在树上）。</p>'
     },
 
     'mem.ksm_savings': {
         heads: [
             netdataDashboard.gaugeChart('Saved', '12%', 'savings', '#0099CC')
         ],
-        info: '<p>The amount of memory saved by KSM.</p>'+
-        '<p><b>Savings</b> - saved memory. '+
-        '<b>Offered</b> - memory marked as mergeable.</p>'
+        info: '<p>KSM节省的内存量。</p>'+
+        '<p><b>节省</b> - 保存内存。 '+
+        '<b>提供</b> - 标记为可合并的内存。</p>'
     },
 
     'mem.ksm_ratios': {
@@ -1426,22 +1426,22 @@ netdataDashboard.context = {
             }
         ],
         info: 'The effectiveness of KSM. '+
-        'This is the percentage of the mergeable pages that are currently merged.'
+        '这是当前合并的可合并页面的百分比。'
     },
 
     'mem.zram_usage': {
-        info: 'ZRAM total RAM usage metrics. ZRAM uses some memory to store metadata about stored memory pages, thus introducing an overhead which is proportional to disk size. It excludes same-element-filled-pages since no memory is allocated for them.'
+        info: 'ZRAM总RAM使用指标。ZRAM使用一些内存来存储有关存储内存页面的元数据，从而引入了与磁盘大小成正比的开销。它排除了相同元素填充的页面，因为没有为它们分配内存。'
     },
 
     'mem.zram_savings': {
-        info: 'Displays original and compressed memory data sizes.'
+        info: '显示原始和压缩内存数据大小。'
     },
 
     'mem.zram_ratio': {
         heads: [
             netdataDashboard.gaugeChart('Compression Ratio', '12%', 'ratio', '#0099CC')
         ],
-        info: 'Compression ratio, calculated as <code>100 * original_size / compressed_size</code>. More means better compression and more RAM savings.'
+        info: '压缩率，计算为<code>100 * original_size / compressed_size</code>。更多意味着更好的压缩和更多的RAM节省。'
     },
 
     'mem.zram_efficiency': {
@@ -1451,17 +1451,17 @@ netdataDashboard.context = {
         commonMin: true,
         commonMax: true,
         valueRange: "[0, 100]",
-        info: 'Memory usage efficiency, calculated as <code>100 * compressed_size / total_mem_used</code>.'
+        info: '内存使用效率，计算为<code>100 * compressed_size / total_mem_used</code>。'
     },
 
 
     'mem.pgfaults': {
-        info: '<p>A <a href="https://en.wikipedia.org/wiki/Page_fault" target="_blank">page fault</a> is a type of interrupt, '+
-        'called trap, raised by computer hardware when a running program accesses a memory page '+
-        'that is mapped into the virtual address space, but not actually loaded into main memory.</p>'+
-        '</p><b>Minor</b> - the page is loaded in memory at the time the fault is generated, '+
-        'but is not marked in the memory management unit as being loaded in memory. '+
-        '<b>Major</b> - generated when the system needs to load the memory page from disk or swap memory.</p>'
+        info: '<p> <a href="https://en.wikipedia.org/wiki/Page_fault" target="_blank">页面错误</a>是一种中断， '+
+        '称为陷阱，当运行中的程序访问内存页面时，由计算机硬件引发 '+
+        '映射到虚拟地址空间，但实际上没有加载到主内存中。</p>'+
+        '</p><b>次要</b>-页面在生成故障时加载到内存中， '+
+        '但在内存管理单元中未标记为正在加载内存中。 '+
+        '<b>主要</b>-当系统需要从磁盘加载内存页面或交换内存时生成。</p>'
     },
 
     'mem.committed': {
@@ -1470,30 +1470,30 @@ netdataDashboard.context = {
     },
 
     'mem.oom_kill': {
-        info: 'The number of processes killed by '+
-        '<a href="https://en.wikipedia.org/wiki/Out_of_memory" target="_blank">Out of Memory</a> Killer. '+
-        'The kernel\'s OOM killer is summoned when the system runs short of free memory and '+
-        'is unable to proceed without killing one or more processes. '+
-        'It tries to pick the process whose demise will free the most memory while '+
-        'causing the least misery for users of the system. '+
-        'This counter also includes processes within containers that have exceeded the memory limit.'
+        info: '被杀死的进程数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Out_of_memory" target="_blank">内存不足</a>杀手。 '+
+        '当系统缺少可用内存时，内核的OOM杀手会被召唤，并且 '+
+        '无法在不杀死一个或多个进程的情况下进行。 '+
+        '它试图选择其消亡将释放最多记忆的过程，同时 '+
+        '给系统用户带来最少的痛苦。 '+
+        '此计数器还包括容器中超过内存限制的进程。'
     },
 
     'mem.numa': {
-        info: '<p>NUMA balancing statistics.</p>'+
-        '<p><b>Local</b> - pages successfully allocated on this node, by a process on this node. '+
-        '<b>Foreign</b> - pages initially intended for this node that were allocated to another node instead. '+
-        '<b>Interleave</b> - interleave policy pages successfully allocated to this node. '+
-        '<b>Other</b> - pages allocated on this node, by a process on another node. '+
-        '<b>PteUpdates</b> - base pages that were marked for NUMA hinting faults. '+
-        '<b>HugePteUpdates</b> - transparent huge pages that were marked for NUMA hinting faults. '+
-        'In Combination with <b>pte_updates</b> the total address space that was marked can be calculated. '+
-        '<b>HintFaults</b> - NUMA hinting faults that were trapped. '+
-        '<b>HintFaultsLocal</b> - hinting faults that were to local nodes. '+
-        'In combination with <b>HintFaults</b>, the percentage of local versus remote faults can be calculated. '+
-        'A high percentage of local hinting faults indicates that the workload is closer to being converged. '+
-        '<b>PagesMigrated</b> - pages were migrated because they were misplaced. '+
-        'As migration is a copying operation, it contributes the largest part of the overhead created by NUMA balancing.</p>'
+        info: '<p>NUMA平衡统计数据。</p>'+
+        '<p><b>本地</b>-通过此节点上的进程成功分配了页面。 '+
+        '<b>外国</b> - 最初用于分配给另一个节点的页面。 '+
+        '<b>交错</b>-交错策略页面已成功分配给此节点。 '+
+        '<b>其他</b>-通过另一个节点上的进程在这个节点上分配的页面。 '+
+        '<b>PteUpdates</b> - 标记为NUMA提示故障的基页。 '+
+        '<b>HugePteUpdates</b> - 标记为NUMA提示故障的透明大页面。 '+
+        '与<b>pte_updates</b>相结合，可以计算标记的总地址空间。 '+
+        '<b>HintFaults</b> - NUMA暗示被困的故障。 '+
+        '<b>HintFaultsLocal</b> - 提示本地节点的故障。 '+
+        '结合<b>提示故障</b>，可以计算局部故障与远程故障的百分比。 '+
+        '很高比例的局部提示故障表明工作量更接近收敛。 '+
+        '<b>PagesMigrated</b> - 页面被迁移，因为它们放错了地方。 '+
+        '由于迁移是一种复制操作，它贡献了NUMA平衡产生的开销的最大部分。</p>'
     },
 
     'mem.available': {
@@ -1505,260 +1505,260 @@ netdataDashboard.context = {
     },
 
     'mem.kernel': {
-        info: '<p>The total amount of memory being used by the kernel.</p>'+
-        '<p><b>Slab</b> - used by the kernel to cache data structures for its own use. '+
-        '<b>KernelStack</b> - allocated for each task done by the kernel. '+
-        '<b>PageTables</b> - dedicated to the lowest level of page tables (A page table is used to turn a virtual address into a physical memory address). '+
-        '<b>VmallocUsed</b> - being used as virtual address space. '+
-        '<b>Percpu</b> - allocated to the per-CPU allocator used to back per-CPU allocations (excludes the cost of metadata). '+
-        'When you create a per-CPU variable, each processor on the system gets its own copy of that variable.</p>'
+        info: '<p>内核使用的总内存量。</p>'+
+        '<p><b>Slab</b> - 内核用于缓存数据结构供自己使用。 '+
+        '<b>KernelStack</b> - 为内核完成的每个任务分配。 '+
+        '<b>PageTables</b> - 专用于最低级别的页面表（页面表用于将虚拟地址转换为物理内存地址）。 '+
+        '<b>VmallocUsed</b>-用作虚拟地址空间。 '+
+        '<b>Percpu</b> - 分配给用于支持每个CPU分配的每个CPU分配器（不包括元数据成本）。 '+
+        '当您创建每个CPU变量时，系统上的每个处理器都会获得该变量的副本。</p>'
     },
 
     'mem.slab': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/Slab_allocation" target="_blank">Slab memory</a> statistics.<p>'+
-        '<p><b>Reclaimable</b> - amount of memory which the kernel can reuse. '+
-        '<b>Unreclaimable</b> - can not be reused even when the kernel is lacking memory.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/Slab_allocation" target="_blank">平板内存</a>统计。<p>'+
+        '<p><b>可回收</b> - 内核可以重用的内存量。 '+
+        '<b>不可回收</b> - 即使内核缺乏内存，也无法重用。</p>'
     },
 
     'mem.hugepages': {
-        info: 'Dedicated (or Direct) HugePages is memory reserved for applications configured to utilize huge pages. Hugepages are <b>used</b> memory, even if there are free hugepages available.'
+        info: '专用（或直接）大型页面是为配置为使用大型页面的应用程序保留的内存。巨页<b>使用</b>内存，即使有免费的巨页可用。'
     },
 
     'mem.transparent_hugepages': {
-        info: 'Transparent HugePages (THP) is backing virtual memory with huge pages, supporting automatic promotion and demotion of page sizes. It works for all applications for anonymous memory mappings and tmpfs/shmem.'
+        info: '透明巨页（THP）用巨页支持虚拟内存，支持页面大小的自动推广和降级。它适用于匿名内存映射和tmpfs/shmem的所有应用程序。'
     },
 
     'mem.hwcorrupt': {
-        info: 'The amount of memory with physical corruption problems, identified by <a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC</a> and set aside by the kernel so it does not get used.'
+        info: '存在物理损坏问题的内存量，由<a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC</a>识别，并由内核预留，使其不被使用。'
     },
 
     'mem.ecc_ce': {
-        info: 'The number of correctable (single-bit) ECC errors. '+
-        'These errors do not affect the normal operation of the system '+
-        'because they are still being corrected. '+
-        'Periodic correctable errors may indicate that one of the memory modules is slowly failing.'
+        info: '可更正（单位）ECC错误的数量。 '+
+        '这些错误不影响系统的正常运行 '+
+        '因为他们仍在纠正。 '+
+        '周期性可更正错误可能表明其中一个内存模块正在缓慢故障。'
     },
 
     'mem.ecc_ue': {
-        info: 'The number of uncorrectable (multi-bit) ECC errors. '+
-        'An uncorrectable error is a fatal issue that will typically lead to an OS crash.'
+        info: '无法更正（多位）ECC错误的数量。 '+
+        '无法更正的错误是一个致命的问题，通常会导致操作系统崩溃。'
     },
 
     'mem.pagetype_global': {
-        info: 'The amount of memory available in blocks of certain size.'
+        info: '以一定大小的块为单位的可用内存量。'
     },
 
     'mem.cachestat_ratio': {
-        info: 'When the processor needs to read or write a location in main memory, it checks for a corresponding entry in the page cache. If the entry is there, a page cache hit has occurred and the read is from the cache. If the entry is not there, a page cache miss has occurred and the kernel allocates a new entry and copies in data from the disk. Netdata calculates the percentage of accessed files that are cached on memory. <a href="https://github.com/iovisor/bcc/blob/master/tools/cachestat.py#L126-L138" target="_blank">The ratio</a> is calculated counting the accessed cached pages (without counting dirty pages and pages added because of read misses) divided by total access without dirty pages.'
+        info: '当处理器需要读取或写入主内存中的位置时，它会检查页面缓存中的相应条目。如果条目在那里，则发生了页面缓存命中，并且读取来自缓存。如果没有条目，则会发生页面缓存丢失，内核会分配一个新的条目并从磁盘中复制数据。Netdata计算内存上缓存的访问文件的百分比。<a href="https://github.com/iovisor/bcc/blob/master/tools/cachestat.py#L126-L138" target="_blank">计算</a>的比率是计算访问的缓存页面（不计算脏页面和因读取丢失而添加的页面）除以没有脏页面的总访问量。'
     },
 
     'mem.cachestat_dirties': {
-        info: 'Number of <a href="https://en.wikipedia.org/wiki/Page_cache#Memory_conservation" target="_blank">dirty(modified) pages</a> cache. Pages in the page cache modified after being brought in are called dirty pages. Since non-dirty pages in the page cache have identical copies in <a href="https://en.wikipedia.org/wiki/Secondary_storage" target="_blank">secondary storage</a> (e.g. hard disk drive or solid-state drive), discarding and reusing their space is much quicker than paging out application memory, and is often preferred over flushing the dirty pages into secondary storage and reusing their space.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_cache#Memory_conservation" target="_blank">肮脏（修改）页面</a>缓存的数量。引入后修改的页面缓存中的页面称为脏页面。由于页面缓存中的非脏页面在<a href="https://en.wikipedia.org/wiki/Secondary_storage" target="_blank">辅助存储</a>（例如硬盘驱动器或固态驱动器）中具有相同的副本，因此丢弃和重用其空间比分页应用程序内存快得多，通常比将脏页面冲入辅助存储并重复使用其空间更可取。'
     },
 
     'mem.cachestat_hits': {
-        info: 'When the processor needs to read or write a location in main memory, it checks for a corresponding entry in the page cache. If the entry is there, a page cache hit has occurred and the read is from the cache. Hits show pages accessed that were not modified (we are excluding dirty pages), this counting also excludes the recent pages inserted for read.'
+        info: '当处理器需要读取或写入主内存中的位置时，它会检查页面缓存中的相应条目。如果条目在那里，则发生了页面缓存命中，并且读取来自缓存。点击量显示未修改的访问页面（我们排除脏页面），此计数还不包括最近插入供阅读的页面。'
     },
 
     'mem.cachestat_misses': {
-        info: 'When the processor needs to read or write a location in main memory, it checks for a corresponding entry in the page cache. If the entry is not there, a page cache miss has occurred and the cache allocates a new entry and copies in data for the main memory. Misses count page insertions to the memory not related to writing.'
+        info: '当处理器需要读取或写入主内存中的位置时，它会检查页面缓存中的相应条目。如果没有条目，则发生页面缓存丢失，缓存分配新条目并复制主内存的数据。缺少与编写无关的内存的页面插入计数。'
     },
 
     'mem.sync': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/sync.2.html" target="_blank">sync() and syncfs()</a> which flush the file system buffers to storage devices. Performance perturbations might be caused by these calls. The <code>sync()</code> calls are based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/syncsnoop.py" target="_blank">syncsnoop</a> from BCC tools.'
+        info: '系统调用<a href="https://man7.org/linux/man-pages/man2/sync.2.html" target="_blank">sync()和syncfs()</a>，这将文件系统缓冲区刷新到存储设备。这些通话可能会造成性能扰动。<code>sync()</code>调用基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/syncsnoop.py" target="_blank">syncsnoop</a>。'
     },
 
     'mem.file_sync': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/fsync.2.html" target="_blank">fsync() and fdatasync()</a> transfer all modified page caches for the files on disk devices. These calls block until the device reports that the transfer has been completed.'
+        info: '系统调用<a href="https://man7.org/linux/man-pages/man2/fsync.2.html" target="_blank">fsync()和fdatasync()</a>传输磁盘设备上文件的所有修改页面缓存。这些通话会阻止，直到设备报告转接已完成。'
     },
 
     'mem.memory_map': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/msync.2.html" target="_blank">msync()</a> which flushes changes made to the in-core copy of a file that was mapped.'
+        info: '系统调用<a href="https://man7.org/linux/man-pages/man2/msync.2.html" target="_blank">msync()</a>，该更改刷新了对映射文件的核心副本所做的更改。'
     },
 
     'mem.file_segment': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/sync_file_range.2.html" target="_blank">sync_file_range()</a> permits fine control when synchronizing the open file referred to by the file descriptor fd with disk. This system call is extremely dangerous and should not be used in portable programs.'
+        info: '<a href="https://man7.org/linux/man-pages/man2/sync_file_range.2.html" target="_blank">sync_file_range()</a>的系统调用允许在将文件描述符fd引用的打开文件与磁盘同步时进行精细控制。这种系统调用极其危险，不应用于便携式程序。'
     },
 
     'filesystem.dc_hit_ratio': {
-        info: 'Percentage of file accesses that were present in the directory cache. 100% means that every file that was accessed was present in the directory cache. If files are not present in the directory cache 1) they are not present in the file system, 2) the files were not accessed before. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows directory cache per <a href="#menu_apps_submenu_directory_cache__eBPF_">application</a>.'
+        info: '目录缓存中存在的文件访问百分比。100%表示访问的每个文件都存在于目录缓存中。如果目录缓存中不存在文件1）它们不存在于文件系统中，2）以前没有访问过文件。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_directory_cache__eBPF_">应用程序</a>显示目录缓存。'
     },
 
     'filesystem.dc_reference': {
-        info: 'Counters of file accesses. <code>Reference</code> is when there is a file access and the file is not present in the directory cache. <code>Miss</code> is when there is file access and the file is not found in the filesystem. <code>Slow</code> is when there is a file access and the file is present in the filesystem but not in the directory cache. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>.'
+        info: '文件访问计数器。<code>引用</code>是当有文件访问且文件不存在于目录缓存中时。<code>Miss</code>是当有文件访问且文件系统中找不到文件时。<code>慢</code>是指有文件访问，文件存在于文件系统中，但不存在于目录缓存中。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。'
     },
 
     'md.health': {
-        info: 'Number of failed devices per MD array. '+
-        'Netdata retrieves this data from the <b>[n/m]</b> field of the md status line. '+
-        'It means that ideally the array would have <b>n</b> devices however, currently, <b>m</b> devices are in use. '+
-        '<code>failed disks</code> is <b>n-m</b>.'
+        info: '每个MD阵列的故障设备数量。 '+
+        'Netdata从md状态行的<b>[n/m]</b>字段检索此数据。 '+
+        '这意味着理想情况下，数组将有<b>n</b>设备，但目前，<b>m</b>设备正在使用中。 '+
+        '<code>失败磁盘</code>是<b>n-m</b>。'
     },
     'md.disks': {
-        info: 'Number of devices in use and in the down state. '+
-        'Netdata retrieves this data from the <b>[n/m]</b> field of the md status line. '+
-        'It means that ideally the array would have <b>n</b> devices however, currently, <b>m</b> devices are in use. '+
-        '<code>inuse</code> is <b>m</b>, <code>down</code> is <b>n-m</b>.'
+        info: '处于使用和处于停机状态的设备数量。 '+
+        'Netdata从md状态行的<b>[n/m]</b>字段检索此数据。 '+
+        '这意味着理想情况下，数组将有<b>n</b>设备，但目前，<b>m</b>设备正在使用中。 '+
+        '<code>inuse</code>是<b>m</b>，<code>down</code>是<b>n-m</b>。'
     },
     'md.status': {
-        info: 'Completion progress of the ongoing operation.'
+        info: '完成正在进行的业务的进展。'
     },
     'md.expected_time_until_operation_finish': {
-        info: 'Estimated time to complete the ongoing operation. '+
-        'The time is only an approximation since the operation speed will vary according to other I/O demands.'
+        info: '完成正在进行的操作的预计时间。 '+
+        '时间只是一个近似值，因为操作速度将根据其他I/O要求而变化。'
     },
     'md.operation_speed': {
-        info: 'Speed of the ongoing operation. '+
-        'The system-wide rebuild speed limits are specified in <code>/proc/sys/dev/raid/{speed_limit_min,speed_limit_max}</code> files. '+
-        'These options are good for tweaking rebuilt process and may increase overall system load, cpu and memory usage.'
+        info: '持续运营的速度。 '+
+        '<code>/proc/sys/dev/raid/{speed_limit_min,speed_limit_max}</code>文件中指定了系统范围的重建速度限制。 '+
+        '这些选项有利于调整重建过程，并可能增加整体系统负载、cpu和内存使用率。'
     },
     'md.mismatch_cnt': {
-        info: 'When performing <b>check</b> and <b>repair</b>, and possibly when performing <b>resync</b>, md will count the number of errors that are found. '+
-        'A count of mismatches is recorded in the <code>sysfs</code> file <code>md/mismatch_cnt</code>. '+
-        'This value is the number of sectors that were re-written, or (for <b>check</b>) would have been re-written. '+
-        'It may be larger than the number of actual errors by a factor of the number of sectors in a page. '+
-        'Mismatches can not be interpreted very reliably on RAID1 or RAID10, especially when the device is used for swap. '+
-        'On a truly clean RAID5 or RAID6 array, any mismatches should indicate a hardware problem at some level - '+
-        'software issues should never cause such a mismatch. '+
-        'For details, see <a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">md(4)</a>.'
+        info: '在执行<b>检查</b>和<b>修复</b>时，以及可能在执行<b>重新同步</b>时，md将计算发现的错误数量。 '+
+        '不匹配计数记录在<code>sysfs</code>文件<code>md/mismatch_cnt</code>中。 '+
+        '此值是重写或（对于<b>check</b>）将重写的扇区数量。 '+
+        '它可能大于页面扇区数量的因子的实际错误数量。 '+
+        '在RAID1或RAID10上无法非常可靠地解释不匹配，特别是在设备用于交换时。 '+
+        '在真正干净的RAID5或RAID6阵列上，任何不匹配都应表明在某些级别上存在硬件问题- '+
+        '软件问题绝不应导致此类不匹配。 '+
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">md(4)</a>。'
     },
     'md.flush': {
-        info: 'Number of flush counts per MD array. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/mdflush_example.txt" target="_blank">mdflush</a> from BCC tools.'
+        info: '每个MD阵列的刷新计数。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/mdflush_example.txt" target="_blank">mdflush</a>。'
     },
 
     // ------------------------------------------------------------------------
     // IP
 
     'ip.inerrors': {
-        info: '<p>The number of errors encountered during the reception of IP packets.</p>' +
-            '</p><b>NoRoutes</b> - packets that were dropped because there was no route to send them. ' +
-            '<b>Truncated</b> - packets which is being discarded because the datagram frame didn\'t carry enough data. ' +
-            '<b>Checksum</b> - packets that were dropped because they had wrong checksum.</p>'
+        info: '<p>接收IP数据包时遇到的错误数量。</p>' +
+            '</p><b>NoRoutes</b> - 由于没有发送路线而删除的数据包。 ' +
+            '<b>Truncated</b> - 由于数据报帧没有携带足够的数据而被丢弃的数据包。 ' +
+            '<b>校验和</b>-因校验和错误而删除的数据包。</p>'
     },
 
     'ip.mcast': {
-        info: 'Total multicast traffic in the system.'
+        info: '系统中的总多播流量。'
     },
 
     'ip.mcastpkts': {
-        info: 'Total transferred multicast packets in the system.'
+        info: '系统中传输的多播数据包总数。'
     },
 
     'ip.bcast': {
-        info: 'Total broadcast traffic in the system.'
+        info: '系统中的总广播流量。'
     },
 
     'ip.bcastpkts': {
-        info: 'Total transferred broadcast packets in the system.'
+        info: '系统中传输的广播数据包总数。'
     },
 
     'ip.ecnpkts': {
-        info: '<p>Total number of received IP packets with ECN bits set in the system.</p>'+
-        '<p><b>CEP</b> - congestion encountered. '+
-        '<b>NoECTP</b> - non ECN-capable transport. '+
-        '<b>ECTP0</b> and <b>ECTP1</b> - ECN capable transport.</p>'
+        info: '<p>系统中设置了ECN位的接收IP数据包总数。</p>'+
+        '<p><b>CEP</b> - 遇到拥堵。 '+
+        '<b>NoECTP</b> - 不支持ECN的运输。 '+
+        '<b>ECTP0</b>和<b>ECTP1</b>-支持ECN的传输。</p>'
     },
 
     'ip.tcpreorders': {
-        info: '<p>TCP prevents out-of-order packets by either sequencing them in the correct order or '+
-        'by requesting the retransmission of out-of-order packets.</p>'+
-        '<p><b>Timestamp</b> - detected re-ordering using the timestamp option. '+
-        '<b>SACK</b> - detected re-ordering using Selective Acknowledgment algorithm. '+
-        '<b>FACK</b> - detected re-ordering using Forward Acknowledgment algorithm. '+
-        '<b>Reno</b> - detected re-ordering using Fast Retransmit algorithm.</p>'
+        info: '<p>TCP通过按正确的顺序排序数据包或防止数据包失序 '+
+        '通过请求重新传输出序的数据包。</p>'+
+        '<p><b>时间戳</b> - 使用时间戳选项检测到重新排序。 '+
+        '<b>SACK</b> - 使用选择性确认算法检测到重新排序。 '+
+        '<b>FACK</b> - 使用正向确认算法检测到重新排序。 '+
+        '<b>Reno</b> - 使用快速重新传输算法检测到重新排序。</p>'
     },
 
     'ip.tcpofo': {
-        info: '<p>TCP maintains an out-of-order queue to keep the out-of-order packets in the TCP communication.</p>'+
-        '<p><b>InQueue</b> - the TCP layer receives an out-of-order packet and has enough memory to queue it. '+
-        '<b>Dropped</b> - the TCP layer receives an out-of-order packet but does not have enough memory, so drops it. '+
-        '<b>Merged</b> - the received out-of-order packet has an overlay with the previous packet. '+
-        'The overlay part will be dropped. All these packets will also be counted into <b>InQueue</b>. '+
-        '<b>Pruned</b> - packets dropped from out-of-order queue because of socket buffer overrun.</p>'
+        info: '<p>TCP维护一个无序队列，以在TCP通信中保留无序数据包。</p>'+
+        '<p><b>InQueue</b> - TCP层收到一个无序的数据包，并有足够的内存排队。 '+
+        '<b>Droppped</b> - TCP层收到一个无序的数据包，但没有足够的内存，因此将其删除。 '+
+        '<b>合并</b> - 收到的无序数据包与上一个数据包具有覆盖。 '+
+        '覆盖部分将被删除。所有这些数据包也将计入<b>InQueue</b>。 '+
+        '<b>修剪</b> - 由于套接字缓冲区溢出，数据包从无序队列中删除。</p>'
     },
 
     'ip.tcpsyncookies': {
         info: '<p><a href="https://en.wikipedia.org/wiki/SYN_cookies" target="_blank">SYN cookies</a> '+
-        'are used to mitigate SYN flood.</p>'+
-        '<p><b>Received</b> - after sending a SYN cookie, it came back to us and passed the check. '+
-        '<b>Sent</b> - an application was not able to accept a connection fast enough, so the kernel could not store '+
-        'an entry in the queue for this connection. Instead of dropping it, it sent a SYN cookie to the client. '+
-        '<b>Failed</b> - the MSS decoded from the SYN cookie is invalid. When this counter is incremented, '+
-        'the received packet won’t be treated as a SYN cookie.</p>'
+        '用于缓解SYN洪水。</p>'+
+        '<p><b>收到</b>-发送SYN Cookie后，它回到我们身边并通过了支票。'+
+        '<b>发送</b> - 应用程序无法足够快地接受连接，因此内核无法存储 '+
+        '此连接队列中的条目。它没有删除它，而是向客户端发送了一个SYN cookie。 '+
+        '<b>失败</b>-从SYN Cookie解码的MSS无效。当这个计数器递增时， '+
+        '接收的数据包不会被视为SYN Cookie。</p>'
     },
 
     'ip.tcpmemorypressures': {
-        info: 'The number of times a socket was put in memory pressure due to a non fatal memory allocation failure '+
-        '(the kernel attempts to work around this situation by reducing the send buffers, etc).'
+        info: '套接字因非致命内存分配失败而施加内存压力的次数 '+
+        '（内核试图通过减少发送缓冲区等来解决这个问题）。'
     },
 
     'ip.tcpconnaborts': {
-        info: '<p>TCP connection aborts.</p>'+
-        '<p><b>BadData</b> - happens while the connection is on FIN_WAIT1 and the kernel receives a packet '+
-        'with a sequence number beyond the last one for this connection - '+
-        'the kernel responds with RST (closes the connection). '+
-        '<b>UserClosed</b> - happens when the kernel receives data on an already closed connection and '+
-        'responds with RST. '+
-        '<b>NoMemory</b> - happens when there are too many orphaned sockets (not attached to an fd) and '+
-        'the kernel has to drop a connection - sometimes it will send an RST, sometimes it won\'t. '+
-        '<b>Timeout</b> - happens when a connection times out. '+
-        '<b>Linger</b> - happens when the kernel killed a socket that was already closed by the application and '+
-        'lingered around for long enough. '+
-        '<b>Failed</b> - happens when the kernel attempted to send an RST but failed because there was no memory available.</p>'
+        info: '<p>TCP连接中止。</p>'+
+        '<p><b>BadData</b> - 当连接在FIN_WAIT1上且内核收到数据包时发生 '+
+        '此连接的序列号超过最后一个序列号- '+
+        '内核使用RST响应（关闭连接）。 '+
+        '<b>UserClosed</b> - 当内核在已关闭的连接上接收数据并 '+
+        '用RST回复。 '+
+        '<b>NoMemory</b> - 当孤儿插座太多（未连接到fd）和 '+
+        '内核必须删除连接——有时它会发送RST，有时不会。 '+
+        '<b>超时</b> - 当连接超时发生。 '+
+        '<b>Linger</b> - 当内核杀死已被应用程序关闭的套接字并 '+
+        '徘徊了足够长的时间。 '+
+        '<b>失败</b> - 当内核尝试发送 RST 但因没有可用内存而失败时发生。</p>'
     },
 
     'ip.tcp_functions': {
         title : 'TCP calls',
-        info: 'Successful or failed calls to functions <code>tcp_sendmsg</code>, <code>tcp_cleanup_rbuf</code>, and <code>tcp_close</code>.'
+        info: '对函数<code>tcp_sendmsg</code>、<code>tcp_cleanup_rbuf</code>和<code>tcp_close</code>的调用成功或失败。'
     },
 
     'ip.total_tcp_bandwidth': {
         title : 'TCP bandwidth',
-        info: 'Bytes sent and received by functions <code>tcp_sendmsg</code> and <code>tcp_cleanup_rbuf</code>. We use <code>tcp_cleanup_rbuf</code> instead of <code>tcp_recvmsg</code>, because the last one misses <code>tcp_read_sock()</code> traffic and we would also need to have more probes to get the socket and package size.'
+        info: '由函数<code>tcp_sendmsg</code>和<code>tcp_cleanup_rbuf</code>发送和接收的字节。我们使用<code>tcp_cleanup_rbuf</code>而不是<code>tcp_recvmsg</code>，因为最后一个错过了<code>tcp_read_sock()</code>流量，我们还需要有更多的探针来获得套接字和包大小。'
     },
 
     'ip.tcp_error': {
         title : 'TCP errors',
-        info: 'Failed calls to functions <code>tcp_sendmsg</code>, <code>tcp_cleanup_rbuf</code>, and <code>tcp_close</code>.'
+        info: '对函数<code>tcp_sendmsg</code>、<code>tcp_cleanup_rbuf</code>和<code>tcp_close</code>的调用失败。'
     },
 
     'ip.tcp_retransmit': {
         title : 'TCP retransmit',
-        info: 'Number of packets retransmitted by function <code>tcp_retransmit_skb</code>.'
+        info: '通过函数<code>tcp_retransmit_skb</code>重新传输的数据包数量。'
     },
 
     'ip.udp_functions': {
         title : 'UDP calls',
-        info: 'Successful or failed calls to functions <code>udp_sendmsg</code> and <code>udp_recvmsg</code>.'
+        info: '对函数<code>udp_sendmsg</code>和<code>udp_recvmsg</code>的调用成功或失败。'
     },
 
     'ip.total_udp_bandwidth': {
         title : 'UDP bandwidth',
-        info: 'Bytes sent and received by functions <code>udp_sendmsg</code> and <code>udp_recvmsg</code>.'
+        info: '由函数<code>udp_sendmsg</code>和<code>udp_recvmsg</code>发送和接收的字节。'
     },
 
     'ip.udp_error': {
         title : 'UDP errors',
-        info: 'Failed calls to functions <code>udp_sendmsg</code> and <code>udp_recvmsg</code>.'
+        info: '对函数<code>udp_sendmsg</code>和<code>udp_recvmsg</code>的调用失败。'
     },
 
 
     'ip.tcp_syn_queue': {
-        info: '<p>The SYN queue of the kernel tracks TCP handshakes until connections get fully established. ' +
-            'It overflows when too many incoming TCP connection requests hang in the half-open state and the server ' +
-            'is not configured to fall back to SYN cookies. Overflows are usually caused by SYN flood DoS attacks.</p>' +
-            '<p><b>Drops</b> - number of connections dropped because the SYN queue was full and SYN cookies were disabled. ' +
-            '<b>Cookies</b> - number of SYN cookies sent because the SYN queue was full.</p>'
+        info: '<p>内核的SYN队列跟踪TCP握手，直到连接完全建立。 ' +
+            '当太多传入的TCP连接请求处于半开放状态和服务器时，它会溢出 ' +
+            '未配置回退到SYN Cookie。溢出通常由SYN洪水DoS攻击引起。</p>' +
+            '<p><b>Drops</b> - 由于SYN队列已满且SYN cookie被禁用，连接数量下降。 ' +
+            '<b>Cookies</b> - 由于SYN队列已满而发送的SYN Cookie数量。</p>'
     },
 
     'ip.tcp_accept_queue': {
-        info: '<p>The accept queue of the kernel holds the fully established TCP connections, waiting to be handled ' +
-            'by the listening application.</p>'+
-            '<b>Overflows</b> - the number of established connections that could not be handled because '+
-            'the receive queue of the listening application was full. '+
-            '<b>Drops</b> - number of incoming connections that could not be handled, including SYN floods, '+
-            'overflows, out of memory, security issues, no route to destination, reception of related ICMP messages, '+
-            'socket is broadcast or multicast.</p>'
+        info: '<p>内核的接受队列持有完全建立的TCP连接，等待处理 ' +
+            '通过收听应用程序。</p>'+
+            '<b>溢出</b> - 因 '+
+            '监听应用程序的接收队列已满。 '+
+            '<b>Drops</b> - 无法处理的传入连接数量，包括SYN洪水， '+
+            '溢出、内存不足、安全问题、没有前往目的地的路线、接收相关的ICMP消息、 '+
+            '套接字是广播或多播。</p>'
     },
 
 
@@ -1766,93 +1766,93 @@ netdataDashboard.context = {
     // IPv4
 
     'ipv4.packets': {
-        info: '<p>IPv4 packets statistics for this host.</p>'+
-        '<p><b>Received</b> - packets received by the IP layer. '+
-        'This counter will be increased even if the packet is dropped later. '+
-        '<b>Sent</b> - packets sent via IP layer, for both single cast and multicast packets. '+
-        'This counter does not include any packets counted in <b>Forwarded</b>. '+
-        '<b>Forwarded</b> - input packets for which this host was not their final IP destination, '+
-        'as a result of which an attempt was made to find a route to forward them to that final destination. '+
-        'In hosts which do not act as IP Gateways, this counter will include only those packets which were '+
+        info: '<p>此主机的IPv4数据包统计。</p>'+
+        '<p><b>已收到</b> - IP 层接收的数据包。 '+
+        '即使稍后删除数据包，这个计数器也会增加。 '+
+        '<b>发送</b>-通过IP层发送的数据包，适用于单播和多播数据包。 '+
+        '此计数器不包括<b>转发</b>中计算的任何数据包。 '+
+        '<b>转发</b> - 此主机不是其最终IP目的地的输入数据包， '+
+        '结果，有人试图找到一条路线将他们转发到最终目的地。 '+
+        '在不充当IP网关的主机中，此计数器将仅包括那些 '+
         '<a href="https://en.wikipedia.org/wiki/Source_routing" target="_blank">Source-Routed</a> '+
-        'and the Source-Route option processing was successful. '+
-        '<b>Delivered</b> - packets delivered to the upper layer protocols, e.g. TCP, UDP, ICMP, and so on.</p>'
+        '源路由选项处理成功。 '+
+        '<b>已交付</b> - 交付到上层协议的数据包，例如TCP、UDP、ICMP等。</p>'
     },
 
     'ipv4.fragsout': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Fragmentation" target="_blank">IPv4 fragmentation</a> '+
-        'statistics for this system.</p>'+
-        '<p><b>OK</b> - packets that have been successfully fragmented. '+
-        '<b>Failed</b> - packets that have been discarded because they needed to be fragmented '+
-        'but could not be, e.g. due to <i>Don\'t Fragment</i> (DF) flag was set. '+
-        '<b>Created</b> - fragments that have been generated as a result of fragmentation.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Fragmentation" target="_blank">IPv4碎片</a> '+
+        '此系统的统计数据。</p>'+
+        '<p><b>好的</b> - 已成功碎片化的数据包。 '+
+        '<b>失败</b> - 由于需要碎片化而被丢弃的数据包 '+
+        '但不能，例如，由于<i>Don\'t Fragment</i> (DF)标志已设置。 '+
+        '<b>创建</b>-因碎片生成的碎片。</p>'
     },
 
     'ipv4.fragsin': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Reassembly" target="_blank">IPv4 reassembly</a> '+
-        'statistics for this system.</p>'+
-        '<p><b>OK</b> - packets that have been successfully reassembled. '+
-        '<b>Failed</b> - failures detected by the IP reassembly algorithm. '+
-        'This is not necessarily a count of discarded IP fragments since some algorithms '+
-        'can lose track of the number of fragments by combining them as they are received. '+
-        '<b>All</b> - received IP fragments which needed to be reassembled.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/IPv4#Reassembly" target="_blank">IPv4重新组装</a> '+
+        '此系统的统计数据。</p>'+
+        '<p><b>好的</b> - 已成功重新组装的数据包。 '+
+        '<b>失败</b> - IP 重新组装算法检测到故障。 '+
+        '这不一定是被丢弃的IP片段的计数，因为一些算法 '+
+        '通过在收到碎片时进行组合，可能会丢失碎片数量。 '+
+        '<b>所有</b>-收到需要重新组装的IP片段。</p>'
     },
 
     'ipv4.errors': {
-        info: '<p>The number of discarded IPv4 packets.</p>'+
-        '<p><b>InDiscards</b>, <b>OutDiscards</b> - inbound and outbound packets which were chosen '+
-        'to be discarded even though no errors had been '+
-        'detected to prevent their being deliverable to a higher-layer protocol. '+
-        '<b>InHdrErrors</b> - input packets that have been discarded due to errors in their IP headers, including '+
-        'bad checksums, version number mismatch, other format errors, time-to-live exceeded, '+
-        'errors discovered in processing their IP options, etc. '+
-        '<b>OutNoRoutes</b> - packets that have been discarded because no route could be found '+
-        'to transmit them to their destination. This includes any packets which a host cannot route '+
-        'because all of its default gateways are down. '+
-        '<b>InAddrErrors</b> - input packets that have been discarded due to invalid IP address or '+
-        'the destination IP address is not a local address and IP forwarding is not enabled. '+
-        '<b>InUnknownProtos</b> - input packets which were discarded because of an unknown or unsupported protocol.</p>'
+        info: '<p>丢弃的IPv4数据包的数量。</p>'+
+        '<p><b>InDiscards</b>，<b>OutDiscards</b>-选择的入站和出站数据包 '+
+        '即使没有出错，也要被丢弃 '+
+        '检测到以防止它们交付到更高级别的协议。 '+
+        '<b>InHdrErrors</b> - 由于IP头错误而被丢弃的输入数据包，包括 '+
+        '校验和不好，版本号不匹配，其他格式错误，超过生存时间， '+
+        '在处理他们的IP选项等时发现的错误。 '+
+        '<b>OutNoRoutes</b> - 由于找不到路线而被丢弃的数据包 '+
+        '将它们传输到目的地。这包括主机无法路由的任何数据包 '+
+        '因为它所有的默认网关都关闭了。 '+
+        '<b>InAddrErrors</b> - 由于IP地址无效或 '+
+        '目标IP地址不是本地地址，并且没有启用IP转发。 '+
+        '<b>InUnknownProtos</b> - 由于未知或不支持的协议而被丢弃的输入数据包。</p>'
     },
 
     'ipv4.icmp': {
-        info: '<p>The number of transferred IPv4 ICMP messages.</p>'+
-        '<p><b>Received</b>, <b>Sent</b> - ICMP messages which the host received and attempted to send. '+
-        'Both these counters include errors.</p>'
+        info: '<p>传输的IPv4 ICMP消息的数量。</p>'+
+        '<p><b>收到</b>，<b>发送</b>-主机收到并试图发送的ICMP消息。 '+
+        '这两个计数器都包含错误。</p>'
     },
 
     'ipv4.icmp_errors': {
-        info: '<p>The number of IPv4 ICMP errors.</p>'+
-        '<p><b>InErrors</b> - received ICMP messages but determined as having ICMP-specific errors, '+
-        'e.g. bad ICMP checksums, bad length, etc. '+
-        '<b>OutErrors</b> - ICMP messages which this host did not send due to '+
-        'problems discovered within ICMP such as a lack of buffers. '+
-        'This counter does not include errors discovered outside the ICMP layer '+
-        'such as the inability of IP to route the resultant datagram. '+
-        '<b>InCsumErrors</b> - received ICMP messages with bad checksum.</p>'
+        info: '<p>IPv4 ICMP错误的数量。</p>'+
+        '<p><b>InErrors</b> - 收到ICMP消息，但确定存在ICMP特定错误， '+
+        '例如，ICMP校验和不好，长度不好等。 '+
+        '<b>OutErrors</b> - 此主机由于 '+
+        '在ICMP中发现的问题，如缺乏缓冲区。 '+
+        '此计数器不包括在ICMP层外发现的错误 '+
+        '例如IP无法路由生成的数据报。 '+
+        '<b>InCsumErrors</b>-收到校验和不良的ICMP消息。</p>'
     },
 
     'ipv4.icmpmsg': {
-        info: 'The number of transferred '+
-        '<a href="https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml" target="_blank">IPv4 ICMP control messages</a>.'
+        info: '转让数量 '+
+        '<a href="https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml" target="_blank">IPv4 ICMP控制消息</a>。'
     },
 
     'ipv4.udppackets': {
-        info: 'The number of transferred UDP packets.'
+        info: '传输的UDP数据包的数量。'
     },
 
     'ipv4.udperrors': {
-        info: '<p>The number of errors encountered during transferring UDP packets.</p>'+
-        '<b>RcvbufErrors</b> - receive buffer is full. '+
-        '<b>SndbufErrors</b> - send buffer is full, no kernel memory available, or '+
-        'the IP layer reported an error when trying to send the packet and no error queue has been setup. '+
-        '<b>InErrors</b> - that is an aggregated counter for all errors, excluding <b>NoPorts</b>. '+
-        '<b>NoPorts</b> - no application is listening at the destination port. '+
-        '<b>InCsumErrors</b> - a UDP checksum failure is detected. '+
-        '<b>IgnoredMulti</b> - ignored multicast packets.'
+        info: '<p>在传输UDP数据包时遇到的错误数量。</p>'+
+        '<b>RcvbufErrors</b> - 接收缓冲区已满。 '+
+        '<b>SndbufErrors</b> - 发送缓冲区已满，没有可用的内核内存，或 '+
+        'IP层在尝试发送数据包时报告了错误，并且没有设置错误队列。 '+
+        '<b>InErrors</b> - 这是所有错误的聚合计数器，不包括<b>NoPorts</b>。 '+
+        '<b>NoPorts</b> - 没有应用程序在目标端口监听。 '+
+        '<b>InCsumErrors</b> - 检测到UDP校验和失败。 '+
+        '<b>忽略多</b> - 忽略多播数据包。'
     },
 
     'ipv4.udplite': {
-        info: 'The number of transferred UDP-Lite packets.'
+        info: '传输的UDP-Lite数据包的数量。'
     },
 
     'ipv4.udplite_errors': {
@@ -6359,51 +6359,51 @@ netdataDashboard.context = {
     },
 
     'systemd.slice_unit_state': {
-        info: 'Scope units are similar to service units, but manage foreign processes instead of starting them as well. ' +
-        'See <a href="https://www.freedesktop.org/software/systemd/man/systemd.slice.html#" target="_blank"> systemd.slice(5)</a>.'
+        info: '范围单位与服务单位相似，但也管理外国流程，而不是启动它们。 ' +
+        '请参阅<a href="https://www.freedesktop.org/software/systemd/man/systemd.slice.html#" target="_blank"> systemd.slice(5)</a>。'
     },
 
     'anomaly_detection.dimensions': {
-        info: 'Total count of dimensions considered anomalous or normal. '
+        info: '被认为异常或正常的维度总数。 '
     },
 
     'anomaly_detection.anomaly_rate': {
-        info: 'Percentage of anomalous dimensions. '
+        info: '异常维度的百分比。 '
     },
 
     'anomaly_detection.detector_window': {
-        info: 'The length of the active window used by the detector. '
+        info: '探测器使用的有源窗口的长度。 '
     },
 
     'anomaly_detection.detector_events': {
-        info: 'Flags (0 or 1) to show when an anomaly event has been triggered by the detector. '
+        info: '标志（0或1），用于显示探测器何时触发异常事件。 '
     },
 
     'anomaly_detection.prediction_stats': {
-        info: 'Diagnostic metrics relating to prediction time of anomaly detection. '
+        info: '与异常检测预测时间相关的诊断指标。 '
     },
 
     'anomaly_detection.training_stats': {
-        info: 'Diagnostic metrics relating to training time of anomaly detection. '
+        info: '与异常检测培训时间相关的诊断指标。 '
     },
 
     // ------------------------------------------------------------------------
     // Supervisor
 
     'fail2ban.failed_attempts': {
-        info: '<p>The number of failed attempts.</p>'+
-        '<p>This chart reflects the number of \'Found\' lines. '+
-        'Found means a line in the service’s log file matches the failregex in its filter.</p>'
+        info: '<p>尝试失败的次数。</p>'+
+        '<p>此图表反映了\'Found\'行的数量。 '+
+        '找到意味着服务日志文件中的一行与其过滤器中的失败正则表达式匹配。</p>'
     },
 
     'fail2ban.bans': {
-        info: '<p>The number of bans.</p>'+
-        '<p>This chart reflects the number of \'Ban\' and \'Restore Ban\' lines. '+
-        'Ban action happens when the number of failed attempts (maxretry) occurred in the last configured interval (findtime).</p>'
+        info: '<p>禁令数量。</p>'+
+        '<p>此图表反映了\'Ban\'和\'Restore Ban\'行的数量。 '+
+        '当上次配置的间隔（查找时间）发生失败的尝试次数（最大尝试）时，就会发生禁用操作。</p>'
     },
 
     'fail2ban.banned_ips': {
-        info: '<p>The number of banned IP addresses.</p>'
+        info: '<p>禁用IP地址的数量。</p>'
     },
 
 };
