@@ -1699,7 +1699,7 @@ netdataDashboard.context = {
         '内核使用RST响应（关闭连接）。 '+
         '<b>UserClosed</b> - 当内核在已关闭的连接上接收数据并 '+
         '用RST回复。 '+
-        '<b>NoMemory</b> - 当孤儿插座太多（未连接到fd）和 '+
+        '<b>NoMemory</b> - 当Orphan插太多（未连接到fd）和 '+
         '内核必须删除连接——有时它会发送RST，有时不会。 '+
         '<b>超时</b> - 当连接超时发生。 '+
         '<b>Linger</b> - 当内核杀死已被应用程序关闭的套接字并 '+
@@ -1856,278 +1856,278 @@ netdataDashboard.context = {
     },
 
     'ipv4.udplite_errors': {
-        info: '<p>The number of errors encountered during transferring UDP-Lite packets.</p>'+
-        '<b>RcvbufErrors</b> - receive buffer is full. '+
-        '<b>SndbufErrors</b> - send buffer is full, no kernel memory available, or '+
-        'the IP layer reported an error when trying to send the packet and no error queue has been setup. '+
-        '<b>InErrors</b> - that is an aggregated counter for all errors, excluding <b>NoPorts</b>. '+
-        '<b>NoPorts</b> - no application is listening at the destination port. '+
-        '<b>InCsumErrors</b> - a UDP checksum failure is detected. '+
-        '<b>IgnoredMulti</b> - ignored multicast packets.'
+        info: '<p>传输UDP-Lite数据包时遇到的错误数量。</p>'+
+        '<b>RcvbufErrors</b> - 接收缓冲区已满。 '+
+        '<b>SndbufErrors</b> - 发送缓冲区已满，没有可用的内核内存，或 '+
+        'IP层在尝试发送数据包时报告了错误，并且没有设置错误队列。 '+
+        '<b>InErrors</b> - 这是所有错误的聚合计数器，不包括<b>NoPorts</b>。 '+
+        '<b>NoPorts</b> - 没有应用程序在目标端口监听。 '+
+        '<b>InCsumErrors</b> - 检测到UDP校验和失败。 '+
+        '<b>忽略多</b> - 忽略多播数据包。'
     },
 
     'ipv4.tcppackets': {
-        info: '<p>The number of packets transferred by the TCP layer.</p>'+
-        '</p><b>Received</b> - received packets, including those received in error, '+
-        'such as checksum error, invalid TCP header, and so on. '+
-        '<b>Sent</b> - sent packets, excluding the retransmitted packets. '+
-        'But it includes the SYN, ACK, and RST packets.</p>'
+        info: '<p>TCP层传输的数据包数量。</p>'+
+        '</p><b>已收到</b>-已收到的数据包，包括错误接收的数据包， '+
+        '例如校验和错误、无效的TCP标头等。 '+
+        '<b>发送</b>-发送数据包，不包括重新传输的数据包。 '+
+        '但它包括SYN、ACK和RST数据包。</p>'
     },
 
     'ipv4.tcpsock': {
-        info: 'The number of TCP connections for which the current state is either ESTABLISHED or CLOSE-WAIT. '+
-        'This is a snapshot of the established connections at the time of measurement '+
-        '(i.e. a connection established and a connection disconnected within the same iteration will not affect this metric).'
+        info: '当前状态已建立或关闭的TCP连接数量。 '+
+        '这是测量时已建立连接的快照 '+
+        '（即在同一迭代中建立连接和断开连接不会影响此指标）。'
     },
 
     'ipv4.tcpopens': {
-        info: '<p>TCP connection statistics.</p>'+
-        '<p><b>Active</b> - number of outgoing TCP connections attempted by this host. '+
-         '<b>Passive</b> - number of incoming TCP connections accepted by this host.</p>'
+        info: '<p>TCP连接统计。</p>'+
+        '<p><b>活跃</b> - 此主机尝试的传出TCP连接数量。 '+
+         '<b>被动</b> - 此主机接受的传入TCP连接数量。</p>'
     },
 
     'ipv4.tcperrors': {
-        info: '<p>TCP errors.</p>'+
-        '<p><b>InErrs</b> - TCP segments received in error '+
-        '(including header too small, checksum errors, sequence errors, bad packets - for both IPv4 and IPv6). '+
-        '<b>InCsumErrors</b> - TCP segments received with checksum errors (for both IPv4 and IPv6). '+
-        '<b>RetransSegs</b> - TCP segments retransmitted.</p>'
+        info: '<p>TCP错误。</p>'+
+        '<p><b>InErrs</b> - 错误地收到 TCP 时段 '+
+        '（包括标题太小、校验和错误、序列错误、错误数据包——适用于IPv4和IPv6）。 '+
+        '<b>InCsumErrors</b> - 收到校验和错误的TCP段（适用于IPv4和IPv6）。 '+
+        '<b>RetransSegs</b> - TCP段重新传输。</p>'
     },
 
     'ipv4.tcphandshake': {
-        info: '<p>TCP handshake statistics.</p>'+
-        '<p><b>EstabResets</b> - established connections resets '+
-        '(i.e. connections that made a direct transition from ESTABLISHED or CLOSE_WAIT to CLOSED). '+
-        '<b>OutRsts</b> - TCP segments sent, with the RST flag set (for both IPv4 and IPv6). '+
-        '<b>AttemptFails</b> - number of times TCP connections made a direct transition from either '+
-        'SYN_SENT or SYN_RECV to CLOSED, plus the number of times TCP connections made a direct transition '+
-        'from the SYN_RECV to LISTEN. '+
-        '<b>SynRetrans</b> - shows retries for new outbound TCP connections, '+
-        'which can indicate general connectivity issues or backlog on the remote host.</p>'
+        info: '<p>TCP握手统计。</p>'+
+        '<p><b>EstabResets</b> - 已建立的连接重置 '+
+        '（即从 ESTABLISHED 或 CLOSE_WAIT 直接过渡到 CLOSED 的连接）。 '+
+        '<b>OutRsts</b> - 发送TCP段，并设置RST标志（适用于IPv4和IPv6）。 '+
+        '<b>AttemptFails</b> - TCP连接从任一方向直接过渡的次数 '+
+        'SYN_SENT或SYN_RECV到CLOED，加上TCP连接直接过渡的次数 '+
+        '从SYN_RECV到监听。 '+
+        '<b>SynRetrans</b> - 显示新的出站 TCP 连接的重试， '+
+        '这可能表明远程主机上的一般连接问题或积压。</p>'
     },
 
     'ipv4.sockstat_sockets': {
-        info: 'The total number of used sockets for all '+
-        '<a href="https://man7.org/linux/man-pages/man7/address_families.7.html" target="_blank">address families</a> '+
-        'in this system.'
+        info: '所有使用的套接字总数 '+
+        '<a href="https://man7.org/linux/man-pages/man7/address_families.7.html" target="_blank">地址家庭</a>'+
+        '在这个系统中。'
     },
 
     'ipv4.sockstat_tcp_sockets': {
-        info: '<p>The number of TCP sockets in the system in certain '+
-        '<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Protocol_operation" target="_blank">states</a>.</p>'+
-        '<p><b>Alloc</b> - in any TCP state. '+
-        '<b>Orphan</b> - no longer attached to a socket descriptor in any user processes, '+
-        'but for which the kernel is still required to maintain state in order to complete the transport protocol. '+
-        '<b>InUse</b> - in any TCP state, excluding TIME-WAIT and CLOSED. '+
-        '<b>TimeWait</b> - in the TIME-WAIT state.</p>'
+        info: '<p>系统中某些TCP套接字的数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Protocol_operation" target="_blank">states</a>。</p>'+
+        '<p><b>Alloc</b> - 处于任何 TCP 状态。 '+
+        '<b>Orphan</b> - 在任何用户进程中不再连接到套接字描述符， '+
+        '但为了完成传输协议，内核仍然需要保持状态。 '+
+        '<b>InUse</b> - 处于任何 TCP 状态，TIME-WAIT 和 CLOSED 除外。 '+
+        '<b>TimeWait</b> - 处于TIME-WAIT状态。</p>'
     },
 
     'ipv4.sockstat_tcp_mem': {
-        info: 'The amount of memory used by allocated TCP sockets.'
+        info: '分配的TCP套接字使用的内存量。'
     },
 
     'ipv4.sockstat_udp_sockets': {
-        info: 'The number of used UDP sockets.'
+        info: '使用UDP套接字的数量。'
     },
 
     'ipv4.sockstat_udp_mem': {
-        info: 'The amount of memory used by allocated UDP sockets.'
+        info: '分配的UDP套接字使用的内存量。'
     },
 
     'ipv4.sockstat_udplite_sockets': {
-        info: 'The number of used UDP-Lite sockets.'
+        info: '使用UDP-Lite套接字的数量。'
     },
 
     'ipv4.sockstat_raw_sockets': {
-        info: 'The number of used <a href="https://en.wikipedia.org/wiki/Network_socket#Types" target="_blank"> raw sockets</a>.'
+        info: '使用<a href="https://en.wikipedia.org/wiki/Network_socket#Types" target="_blank">原始套接字的数量</a>。'
     },
 
     'ipv4.sockstat_frag_sockets': {
-        info: 'The number of entries in hash tables that are used for packet reassembly.'
+        info: '散列表中用于数据包重新组装的条目数量。'
     },
 
     'ipv4.sockstat_frag_mem': {
-        info: 'The amount of memory used for packet reassembly.'
+        info: '用于数据包重新组装的内存量。'
     },
 
     // ------------------------------------------------------------------------
     // IPv6
 
     'ipv6.packets': {
-        info: '<p>IPv6 packet statistics for this host.</p>'+
-        '<p><b>Received</b> - packets received by the IP layer. '+
-        'This counter will be increased even if the packet is dropped later. '+
-        '<b>Sent</b> - packets sent via IP layer, for both single cast and multicast packets. '+
-        'This counter does not include any packets counted in <b>Forwarded</b>. '+
-        '<b>Forwarded</b> - input packets for which this host was not their final IP destination, '+
-        'as a result of which an attempt was made to find a route to forward them to that final destination. '+
-        'In hosts which do not act as IP Gateways, this counter will include only those packets which were '+
+        info: '<p>此主机的IPv6数据包统计信息。</p>'+
+        '<p><b>已收到</b> - IP 层接收的数据包。 '+
+        '即使稍后删除数据包，这个计数器也会增加。 '+
+        '<b>发送</b>-通过IP层发送的数据包，适用于单播和多播数据包。 '+
+        '此计数器不包括<b>转发</b>中计算的任何数据包。 '+
+        '<b>转发</b> - 此主机不是其最终IP目的地的输入数据包， '+
+        '结果，有人试图找到一条路线将他们转发到最终目的地。 '+
+        '在不充当IP网关的主机中，此计数器将仅包括那些 '+
         '<a href="https://en.wikipedia.org/wiki/Source_routing" target="_blank">Source-Routed</a> '+
-        'and the Source-Route option processing was successful. '+
-        '<b>Delivers</b> - packets delivered to the upper layer protocols, e.g. TCP, UDP, ICMP, and so on.</p>'
+        '源路由选项处理成功。 '+
+        '<b>交付</b> - 交付到上层协议的数据包，例如TCP、UDP、ICMP等。</p>'
     },
 
     'ipv6.fragsout': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/IP_fragmentation" target="_blank">IPv6 fragmentation</a> '+
-        'statistics for this system.</p>'+
-        '<p><b>OK</b> - packets that have been successfully fragmented. '+
-        '<b>Failed</b> - packets that have been discarded because they needed to be fragmented '+
-        'but could not be, e.g. due to <i>Don\'t Fragment</i> (DF) flag was set. '+
-        '<b>All</b> - fragments that have been generated as a result of fragmentation.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/IP_fragmentation" target="_blank">IPv6碎片</a>'+
+        '此系统的统计数据。</p>'+
+        '<p><b>好的</b> - 已成功碎片化的数据包。 '+
+        '<b>失败</b> - 由于需要碎片化而被丢弃的数据包 '+
+        '但不能，例如，由于<i>Don\'t Fragment</i> (DF)标志已设置。 '+
+        '<b>所有</b>-碎片生成的碎片。</p>'
     },
 
     'ipv6.fragsin': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/IP_fragmentation" target="_blank">IPv6 reassembly</a> '+
-        'statistics for this system.</p>'+
-        '<p><b>OK</b> - packets that have been successfully reassembled. '+
-        '<b>Failed</b> - failures detected by the IP reassembly algorithm. '+
-        'This is not necessarily a count of discarded IP fragments since some algorithms '+
-        'can lose track of the number of fragments by combining them as they are received. '+
-        '<b>Timeout</b> - reassembly timeouts detected. '+
-        '<b>All</b> - received IP fragments which needed to be reassembled.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/IP_fragmentation" target="_blank">IPv6重新组装</a> '+
+        '此系统的统计数据。</p>'+
+        '<p><b>好的</b> - 已成功重新组装的数据包。 '+
+        '<b>失败</b> - IP 重新组装算法检测到故障。 '+
+        '这不一定是被丢弃的IP片段的计数，因为一些算法 '+
+        '通过在收到碎片时进行组合，可能会丢失碎片数量。 '+
+        '<b>超时</b> - 检测到重新组装超时。 '+
+        '<b>所有</b>-收到需要重新组装的IP片段。</p>'
     },
 
     'ipv6.errors': {
-        info: '<p>The number of discarded IPv6 packets.</p>'+
-        '<p><b>InDiscards</b>, <b>OutDiscards</b> - packets which were chosen to be discarded even though '+
-        'no errors had been detected to prevent their being deliverable to a higher-layer protocol. '+
-        '<b>InHdrErrors</b> - errors in IP headers, including bad checksums, version number mismatch, '+
-        'other format errors, time-to-live exceeded, etc. '+
-        '<b>InAddrErrors</b> - invalid IP address or the destination IP address is not a local address and '+
-        'IP forwarding is not enabled. '+
-        '<b>InUnknownProtos</b> - unknown or unsupported protocol. '+
-        '<b>InTooBigErrors</b> - the size exceeded the link MTU. '+
-        '<b>InTruncatedPkts</b> - packet frame did not carry enough data. '+
-        '<b>InNoRoutes</b> - no route could be found while forwarding. '+
-        '<b>OutNoRoutes</b> - no route could be found for packets generated by this host.</p>'
+        info: '<p>丢弃的IPv6数据包的数量。</p>'+
+        '<p><b>InDiscards</b>，<b>OutDiscards</b> - 即使 '+
+        '没有检测到错误来阻止它们交付到更高级别的协议。 '+
+        '<b>InHdrErrors</b> - IP头中的错误，包括糟糕的校验和、版本号不匹配、 '+
+        '其他格式错误、超出使用时间等。 '+
+        '<b>InAddrErrors</b> - 无效的IP地址或目标IP地址不是本地地址，并且 '+
+        '未启用IP转发。 '+
+        '<b>InUnknownProtos</b> - 未知或不支持的协议。 '+
+        '<b>InTooBigErrors</b> - 大小超过链接MTU。 '+
+        '<b>InTruncatedPkts</b> - 数据包框架没有携带足够的数据。 '+
+        '<b>InNoRoutes</b> - 转发时找不到任何路线。 '+
+        '<b>OutNoRoutes</b> - 找不到此主机生成的数据包的路由。</p>'
     },
 
     'ipv6.udppackets': {
-        info: 'The number of transferred UDP packets.'
+        info: '传输的UDP数据包的数量。'
     },
 
     'ipv6.udperrors': {
-        info: '<p>The number of errors encountered during transferring UDP packets.</p>'+
-        '<b>RcvbufErrors</b> - receive buffer is full. '+
-        '<b>SndbufErrors</b> - send buffer is full, no kernel memory available, or '+
-        'the IP layer reported an error when trying to send the packet and no error queue has been setup. '+
-        '<b>InErrors</b> - that is an aggregated counter for all errors, excluding <b>NoPorts</b>. '+
-        '<b>NoPorts</b> - no application is listening at the destination port. '+
-        '<b>InCsumErrors</b> - a UDP checksum failure is detected. '+
-        '<b>IgnoredMulti</b> - ignored multicast packets.'
+        info: '<p>在传输UDP数据包时遇到的错误数量。</p>'+
+        '<b>RcvbufErrors</b> - 接收缓冲区已满。 '+
+        '<b>SndbufErrors</b> - 发送缓冲区已满，没有可用的内核内存，或 '+
+        'IP层在尝试发送数据包时报告了错误，并且没有设置错误队列。 '+
+        '<b>InErrors</b> - 这是所有错误的聚合计数器，不包括<b>NoPorts</b>。 '+
+        '<b>NoPorts</b> - 没有应用程序在目标端口监听。 '+
+        '<b>InCsumErrors</b> - 检测到UDP校验和失败。 '+
+        '<b>忽略多</b> - 忽略多播数据包。'
     },
 
     'ipv6.udplitepackets': {
-        info: 'The number of transferred UDP-Lite packets.'
+        info: '传输的UDP-Lite数据包的数量。'
     },
 
     'ipv6.udpliteerrors': {
-        info: '<p>The number of errors encountered during transferring UDP-Lite packets.</p>'+
-        '<p><b>RcvbufErrors</b> - receive buffer is full. '+
-        '<b>SndbufErrors</b> - send buffer is full, no kernel memory available, or '+
-        'the IP layer reported an error when trying to send the packet and no error queue has been setup. '+
-        '<b>InErrors</b> - that is an aggregated counter for all errors, excluding <b>NoPorts</b>. '+
-        '<b>NoPorts</b> - no application is listening at the destination port. '+
-        '<b>InCsumErrors</b> - a UDP checksum failure is detected.</p>'
+        info: '<p>传输UDP-Lite数据包时遇到的错误数量。</p>'+
+        '<p><b>RcvbufErrors</b> - 接收缓冲区已满。 '+
+        '<b>SndbufErrors</b> - 发送缓冲区已满，没有可用的内核内存，或 '+
+        'IP层在尝试发送数据包时报告了错误，并且没有设置错误队列。 '+
+        '<b>InErrors</b> - 这是所有错误的聚合计数器，不包括<b>NoPorts</b>。 '+
+        '<b>NoPorts</b> - 没有应用程序在目标端口监听。 '+
+        '<b>InCsumErrors</b> - 检测到UDP校验和失败。</p>'
     },
 
     'ipv6.mcast': {
-        info: 'Total IPv6 multicast traffic.'
+        info: 'IPv6组播总流量。'
     },
 
     'ipv6.bcast': {
-        info: 'Total IPv6 broadcast traffic.'
+        info: 'IPv6广播总流量。'
     },
 
     'ipv6.mcastpkts': {
-        info: 'Total transferred IPv6 multicast packets.'
+        info: '传输的IPv6组播数据包总数。'
     },
 
     'ipv6.icmp': {
-        info: '<p>The number of transferred ICMPv6 messages.</p>'+
-        '<p><b>Received</b>, <b>Sent</b> - ICMP messages which the host received and attempted to send. '+
-        'Both these counters include errors.</p>'
+        info: '<p>传输的ICMPv6消息数量。</p>'+
+        '<p><b>收到</b>，<b>发送</b>-主机收到并试图发送的ICMP消息。 '+
+        '这两个计数器都包含错误。</p>'
     },
 
     'ipv6.icmpredir': {
-        info: 'The number of transferred ICMPv6 Redirect messages. '+
-        'These messages inform a host to update its routing information (to send packets on an alternative route).'
+        info: '传输的ICMPv6重定向消息的数量。'+
+        '这些信息通知主机更新其路由信息（在替代路由上发送数据包）。'
     },
 
     'ipv6.icmpechos': {
-        info: 'The number of ICMPv6 Echo messages.'
+        info: 'ICMPv6回声消息的数量。'
     },
 
     'ipv6.icmperrors': {
-        info: '<p>The number of ICMPv6 errors and '+
-        '<a href="https://www.rfc-editor.org/rfc/rfc4443.html#section-3" target="_blank">error messages</a>.</p>'+
-        '<p><b>InErrors</b>, <b>OutErrors</b> - bad ICMP messages (bad ICMP checksums, bad length, etc.). '+
-        '<b>InCsumErrors</b> - wrong checksum.</p>'
+        info: '<p>ICMPv6错误的数量和 '+
+        '<a href="https://www.rfc-editor.org/rfc/rfc4443.html#section-3" target="_blank">错误消息</a>。</p>'+
+        '<p><b>InErrors</b>，<b>OutErrors</b> - 糟糕的ICMP消息（错误的ICMP校验和，糟糕的长度等）。 '+
+        '<b>InCsumErrors</b> - 校验和错误。</p>'
     },
 
     'ipv6.groupmemb': {
-        info: '<p>The number of transferred ICMPv6 Group Membership messages.</p>'+
-        '<p> Multicast routers send Group Membership Query messages to learn which groups have members on each of their '+
-        'attached physical networks. Host computers respond by sending a Group Membership Report for each '+
-        'multicast group joined by the host. A host computer can also send a Group Membership Report when '+
-        'it joins a new multicast group. '+
-        'Group Membership Reduction messages are sent when a host computer leaves a multicast group.</p>'
+        info: '<p>传输的ICMPv6组成员消息的数量。</p>'+
+        '<p>多播路由器发送组成员查询消息，以了解哪些组在其每个组上都有成员 '+
+        '连接物理网络。主机计算机通过为每个 '+
+        '主机加入的多播组。主机计算机也可以在以下情况下发送组成员报告 '+
+        '它加入了一个新的多播组。 '+
+        '当主机离开组播组时，会发送组成员减少消息。</p>'
     },
 
     'ipv6.icmprouter': {
-        info: '<p>The number of transferred ICMPv6 '+
-        '<a href="https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol" target="_blank">Router Discovery</a> messages.</p>'+
-        '<p>Router <b>Solicitations</b> message is sent from a computer host to any routers on the local area network '+
-        'to request that they advertise their presence on the network. '+
-        'Router <b>Advertisement</b> message is sent by a router on the local area network to announce its IP address '+
-        'as available for routing.</p>'
+        info: '<p>转让ICMPv6的数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol" target="_blank">路由器发现</a>消息。</p>'+
+        '<p>路由器<b>招标</b>消息从计算机主机发送到局域网上的任何路由器 '+
+        '要求他们在网络上做广告。 '+
+        '路由器<b>广告</b>消息由局域网上的路由器发送，以宣布其IP地址 '+
+        '可供路由。</p>'
     },
 
     'ipv6.icmpneighbor': {
-        info: '<p>The number of transferred ICMPv6 '+
-        '<a href="https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol" target="_blank">Neighbour Discovery</a> messages.</p>'+
-        '<p>Neighbor <b>Solicitations</b> are used by nodes to determine the link layer address '+
-        'of a neighbor, or to verify that a neighbor is still reachable via a cached link layer address. '+
-        'Neighbor <b>Advertisements</b> are used by nodes to respond to a Neighbor Solicitation message.</p>'
+        info: '<p>转让ICMPv6的数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol" target="_blank">邻居发现</a>消息。</p>'+
+        '<p>邻居<b>请求</b>被节点用于确定链接层地址 '+
+        '邻居，或验证邻居是否仍然可以通过缓存的链接层地址访问。 '+
+        '邻居<b>广告</b>被节点用于响应邻居邀约消息。</p>'
     },
 
     'ipv6.icmpmldv2': {
-        info: 'The number of transferred ICMPv6 '+
-        '<a href="https://en.wikipedia.org/wiki/Multicast_Listener_Discovery" target="_blank">Multicast Listener Discovery</a> (MLD) messages.'
+        info: '转让ICMPv6的数量'+
+        '<a href="https://en.wikipedia.org/wiki/Multicast_Listener_Discovery" target="_blank">多播监听器发现</a>（MLD）消息。'
     },
 
     'ipv6.icmptypes': {
-        info: 'The number of transferred ICMPv6 messages of '+
-        '<a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6#Types" target="_blank">certain types</a>.'
+        info: '传输的ICMPv6消息数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6#Types" target="_blank">某些类型</a>。'
     },
 
     'ipv6.ect': {
-        info: '<p>Total number of received IPv6 packets with ECN bits set in the system.</p>'+
-        '<p><b>CEP</b> - congestion encountered. '+
-        '<b>NoECTP</b> - non ECN-capable transport. '+
-        '<b>ECTP0</b> and <b>ECTP1</b> - ECN capable transport.</p>'
+        info: '<p>系统中设置了ECN位的接收IPv6数据包总数。</p>'+
+        '<p><b>CEP</b> - 遇到拥堵。 '+
+        '<b>NoECTP</b> - 不支持ECN的运输。 '+
+        '<b>ECTP0</b>和<b>ECTP1</b>-支持ECN的传输。</p>'
     },
 
     'ipv6.sockstat6_tcp_sockets': {
-        info: 'The number of TCP sockets in any '+
-        '<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Protocol_operation" target="_blank">state</a>, '+
-        'excluding TIME-WAIT and CLOSED.'
+        info: '任何TCP套接字的数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Protocol_operation" target="_blank">state</a>， '+
+        '不包括时间等待和关闭。'
     },
 
     'ipv6.sockstat6_udp_sockets': {
-        info: 'The number of used UDP sockets.'
+        info: '使用UDP套接字的数量。'
     },
 
     'ipv6.sockstat6_udplite_sockets': {
-        info: 'The number of used UDP-Lite sockets.'
+        info: '使用UDP-Lite套接字的数量。'
     },
 
     'ipv6.sockstat6_raw_sockets': {
-        info: 'The number of used <a href="https://en.wikipedia.org/wiki/Network_socket#Types" target="_blank"> raw sockets</a>.'
+        info: '使用<a href="https://en.wikipedia.org/wiki/Network_socket#Types" target="_blank">原始套接字的数量</a>。'
     },
 
     'ipv6.sockstat6_frag_sockets': {
-        info: 'The number of entries in hash tables that are used for packet reassembly.'
+        info: '散列表中用于数据包重新组装的条目数量。'
     },
 
 
@@ -2135,99 +2135,99 @@ netdataDashboard.context = {
     // SCTP
 
     'sctp.established': {
-        info: 'The number of associations for which the current state is either '+
-        'ESTABLISHED, SHUTDOWN-RECEIVED or SHUTDOWN-PENDING.'
+        info: '当前状态为的关联数量 '+
+        '已建立、已关闭接收或即将关闭。'
     },
 
     'sctp.transitions': {
-        info: '<p>The number of times that associations have made a direct transition between states.</p>'+
-        '<p><b>Active</b> - from COOKIE-ECHOED to ESTABLISHED. The upper layer initiated the association attempt. '+
-        '<b>Passive</b> - from CLOSED to ESTABLISHED. The remote endpoint initiated the association attempt. '+
-        '<b>Aborted</b> - from any state to CLOSED using the primitive ABORT. Ungraceful termination of the association. '+
-        '<b>Shutdown</b> - from SHUTDOWN-SENT or SHUTDOWN-ACK-SENT to CLOSED. Graceful termination of the association.</p>'
+        info: '<p>关联在州之间直接过渡的次数。</p>'+
+        '<p><b>活跃</b> - 从COOKIE-ECHOED到已建立。上层发起了关联尝试。 '+
+        '<b>被动</b> - 从关闭到已建立。远程端点发起了关联尝试。 '+
+        '<b>中止</b>-使用原始ABORT从任何状态到关闭。不光彩地终止协会。 '+
+        '<b>Shutdown</b> - 从SHUTDOWN-SENT或SHUTDOWN-ACK-SENT到CLOSHED。优雅地终止协会。</p>'
     },
 
     'sctp.packets': {
-        info: '<p>The number of transferred SCTP packets.</p>'+
-        '<p><b>Received</b> - includes duplicate packets. '+
-        '<b>Sent</b> - includes retransmitted DATA chunks.</p>'
+        info: '<p>传输的SCTP数据包数量。</p>'+
+        '<p><b>已收到</b> - 包含重复的数据包。 '+
+        '<b>发送</b>-包括重新传输的数据块。</p>'
     },
 
     'sctp.packet_errors': {
-        info: '<p>The number of errors encountered during receiving SCTP packets.</p>'+
-        '<p><b>Invalid</b> - packets for which the receiver was unable to identify an appropriate association. '+
-        '<b>Checksum</b> - packets with an invalid checksum.</p>'
+        info: '<p>接收SCTP数据包时遇到的错误数量。</p>'+
+        '<p><b>无效</b> - 接收方无法识别适当关联的数据包。 '+
+        '<b>校验和</b> - 校验和无效的数据包。</p>'
     },
 
     'sctp.fragmentation': {
-        info: '<p>The number of fragmented and reassembled SCTP messages.</p>'+
-        '<p><b>Reassembled</b> - reassembled user messages, after conversion into DATA chunks. '+
-        '<b>Fragmented</b> - user messages that have to be fragmented because of the MTU.</p>'
+        info: '<p>碎片化和重新组装的SCTP消息的数量。</p>'+
+        '<p><b>重新组装</b> - 重新组装用户消息，在转换为数据块后。 '+
+        '<b>碎片化</b> - 由于MTU而不得不碎片化的用户消息。</p>'
     },
 
     'sctp.chunks': {
-        info: 'The number of transferred control, ordered, and unordered DATA chunks. '+
-        'Retransmissions and duplicates are not included.'
+        info: '传输控件、有序和无顺序数据块的数量。 '+
+        '不包括重播和重复。'
     },
 
     // ------------------------------------------------------------------------
     // Netfilter Connection Tracker
 
     'netfilter.conntrack_sockets': {
-        info: 'The number of entries in the conntrack table.'
+        info: 'Conntrack表中的条目数。'
     },
 
     'netfilter.conntrack_new': {
-        info: '<p>Packet tracking statistics. <b>New</b> (since v4.9) and <b>Ignore</b> (since v5.10) are hardcoded to zeros in the latest kernel.</p>'+
-        '<p><b>New</b> - conntrack entries added which were not expected before. '+
-        '<b>Ignore</b> - packets seen which are already connected to a conntrack entry. '+
-        '<b>Invalid</b> - packets seen which can not be tracked.</p>'
+        info: '<p>数据包跟踪统计信息。<b>新</b>（自v4.9以来）和<b>忽略</b>（自v5.10以来）在最新内核中被硬编码为零。</p>'+
+        '<p><b>新</b> - 添加以前意想不到的条目。 '+
+        '<b>忽略</b>-已连接到conntrack条目的数据包。 '+
+        '<b>无效</b> - 看到无法跟踪的数据包。</p>'
     },
 
     'netfilter.conntrack_changes': {
-        info: '<p>The number of changes in conntrack tables.</p>'+
-        '<p><b>Inserted</b>, <b>Deleted</b> - conntrack entries which were inserted or removed. '+
-        '<b>Delete-list</b> - conntrack entries which were put to dying list.</p>'
+        info: '<p>conntrack表格中的更改数量。</p>'+
+        '<p><b>插入</b>，<b>删除</b>-跟踪插入或删除的条目。 '+
+        '<b>删除列表</b> - 跟踪被列入垂死列表的条目。</p>'
     },
 
     'netfilter.conntrack_expect': {
-        info: '<p>The number of events in the "expect" table. '+
-        'Connection tracking expectations are the mechanism used to "expect" RELATED connections to existing ones. '+
-        'An expectation is a connection that is expected to happen in a period of time.</p>'+
-        '<p><b>Created</b>, <b>Deleted</b> - conntrack entries which were inserted or removed. '+
-        '<b>New</b> - conntrack entries added after an expectation for them was already present.</p>'
+        info: '<p>“预期”表中的事件数量。 '+
+        '连接跟踪预期是用于“预期”与现有连接相关连接的机制。 '+
+        '期望是预计在一段时间内发生的连接。</p>'+
+        '<p><b>创建</b>，<b>删除</b>-跟踪插入或删除的条目。 '+
+        '<b>新</b> - 在对它们的预期已经存在后添加了conntrack条目。</p>'
     },
 
     'netfilter.conntrack_search': {
-        info: '<p>Conntrack table lookup statistics.</p>'+
-        '<p><b>Searched</b> - conntrack table lookups performed. '+
-        '<b>Restarted</b> - conntrack table lookups which had to be restarted due to hashtable resizes. '+
-        '<b>Found</b> - conntrack table lookups which were successful.</p>'
+        info: '<p>Conntrack表查找统计信息。</p>'+
+        '<p><b>Searched</b> - 进行conntrack 表格查找。 '+
+        '<b>重新启动</b>-由于散列调整大小而不得不重新启动的conntrack表查找。 '+
+        '<b>找到</b>-成功跟踪表格查找。</p>'
     },
 
     'netfilter.conntrack_errors': {
-        info: '<p>Conntrack errors.</p>'+
-        '<p><b>IcmpError</b> - packets which could not be tracked due to error situation. '+
-        '<b>InsertFailed</b> - entries for which list insertion was attempted but failed '+
-        '(happens if the same entry is already present). '+
-        '<b>Drop</b> - packets dropped due to conntrack failure. '+
-        'Either new conntrack entry allocation failed, or protocol helper dropped the packet. '+
-        '<b>EarlyDrop</b> - dropped conntrack entries to make room for new ones, if maximum table size was reached.</p>'
+        info: '<p>Conntrack错误。</p>'+
+        '<p><b>IcmpError</b> - 由于错误情况无法跟踪的数据包。 '+
+        '<b>插入失败</b> - 尝试插入列表但失败的条目 '+
+        '（如果同一条目已经存在，则可能）。 '+
+        '<b>Drop</b> - 由于conntrack失败而删除的数据包。 '+
+        '要么新的conntrack条目分配失败，要么协议帮助程序删除数据包。 '+
+        '<b>EarlyDrop</b> - 如果达到最大表大小，请删除conntrack条目，为新条目腾出空间。</p>'
     },
 
     'netfilter.synproxy_syn_received': {
-        info: 'The number of initial TCP SYN packets received from clients.'
+        info: '从客户端收到的初始TCP SYN数据包的数量。'
     },
 
     'netfilter.synproxy_conn_reopened': {
-        info: 'The number of reopened connections by new TCP SYN packets directly from the TIME-WAIT state.'
+        info: '直接从TIME-WAIT状态由新的TCP SYN数据包重新打开连接的数量。'
     },
 
     'netfilter.synproxy_cookies': {
-        info: '<p>SYNPROXY cookie statistics.</p>'+
-        '<p><b>Valid</b>, <b>Invalid</b> - result of cookie validation in TCP ACK packets received from clients. '+
-        '<b>Retransmits</b> - TCP SYN packets retransmitted to the server. '+
-        'It happens when the client repeats TCP ACK and the connection to the server is not yet established.</p>'
+        info: '<p>SYNPROXY Cookie统计。</p>'+
+        '<p><b>有效</b>，<b>无效</b>-从客户端收到的TCP ACK数据包中的cookie验证结果。 '+
+        '<b>重新传输</b> - TCP SYN数据包重新传输到服务器。 '+
+        '当客户端重复TCP ACK且与服务器的连接尚未建立时，就会发生这种情况。</p>'
     },
 
     // ------------------------------------------------------------------------
@@ -2235,226 +2235,226 @@ netdataDashboard.context = {
 
     // APPS cpu
     'apps.cpu': {
-        info: 'Total CPU utilization (all cores). It includes user, system and guest time.'
+        info: 'CPU总利用率（所有内核）。它包括用户、系统和客人时间。'
     },
     'groups.cpu': {
-        info: 'Total CPU utilization (all cores). It includes user, system and guest time.'
+        info: 'CPU总利用率（所有内核）。它包括用户、系统和客人时间。'
     },
     'users.cpu': {
-        info: 'Total CPU utilization (all cores). It includes user, system and guest time.'
+        info: 'CPU总利用率（所有内核）。它包括用户、系统和客人时间。'
     },
 
     'apps.cpu_user': {
-        info: 'The amount of time the CPU was busy executing code in '+
-        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">user mode</a> (all cores).'
+        info: 'CPU 忙于执行代码所需的时间 '+
+        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">用户模式</a>（所有核心）。'
     },
     'groups.cpu_user': {
-        info: 'The amount of time the CPU was busy executing code in '+
-        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">user mode</a> (all cores).'
+        info: 'CPU 忙于执行代码所需的时间 '+
+        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">用户模式</a>（所有核心）。'
     },
     'users.cpu_user': {
-        info: 'The amount of time the CPU was busy executing code in '+
-        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">user mode</a> (all cores).'
+        info: 'TCPU忙于执行代码的大量时间 '+
+        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">用户模式</a>（所有核心）。'
     },
 
     'apps.cpu_system': {
-        info: 'The amount of time the CPU was busy executing code in '+
-        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">kernel mode</a> (all cores).'
+        info: 'CPU 忙于执行代码所需的时间 '+
+        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">内核模式</a>（所有内核）。'
     },
     'groups.cpu_system': {
-        info: 'The amount of time the CPU was busy executing code in '+
-        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">kernel mode</a> (all cores).'
+        info: 'CPU 忙于执行代码所需的时间 '+
+        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">内核模式</a>（所有内核）。'
     },
     'users.cpu_system': {
-        info: 'The amount of time the CPU was busy executing code in '+
-        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">kernel mode</a> (all cores).'
+        info: 'CPU 忙于执行代码所需的时间 '+
+        '<a href="https://en.wikipedia.org/wiki/CPU_modes#Mode_types" target="_blank">内核模式</a>（所有内核）。'
     },
 
     'apps.cpu_guest': {
-        info: 'The amount of time spent running a virtual CPU for a guest operating system (all cores).'
+        info: '为来宾操作系统（所有内核）运行虚拟CPU所花费的时间。'
     },
     'groups.cpu_guest': {
-        info: 'The amount of time spent running a virtual CPU for a guest operating system (all cores).'
+        info: '为来宾操作系统（所有内核）运行虚拟CPU所花费的时间。'
     },
     'users.cpu_guest': {
-        info: 'The amount of time spent running a virtual CPU for a guest operating system (all cores).'
+        info: '为来宾操作系统（所有内核）运行虚拟CPU所花费的时间。'
     },
 
     // APPS disk
     'apps.preads': {
-        info: 'The amount of data that has been read from the storage layer. '+
-        'Actual physical disk I/O was required.'
+        info: '从存储层读取的数据量。 '+
+        '需要实际的物理磁盘I/O。'
     },
     'groups.preads': {
-        info: 'The amount of data that has been read from the storage layer. '+
-        'Actual physical disk I/O was required.'
+        info: '从存储层读取的数据量。 '+
+        '需要实际的物理磁盘I/O。'
     },
     'users.preads': {
-        info: 'The amount of data that has been read from the storage layer. '+
-        'Actual physical disk I/O was required.'
+        info: '从存储层读取的数据量。 '+
+        '需要实际的物理磁盘I/O。'
     },
 
     'apps.pwrites': {
-        info: 'The amount of data that has been written to the storage layer. '+
-        'Actual physical disk I/O was required.'
+        info: '已写入存储层的数据量。 '+
+        '需要实际的物理磁盘I/O。'
     },
     'groups.pwrites': {
-        info: 'The amount of data that has been written to the storage layer. '+
-        'Actual physical disk I/O was required.'
+        info: '已写入存储层的数据量。 '+
+        '需要实际的物理磁盘I/O。'
     },
     'users.pwrites': {
-        info: 'The amount of data that has been written to the storage layer. '+
-        'Actual physical disk I/O was required.'
+        info: '已写入存储层的数据量。 '+
+        '需要实际的物理磁盘I/O。'
     },
 
     'apps.lreads': {
-        info: 'The amount of data that has been read from the storage layer. '+
-        'It includes things such as terminal I/O and is unaffected by whether or '+
-        'not actual physical disk I/O was required '+
-        '(the read might have been satisfied from pagecache).'
+        info: '从存储层读取的数据量。 '+
+        '它包括I/O终端等内容，不受是否或 '+
+        '不是实际的物理磁盘I/O是必需的 '+
+        '（读数可能已从pagecache中满意）。'
     },
     'groups.lreads': {
-        info: 'The amount of data that has been read from the storage layer. '+
-        'It includes things such as terminal I/O and is unaffected by whether or '+
-        'not actual physical disk I/O was required '+
-        '(the read might have been satisfied from pagecache).'
+        info: '从存储层读取的数据量。 '+
+        '它包括I/O终端等内容，不受是否或 '+
+        '不是实际的物理磁盘I/O是必需的 '+
+        '（读数可能已从pagecache中满意）。'
     },
     'users.lreads': {
-        info: 'The amount of data that has been read from the storage layer. '+
-        'It includes things such as terminal I/O and is unaffected by whether or '+
-        'not actual physical disk I/O was required '+
-        '(the read might have been satisfied from pagecache).'
+        info: '从存储层读取的数据量。 '+
+        '它包括I/O终端等内容，不受是否或 '+
+        '不是实际的物理磁盘I/O是必需的 '+
+        '（读数可能已从pagecache中满意）。'
     },
 
     'apps.lwrites': {
-        info: 'The amount of data that has been written or shall be written to the storage layer. '+
-        'It includes things such as terminal I/O and is unaffected by whether or '+
-        'not actual physical disk I/O was required.'
+        info: '已写入或应写入存储层的数据量。 '+
+        '它包括I/O终端等内容，不受是否或 '+
+        '不是需要实际的物理磁盘I/O。'
     },
     'groups.lwrites': {
-        info: 'The amount of data that has been written or shall be written to the storage layer. '+
-        'It includes things such as terminal I/O and is unaffected by whether or '+
-        'not actual physical disk I/O was required.'
+        info: '已写入或应写入存储层的数据量。 '+
+        '它包括I/O终端等内容，不受是否或 '+
+        '不是需要实际的物理磁盘I/O。'
     },
     'users.lwrites': {
-        info: 'The amount of data that has been written or shall be written to the storage layer. '+
-        'It includes things such as terminal I/O and is unaffected by whether or '+
-        'not actual physical disk I/O was required.'
+        info: '已写入或应写入存储层的数据量。 '+
+        '它包括I/O终端等内容，不受是否或 '+
+        '不是需要实际的物理磁盘I/O。'
     },
 
     'apps.files': {
-        info: 'The number of open files and directories.'
+        info: '打开的文件和目录的数量。'
     },
     'groups.files': {
-        info: 'The number of open files and directories.'
+        info: '打开的文件和目录的数量。'
     },
     'users.files': {
-        info: 'The number of open files and directories.'
+        info: '打开的文件和目录的数量。'
     },
 
     // APPS mem
     'apps.mem': {
-        info: 'Real memory (RAM) used by applications. This does not include shared memory.'
+        info: '应用程序使用的真实内存（RAM）。这不包括共享内存。'
     },
     'groups.mem': {
-        info: 'Real memory (RAM) used per user group. This does not include shared memory.'
+        info: '每个用户组使用的真实内存（RAM）。这不包括共享内存。'
     },
     'users.mem': {
-        info: 'Real memory (RAM) used per user group. This does not include shared memory.'
+        info: '每个用户组使用的真实内存（RAM）。这不包括共享内存。'
     },
 
     'apps.vmem': {
-        info: 'Virtual memory allocated by applications. '+
-        'Check <a href="https://github.com/netdata/netdata/tree/master/daemon#virtual-memory" target="_blank">this article</a> for more information.'
+        info: '由应用程序分配的虚拟内存。 '+
+        '有关更多信息，请查看<a href="https://github.com/netdata/netdata/tree/master/daemon#virtual-memory" target="_blank">本文</a>。'
     },
     'groups.vmem': {
-        info: 'Virtual memory allocated per user group since the Netdata restart. Please check <a href="https://github.com/netdata/netdata/tree/master/daemon#virtual-memory" target="_blank">this article</a> for more information.'
+        info: '自Netdata重新启动以来，每个用户组分配的虚拟内存。有关更多信息，请查看<a href="https://github.com/netdata/netdata/tree/master/daemon#virtual-memory" target="_blank">本文</a>。'
     },
     'users.vmem': {
-        info: 'Virtual memory allocated per user group since the Netdata restart. Please check <a href="https://github.com/netdata/netdata/tree/master/daemon#virtual-memory" target="_blank">this article</a> for more information.'
+        info: '自Netdata重新启动以来，每个用户组分配的虚拟内存。有关更多信息，请查看<a href="https://github.com/netdata/netdata/tree/master/daemon#virtual-memory" target="_blank">本文</a>。'
     },
 
     'apps.minor_faults': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Page_fault#Minor" target="_blank">minor faults</a> '+
-        'which have not required loading a memory page from the disk. '+
-        'Minor page faults occur when a process needs data that is in memory and is assigned to another process. '+
-        'They share memory pages between multiple processes – '+
-        'no additional data needs to be read from disk to memory.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_fault#Minor" target="_blank">小故障</a>的数量 '+
+        '不需要从磁盘加载内存页面。 '+
+        '当一个进程需要内存中的数据并分配给另一个进程时，会出现轻微的页面故障。 '+
+        '他们在多个进程之间共享内存页面—— '+
+        '无需将其他数据从磁盘读取到内存。'
     },
     'groups.minor_faults': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Page_fault#Minor" target="_blank">minor faults</a> '+
-        'which have not required loading a memory page from the disk. '+
-        'Minor page faults occur when a process needs data that is in memory and is assigned to another process. '+
-        'They share memory pages between multiple processes – '+
-        'no additional data needs to be read from disk to memory.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_fault#Minor" target="_blank">小故障</a>的数量 '+
+        '不需要从磁盘加载内存页面。 '+
+        '当一个进程需要内存中的数据并分配给另一个进程时，会出现轻微的页面故障。 '+
+        '他们在多个进程之间共享内存页面—— '+
+        '无需将其他数据从磁盘读取到内存。'
     },
     'users.minor_faults': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Page_fault#Minor" target="_blank">minor faults</a> '+
-        'which have not required loading a memory page from the disk. '+
-        'Minor page faults occur when a process needs data that is in memory and is assigned to another process. '+
-        'They share memory pages between multiple processes – '+
-        'no additional data needs to be read from disk to memory.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_fault#Minor" target="_blank">小故障</a>的数量 '+
+        '不需要从磁盘加载内存页面。 '+
+        '当一个进程需要内存中的数据并分配给另一个进程时，会出现轻微的页面故障。 '+
+        '他们在多个进程之间共享内存页面——'+
+        '无需将其他数据从磁盘读取到内存。'
     },
 
     // APPS processes
     'apps.threads': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Thread_(computing)" target="_blank">threads</a>.'
+        info: '<a href="https://en.wikipedia.org/wiki/Thread_(computing)" target="_blank">线程</a>的数量。'
     },
     'groups.threads': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Thread_(computing)" target="_blank">threads</a>.'
+        info: '<a href="https://en.wikipedia.org/wiki/Thread_(computing)" target="_blank">线程</a>的数量。'
     },
     'users.threads': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Thread_(computing)" target="_blank">threads</a>.'
+        info: '<a href="https://en.wikipedia.org/wiki/Thread_(computing)" target="_blank">线程</a>的数量。'
     },
 
     'apps.processes': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Process_(computing)" target="_blank">processes</a>.'
+        info: '<a href="https://en.wikipedia.org/wiki/Process_(computing)" target="_blank">进程</a>的数量。'
     },
     'groups.processes': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Process_(computing)" target="_blank">processes</a>.'
+        info: '<a href="https://en.wikipedia.org/wiki/Process_(computing)" target="_blank">进程</a>的数量。'
     },
     'users.processes': {
-        info: 'The number of <a href="https://en.wikipedia.org/wiki/Process_(computing)" target="_blank">processes</a>.'
+        info: '<a href="https://en.wikipedia.org/wiki/Process_(computing)" target="_blank">进程</a>的数量。'
     },
 
     'apps.uptime': {
-        info: 'The period of time within which at least one process in the group has been running.'
+        info: '组中至少一个进程运行的时间段。'
     },
     'groups.uptime': {
-        info: 'The period of time within which at least one process in the group has been running.'
+        info: '组中至少一个进程运行的时间段。'
     },
     'users.uptime': {
-        info: 'The period of time within which at least one process in the group has been running.'
+        info: '组中至少一个进程运行的时间段。'
     },
 
     'apps.uptime_min': {
-        info: 'The shortest uptime among processes in the group.'
+        info: '组中进程中最短的正常运行时间。'
     },
     'groups.uptime_min': {
-        info: 'The shortest uptime among processes in the group.'
+        info: '组中进程中最短的正常运行时间。'
     },
     'users.uptime_min': {
-        info: 'The shortest uptime among processes in the group.'
+        info: '组中进程中最短的正常运行时间。'
     },
 
     'apps.uptime_avg': {
-        info: 'The average uptime of processes in the group.'
+        info: '组中进程的平均正常运行时间。'
     },
     'groups.uptime_avg': {
-        info: 'The average uptime of processes in the group.'
+        info: '组中进程的平均正常运行时间。'
     },
     'users.uptime_avg': {
-        info: 'The average uptime of processes in the group.'
+        info: '组中进程的平均正常运行时间。'
     },
 
     'apps.uptime_max': {
-        info: 'The longest uptime among processes in the group.'
+        info: '组中进程中最长的正常运行时间。'
     },
     'groups.uptime_max': {
-        info: 'The longest uptime among processes in the group.'
+        info: '组中进程中最长的正常运行时间。'
     },
     'users.uptime_max': {
-        info: 'The longest uptime among processes in the group.'
+        info: '组中进程中最长的正常运行时间。'
     },
 
     'apps.pipes': {
