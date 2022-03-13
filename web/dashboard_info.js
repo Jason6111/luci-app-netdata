@@ -123,13 +123,13 @@ netdataDashboard.menu = {
     },
 
     'netfilter': {
-        title: '防火墙 (netfilter)',
+        title: '防火墙(netfilter)',
         icon: '<i class="fas fa-shield-alt"></i>',
         info: 'netfilter组件的性能指标。'
     },
 
     'ipfw': {
-        title: '防火墙 (ipfw)',
+        title: '防火墙(ipfw)',
         icon: '<i class="fas fa-shield-alt"></i>',
         info: 'ipfw规则的计数器和内存使用情况。'
     },
@@ -199,15 +199,15 @@ netdataDashboard.menu = {
     'nfs': {
         title: 'NFS客户端',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the '+
+        info: '绩效指标 '+
         '<a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">NFS</a> '+
-        'operations of this system, acting as an NFS client.'
+        '该系统作为NFS客户端的操作。'
     },
 
     'zfs': {
         title: 'ZFS文件系统',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the '+
+        info: '绩效指标 '+
         '<a href="https://en.wikipedia.org/wiki/ZFS#Caching_mechanisms" target="_blank">ZFS ARC and L2ARC</a>. '+
         'ZFS档案系统的效能指标。以下图表呈现来自 '+
         '<a href="https://github.com/openzfs/zfs/blob/master/cmd/arcstat/arcstat.in" target="_blank">arcstat.py</a> 与 '+
@@ -217,7 +217,7 @@ netdataDashboard.menu = {
     'zfspool': {
         title: 'ZFS pools',
         icon: '<i class="fas fa-database"></i>',
-        info: 'State of ZFS pools.'
+        info: 'ZFS的状态。'
     },
 
     'btrfs': {
@@ -229,37 +229,37 @@ netdataDashboard.menu = {
     'apps': {
         title: '应用程序',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Per application statistics are collected using '+
+        info: '每个应用程序的统计数据使用 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin" target="_blank">apps.plugin</a>. '+
-        'This plugin walks through all processes and aggregates statistics for '+
+        '这个插件会浏览所有流程，并汇总 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin#configuration" target="_blank">application groups</a>. '+
-        'The plugin also counts the resources of exited children. '+
-        'So for processes like shell scripts, the reported values include the resources used by the commands '+
-        'these scripts run within each timeframe.',
+        '该插件还计算退出子项的资源。 '+
+        '因此，对于shell脚本等进程，报告的值包括命令使用的资源 '+
+        '这些脚本在每个时间范围内运行。',
         height: 1.5
     },
 
     'groups': {
         title: '用户组',
         icon: '<i class="fas fa-user"></i>',
-        info: 'Per user group statistics are collected using '+
+        info: '每个用户组的统计数据使用 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin" target="_blank">apps.plugin</a>. '+
-        'This plugin walks through all processes and aggregates statistics per user group. '+
-        'The plugin also counts the resources of exited children. '+
-        'So for processes like shell scripts, the reported values include the resources used by the commands '+
-        'these scripts run within each timeframe.',
+        '此插件浏览所有流程，并汇总每个用户组的统计数据。 '+
+        '该插件还计算退出子项的资源。 '+
+        '因此，对于shell脚本等进程，报告的值包括命令使用的资源 '+
+        '这些脚本在每个时间范围内运行。',
         height: 1.5
     },
 
     'users': {
         title: '用户',
         icon: '<i class="fas fa-users"></i>',
-        info: 'Per user statistics are collected using '+
+        info: '每个用户的统计数据是使用 '+
         '<a href="https://learn.netdata.cloud/docs/agent/collectors/apps.plugin" target="_blank">apps.plugin</a>. '+
-        'This plugin walks through all processes and aggregates statistics per user. '+
-        'The plugin also counts the resources of exited children. '+
-        'So for processes like shell scripts, the reported values include the resources used by the commands '+
-        'these scripts run within each timeframe.',
+        '此插件浏览所有流程，并汇总每个用户的统计数据。 '+
+        '该插件还计算退出子项的资源。 '+
+        '因此，对于shell脚本等进程，报告的值包括命令使用的资源 '+
+        '这些脚本在每个时间范围内运行。',
         height: 1.5
     },
 
@@ -294,43 +294,43 @@ netdataDashboard.menu = {
     'fping': {
         title: 'fping',
         icon: '<i class="fas fa-exchange-alt"></i>',
-        info: 'Network latency statistics, via <b>fping</b>. <b>fping</b> is a program to send ICMP echo probes to network hosts, similar to <code>ping</code>, but much better performing when pinging multiple hosts. fping versions after 3.15 can be directly used as netdata plugins.'
+        info: '网络延迟统计，通过<b>fping</b>。<b>fping</b>是一个向网络主机发送ICMP回声探针的程序，类似于<code>ping</code>，但在ping多个主机时性能要好得多。3.15之后的fping版本可以直接用作netdata插件。'
     },
 
     'gearman': {
         title: 'Gearman',
         icon: '<i class="fas fa-tasks"></i>',
-        info: 'Gearman is a job server that allows you to do work in parallel, to load balance processing, and to call functions between languages.'
+        info: 'Gearman是一个工作服务器，允许您并行工作，加载平衡处理，并在语言之间调用函数。'
     },
 
     'ioping': {
         title: 'ioping',
         icon: '<i class="fas fa-exchange-alt"></i>',
-        info: 'Disk latency statistics, via <b>ioping</b>. <b>ioping</b> is a program to read/write data probes from/to a disk.'
+        info: '磁盘延迟统计，通过<b>ioping</b>。<b>ioping</b>是一个从/到磁盘读取/写入数据探针的程序。'
     },
 
     'httpcheck': {
         title: 'Http Check',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Web Service availability and latency monitoring using HTTP checks. This plugin is a specialized version of the port check plugin.'
+        info: '使用HTTP检查进行Web服务可用性和延迟监控。此插件是端口检查插件的专用版本。'
     },
 
     'memcached': {
         title: 'memcached',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>memcached</b>. Memcached is a general-purpose distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read.'
+        info: '<b>memcached</b>的绩效指标。Memcached是一个通用的分布式内存缓存系统。它通常用于通过在RAM中缓存数据和对象来加快动态数据库驱动的网站，以减少外部数据源（如数据库或API）必须读取的次数。'
     },
 
     'monit': {
         title: 'monit',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Statuses of checks in <b>monit</b>. Monit is a utility for managing and monitoring processes, programs, files, directories and filesystems on a Unix system. Monit conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.'
+        info: '<b>监控</b>中的检查状态。Monit是一个用于管理和监控Unix系统上的流程、程序、文件、目录和文件系统的实用工具。Monit进行自动维护和维修，并在错误情况下执行有意义的因果行为。'
     },
 
     'mysql': {
         title: 'MySQL',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>mysql</b>, the open-source relational database management system (RDBMS).'
+        info: '开源关系数据库管理系统（RDBMS）<b>mysql</b>的绩效指标。'
     },
 
     'postgres': {
