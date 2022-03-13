@@ -27,30 +27,30 @@ netdataDashboard.menu = {
     },
 
     'ap': {
-        title: 'Access Points',
+        title: 'AP接入点',
         icon: '<i class="fas fa-wifi"></i>',
-        info: 'Performance metrics for the access points (i.e. wireless interfaces in AP mode) found on the system.'
+        info: '系统上找到的接入点（即AP模式下的无线接口）的指标。'
     },
 
     'tc': {
-        title: 'Quality of Service',
+        title: 'Quality服务',
         icon: '<i class="fas fa-globe"></i>',
-        info: 'Netdata collects and visualizes <code>tc</code> class utilization using its ' +
-            '<a href="https://github.com/netdata/netdata/blob/master/collectors/tc.plugin/tc-qos-helper.sh.in" target="_blank">tc-helper plugin</a>. ' +
-            'If you also use <a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a> for setting up QoS, ' +
-            'netdata automatically collects interface and class names. If your QoS configuration includes overheads ' +
-            'calculation, the values shown here will include these overheads (the total bandwidth for the same ' +
-            'interface as reported in the Network Interfaces section, will be lower than the total bandwidth ' +
-            'reported here). QoS data collection may have a slight time difference compared to the interface ' +
-            '(QoS data collection uses a BASH script, so a shift in data collection of a few milliseconds ' +
-            'should be justified).'
+        info: 'Netdata使用其收集和可视化<code>tc</code>类利用率 ' +
+            '<a href="https://github.com/netdata/netdata/blob/master/collectors/tc.plugin/tc-qos-helper.sh.in" target="_blank">Tc-helper插件</a>. ' +
+            '如果您也使用<a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>来设置QoS， ' +
+            'Netdata会自动收集接口和类名。如果您的QoS配置包含间接费用 ' +
+            '计算，这里显示的值将包括这些开销（相同的总带宽 ' +
+            '“网络接口”部分中报告的接口将低于总带宽 ' +
+            '这里报告了）。与界面相比，QoS数据收集可能略有时差 ' +
+            '（QoS数据收集使用BASH脚本，因此数据收集的转移几毫秒 ' +
+            '应该有正当理由）。'
     },
 
     'net': {
         title: '网络接口',
         icon: '<i class="fas fa-sitemap"></i>',
-        info: '<p>Performance <a href="https://www.kernel.org/doc/html/latest/networking/statistics.html" target="_blank">网路介面的效能指标。</a>.</p>'+
-        '<p>Netdata retrieves this data reading the <code>/proc/net/dev</code> file and <code>/sys/class/net/</code> directory.</p>'
+        info: '<p>运转 <a href="https://www.kernel.org/doc/html/latest/networking/statistics.html" target="_blank">网路介面的效能指标。</a>.</p>'+
+        '<p>Netdata检索读取<code>/proc/net/dev</code>文件和<code>/sys/class/net/</code>目录的数据。</p>'
     },
 
     'Infiniband': {
