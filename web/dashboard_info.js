@@ -895,35 +895,35 @@ netdataDashboard.submenu = {
         title: 'softnet',
         info: function (os) {
             if (os === 'linux')
-                return '<p>Statistics for CPUs SoftIRQs related to network receive work. '+
-                'Total for all CPU cores can be found at <a href="#menu_system_submenu_softnet_stat">System / softnet statistics</a>. '+
-                'More information about identifying and troubleshooting network driver related issues can be found at '+
-                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">Red Hat Enterprise Linux Network Performance Tuning Guide</a>.</p>'+
-                '<p><b>Processed</b> - packets processed. '+
-                '<b>Dropped</b> - packets dropped because the network device backlog was full. '+
-                '<b>Squeezed</b> - number of times the network device budget was consumed or the time limit was reached, '+
-                'but more work was available. '+
-                '<b>ReceivedRPS</b> - number of times this CPU has been woken up to process packets via an Inter-processor Interrupt. '+
-                '<b>FlowLimitCount</b> - number of times the flow limit has been reached (flow limiting is an optional '+
-                'Receive Packet Steering feature).</p>';
+                return '<p>与网络接收工作相关的CPU SoftIRQ的统计数据。 '+
+                '所有CPU内核的总和可在<a href="#menu_system_submenu_softnet_stat">系统/软网统计</a>中找到。 '+
+                '有关识别网络驱动程序相关问题并进行故障诊断的更多信息，请参阅 '+
+                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">红帽企业Linux网络性能调优指南</a>。</p>'+
+                '<p><b>已处理</b> - 处理数据包。 '+
+                '<b>已删除</b> - 由于网络设备积压已满，数据包已丢失。 '+
+                '<b>挤压</b> - 网络设备预算消耗或达到时限的次数， '+
+                '但还有更多工作要做。 '+
+                '<b>ReceivedRPS</b> - 这个CPU被唤醒通过处理器间中断处理数据包的次数。 '+
+                '<b>流量限制计数</b> - 达到流量限制的次数（流量限制是可选的 '+
+                '接收数据包转向功能）。</p>';
             else
-                return 'Statistics for per CPUs core SoftIRQs related to network receive work. Total for all CPU cores can be found at <a href="#menu_system_submenu_softnet_stat">System / softnet statistics</a>.';
+                return '与网络接收工作相关的每个CPU核心SoftIRQ的统计数据。所有CPU内核的总和可在<a href="#menu_system_submenu_softnet_stat">系统/软网统计</a>中找到。';
         }
     },
 
     'go_expvar.memstats': {
         title: 'memory statistics',
-        info: 'Go runtime memory statistics. See <a href="https://golang.org/pkg/runtime/#MemStats" target="_blank">runtime.MemStats</a> documentation for more info about each chart and the values.'
+        info: '运行时内存统计。有关每个图表和值的更多信息，请参阅<a href="https://golang.org/pkg/runtime/#MemStats" target="_blank">runtime.MemStats</a>文档。'
     },
 
     'couchdb.dbactivity': {
         title: 'db activity',
-        info: 'Overall database reads and writes for the entire server. This includes any external HTTP traffic, as well as internal replication traffic performed in a cluster to ensure node consistency.'
+        info: '整个数据库为整个服务器读取和写入。这包括任何外部HTTP流量，以及在集群中执行的内部复制流量，以确保节点一致性。'
     },
 
     'couchdb.httptraffic': {
         title: 'http traffic breakdown',
-        info: 'All HTTP traffic, broken down by type of request (<tt>GET</tt>, <tt>PUT</tt>, <tt>POST</tt>, etc.) and response status code (<tt>200</tt>, <tt>201</tt>, <tt>4xx</tt>, etc.)<br/><br/>Any <tt>5xx</tt> errors here indicate a likely CouchDB bug; check the logfile for further information.'
+        info: '所有HTTP流量，按请求类型（<tt>GET</tt>、<tt>PUT</tt>、<tt>POST</tt>等）和响应状态代码（<tt>200</tt>、<tt>201</tt>、<tt>4xx</tt>等）<br/><br/>此处的任何<tt>5xx</tt>错误都表示可能存在CouchDB错误；请查看日志文件以了解更多信息。'
     },
 
     'couchdb.ops': {
@@ -932,111 +932,111 @@ netdataDashboard.submenu = {
 
     'couchdb.perdbstats': {
         title: 'per db statistics',
-        info: 'Statistics per database. This includes <a href="http://docs.couchdb.org/en/latest/api/database/common.html#get--db" target="_blank">3 size graphs per database</a>: active (the size of live data in the database), external (the uncompressed size of the database contents), and file (the size of the file on disk, exclusive of any views and indexes). It also includes the number of documents and number of deleted documents per database.'
+        info: '每个数据库的统计数据。这包括<a href="http://docs.couchdb.org/en/latest/api/database/common.html#get--db" target="_blank">每个数据库3个大小的图表</a>：活动（数据库中实时数据的大小）、外部（数据库内容的未压缩大小）和文件（磁盘上文件的大小，不包括任何视图和索引）。它还包括每个数据库的文件数量和删除的文件数量。'
     },
 
     'couchdb.erlang': {
         title: 'erlang statistics',
-        info: 'Detailed information about the status of the Erlang VM that hosts CouchDB. These are intended for advanced users only. High values of the peak message queue (>10e6) generally indicate an overload condition.'
+        info: '有关托管CouchDB的Erlang VM状态的详细信息。这些仅适用于高级用户。峰值消息队列的高值（>10e6）通常表示重载条件。'
     },
 
     'ntpd.system': {
         title: 'system',
-        info: 'Statistics of the system variables as shown by the readlist billboard <code>ntpq -c rl</code>. System variables are assigned an association ID of zero and can also be shown in the readvar billboard <code>ntpq -c "rv 0"</code>. These variables are used in the <a href="http://doc.ntp.org/current-stable/discipline.html" target="_blank">Clock Discipline Algorithm</a>, to calculate the lowest and most stable offset.'
+        info: '阅读列表广告牌<code>ntpq -c rl</code>所示的系统变量统计信息。系统变量被分配为零的关联ID，也可以显示在readvar广告牌<code>ntpq -c“rv 0”</code>中。这些变量用于<a href="http://doc.ntp.org/current-stable/discipline.html" target="_blank">时钟纪律算法</a>，以计算最低和最稳定的偏移量。'
     },
 
     'ntpd.peers': {
         title: 'peers',
-        info: 'Statistics of the peer variables for each peer configured in <code>/etc/ntp.conf</code> as shown by the readvar billboard <code>ntpq -c "rv &lt;association&gt;"</code>, while each peer is assigned a nonzero association ID as shown by <code>ntpq -c "apeers"</code>. The module periodically scans for new/changed peers (default: every 60s). <b>ntpd</b> selects the best possible peer from the available peers to synchronize the clock. A minimum of at least 3 peers is required to properly identify the best possible peer.'
+        info: '在<code>/etc/ntp.conf</code>中配置的每个对等变量的统计信息，如readvar广告牌<code>ntpq -c“rv &lt;association&gt;”</code>所示，而每个对等方都分配了一个非零关联ID，如<code>ntpq -c“apeers”</code>所示。该模块定期扫描新的/更改的对等机（默认：每60秒一次）。<b>ntpd</b>从可用对等机中选择最佳对等机来同步时钟。至少需要3名同行才能正确识别最佳同行。'
     },
 
     'mem.page_cache': {
         title: 'page cache (eBPF)',
-        info: 'Monitor calls to functions used to manipulate <a href="https://en.wikipedia.org/wiki/Page_cache" target="_blank">Linux page cache</a>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows page cache manipulation per <a href="#menu_apps_submenu_page_cache">application</a>.'
+        info: '监控对用于操作<a href="https://en.wikipedia.org/wiki/Page_cache" target="_blank">Linux页面缓存</a>的函数的调用。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_page_cache">应用程序</a>显示页面缓存操作。'
     },
 
     'apps.page_cache': {
         title: 'page cache (eBPF)',
-        info: 'Netdata also gives a summary for these charts in <a href="#menu_mem_submenu_page_cache">Memory submenu</a>.'
+        info: 'Netdata还在<a href="#menu_mem_submenu_page_cache">内存子菜单</a>中对这些图表进行了摘要。'
     },
 
     'filesystem.vfs': {
         title: 'vfs (eBPF)',
-        info: 'Monitor calls to functions used to manipulate <a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#vfs" target="_blank">File Systems</a>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows Virtual File System per <a href="#menu_apps_submenu_vfs">application</a>.'
+        info: '监控对用于操作<a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#vfs" target="_blank">文件系统</a>的调用。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_vfs">应用程序</a>显示虚拟文件系统。'
     },
 
     'apps.vfs': {
         title: 'vfs (eBPF)',
-        info: 'Netdata also gives a summary for these charts in <a href="#menu_filesystem_submenu_vfs">Filesystem submenu</a>.'
+        info: 'Netdata还在<a href="#menu_filesystem_submenu_vfs">文件系统子菜单</a>中对这些图表进行了摘要。'
     },
 
     'filesystem.ext4_latency': {
         title: 'ext4 latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="http://www.brendangregg.com/blog/2016-10-06/linux-bcc-ext4dist-ext4slower.html" target="_blank">ext4dist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="http://www.brendangregg.com/blog/2016-10-06/linux-bcc-ext4dist-ext4slower.html" target="_blank">ext4dist</a>。'
     },
 
     'filesystem.xfs_latency': {
         title: 'xfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/xfsdist_example.txt" target="_blank">xfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/xfsdist_example.txt" target="_blank">xfsdist</a>。'
     },
 
     'filesystem.nfs_latency': {
         title: 'nfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/nfsdist_example.txt" target="_blank">nfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/nfsdist_example.txt" target="_blank">nfsdist</a>。'
     },
 
     'filesystem.zfs_latency': {
         title: 'zfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, this spans disk I/O, file system operations (lock, I/O), run queue latency and all events related to the monitored action. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/zfsdist_example.txt" target="_blank">zfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，这跨越磁盘I/O、文件系统操作（锁定、I/O）、运行队列延迟以及与监控操作相关的所有事件。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/zfsdist_example.txt" target="_blank">zfsdist</a>。'
     },
 
     'filesystem.btrfs_latency': {
         title: 'btrfs latency (eBPF)',
-        info: 'Latency is the time it takes for an event to be completed. We calculate the difference between the calling and return times, we get the logarithmic for the final result and we sum one value to the respective bin. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/btrfsdist_example.txt" target="_blank">btrfsdist</a> from BCC tools.'
+        info: '延迟是完成事件所需的时间。我们计算调用和返回时间之间的差异，获得最终结果的对数，并将一个值相加到各自的bin。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/btrfsdist_example.txt" target="_blank">btrfsdist</a>。'
     },
 
     'filesystem.file_access': {
         title: 'file access (eBPF)',
-        info: 'When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows file access per <a href="#menu_apps_submenu_file_access">application</a>.'
+        info: '当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_file_access">应用程序</a>显示文件访问权限。'
     },
 
     'apps.file_access': {
         title: 'file access (eBPF)',
-        info: 'Netdata also gives a summary for this chart on <a href="#menu_filesystem_submenu_file_access">Filesystem submenu</a> (more details on <a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#file" target="_blank">eBPF plugin file chart section</a>).'
+        info: 'Netdata还在<a href="#menu_filesystem_submenu_file_access">文件系统子菜单</a>上提供了此图表的摘要（有关<a href="https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin#file" target="_blank">eBPF插件文件图表部分</a>的更多详细信息）。'
     },
 
     'ip.kernel': {
         title: 'kernel functions (eBPF)',
-        info: 'Next charts are made when <code>ebpf.plugin</code> is running on your host. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows calls for kernel functions per <a href="#menu_apps_submenu_net">application</a>.'
+        info: '当<code>ebpf.plugin</code>在主机上运行时，会制作下一个图表。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_net">应用程序</a>显示对内核函数的调用。'
     },
 
     'apps.net': {
         title: 'network',
-        info: 'Netdata also gives a summary for eBPF charts in <a href="#menu_ip_submenu_kernel">Networking Stack submenu</a>.'
+        info: 'Netdata还总结了<a href="#menu_ip_submenu_kernel">网络堆栈子菜单</a>中的eBPF图表。'
     },
 
     'system.ipc semaphores': {
-        info: 'System V semaphores is an inter-process communication (IPC) mechanism. '+
+        info: '系统V信号量是一种进程间通信（IPC）机制。 '+
         'It allows processes or threads within a process to synchronize their actions. '+
-        'They are often used to monitor and control the availability of system resources such as shared memory segments. ' +
-        'For details, see <a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>. ' +
-        'To see the host IPC semaphore information, run <code>ipcs -us</code>. For limits, run <code>ipcs -ls</code>.'
+        '它们通常用于监控共享内存段等系统资源的可用性。 ' +
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>。 ' +
+        '要查看主机IPC信号量信息，请运行<code>ipcs -us</code>。对于限制，请运行<code>ipcs -ls</code>。'
     },
 
     'system.ipc shared memory': {
-        info: 'System V shared memory is an inter-process communication (IPC) mechanism. '+
-        'It allows processes to communicate information by sharing a region of memory. '+
-        'It is the fastest form of inter-process communication available since no kernel involvement occurs when data is passed between the processes (no copying). '+
-        'Typically, processes must synchronize their access to a shared memory object, using, for example, POSIX semaphores. '+
-        'For details, see <a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>. '+
-        'To see the host IPC shared memory information, run <code>ipcs -um</code>. For limits, run <code>ipcs -lm</code>.'
+        info: '系统共享内存是一种进程间通信（IPC）机制。 '+
+        '它允许进程通过共享内存区域来通信信息。 '+
+        '这是可用的最快进程间通信形式，因为当数据在进程之间传递时（没有复制），不会发生内核参与。 '+
+        '通常，进程必须同步对共享内存对象的访问，例如使用POSIX信号量。 '+
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>。 '+
+        '要查看主机IPC共享内存信息，请运行<code>ipcs -um</code>。对于限制，请运行<code>ipcs -lm</code>。'
     },
 
     'system.ipc message queues': {
-        info: 'System V message queues is an inter-process communication (IPC) mechanism. '+
-        'It allow processes to exchange data in the form of messages. '+
-        'For details, see <a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>. ' +
-        'To see the host IPC messages information, run <code>ipcs -uq</code>. For limits, run <code>ipcs -lq</code>.'
+        info: '系统消息队列是一种进程间通信（IPC）机制。 '+
+        '它允许进程以消息形式交换数据。 '+
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man7/svipc.7.html" target="_blank">svipc(7)</a>。 ' +
+        '要查看主机IPC消息信息，请运行<code>ipcs -uq</code>。对于限制，请运行<code>ipcs -lq</code>。'
     },
 
     'system.interrupts': {
@@ -1050,12 +1050,12 @@ netdataDashboard.submenu = {
     },
 
     'system.softirqs': {
-        info: 'Software interrupts (or "softirqs") are one of the oldest deferred-execution mechanisms in the kernel. '+
-        'Several tasks among those executed by the kernel are not critical: '+
-        'they can be deferred for a long period of time, if necessary. '+
-        'The deferrable tasks can execute with all interrupts enabled '+
-        '(softirqs are patterned after hardware interrupts). '+
-        'Taking them out of the interrupt handler helps keep kernel response time small.'
+        info: '软件中断（或“softirqs”）是内核中最古老的延迟执行机制之一。 '+
+        '内核执行的几项任务并不重要： '+
+        '如有必要，它们可以被长时间推迟。 '+
+        '在启用所有中断的情况下，可以执行可执行的任务 '+
+        '（软件在硬件中断后模式化）。 '+
+        '将它们从中断处理程序中取出有助于保持内核响应时间小。'
     },
 
     'cpu.softirqs': {
@@ -1064,19 +1064,19 @@ netdataDashboard.submenu = {
     },
 
     'cpu.interrupts': {
-        info: 'Total number of interrupts per CPU. '+
-        'To see the total number for the system check the <a href="#menu_system_submenu_interrupts">interrupts</a> section. '+
-        'The last column in <code>/proc/interrupts</code> provides an interrupt description or the device name that registered the handler for that interrupt.'
+        info: '每个CPU的中断总数。 '+
+        '要查看系统的总数，请查看<a href="#menu_system_submenu_interrupts">中断</a>部分。 '+
+        '<code>/proc/interrupts</code>的最后一列提供了中断描述或注册该中断处理程序的设备名称。'
     },
 
     'cpu.throttling': {
-        info: ' CPU throttling is commonly used to automatically slow down the computer '+
-        'when possible to use less energy and conserve battery.'
+        info: ' CPU节流通常用于自动减慢计算机的速度 '+
+        '在可能的情况下减少能源消耗并节省电池电量。'
     },
 
     'cpu.cpuidle': {
-        info: '<a href="https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Processor_states" target="_blank">Idle States (C-states)</a> '+
-        'are used to save power when the processor is idle.'
+        info: '<a href="https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Processor_states" target="_blank">空闲状态（C-states）</a> '+
+        '用于在处理器闲置时节省电力。'
     },
 
     'services.net': {
