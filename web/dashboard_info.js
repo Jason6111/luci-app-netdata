@@ -54,12 +54,12 @@ netdataDashboard.menu = {
     },
 
     'Infiniband': {
-        title: 'Infiniband ports',
+        title: 'Infiniband端口',
         icon: '<i class="fas fa-sitemap"></i>',
-        info: '<p>Performance and exception statistics for '+
-        '<a href="https://en.wikipedia.org/wiki/InfiniBand" target="_blank">Infiniband</a> ports. '+
-        'The individual port and hardware counter descriptions can be found in the '+
-        '<a href="https://community.mellanox.com/s/article/understanding-mlx5-linux-counters-and-status-parameters" target="_blank">Mellanox knowledge base</a>.'
+        info: '<p>绩效和例外统计 '+
+        '<a href="https://en.wikipedia.org/wiki/InfiniBand" target="_blank">Infiniband</a> 端口。 '+
+        '单个端口和硬件计数器描述可以在 '+
+        '<a href="https://community.mellanox.com/s/article/understanding-mlx5-linux-counters-and-status-parameters" target="_blank">Mellanox知识库</a>.'
     },
 
     'wireless': {
@@ -73,9 +73,9 @@ netdataDashboard.menu = {
         icon: '<i class="fas fa-cloud"></i>',
         info: function (os) {
             if (os === "linux")
-                return 'Metrics for the networking stack of the system. These metrics are collected from <code>/proc/net/netstat</code> or attaching <code>kprobes</code> to kernel functions, apply to both IPv4 and IPv6 traffic and are related to operation of the kernel networking stack.';
+                return '系统网络堆栈的指标。这些指标从<code>/proc/net/netstat</code>收集，或将<code>kprobes</code>附加到内核函数，适用于IPv4和IPv6流量，并与内核网络堆栈的操作有关。';
             else
-                return 'Metrics for the networking stack of the system.';
+                return '系统网络堆栈的指标。';
         }
     },
 
