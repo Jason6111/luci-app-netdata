@@ -12,7 +12,7 @@ git clone https://github.com/Jason6111/luci-app-netdata ./feeds/luci/application
  -  main.js   
  -  index.html  
   
-已经开启了远程查看全 不需要的手动关闭  
+已经开启了远程查看权，不需要的手动关闭  
 `/root/etc/netdata/netdata.conf`  
 allow connections from = *  
 allow dashboard from = *  
