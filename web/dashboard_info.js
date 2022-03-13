@@ -1128,28 +1128,28 @@ netdataDashboard.context = {
     },
 
     'system.cpu_pressure': {
-        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">Pressure Stall Information</a> ' +
-            'identifies and quantifies the disruptions caused by resource contentions. ' +
-            'The "some" line indicates the share of time in which at least <b>some</b> tasks are stalled on CPU. ' +
-            'The ratios (in %) are tracked as recent trends over 10-, 60-, and 300-second windows.'
+        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">压力信息</a> ' +
+            '识别和量化资源争用造成的中断。 ' +
+            '“一些”行表示CPU上至少<b>一些</b>任务停滞的时间份额。 ' +
+            '这些比率（以%为单位）被跟踪为10秒、60秒和300秒windows的近期趋势。'
     },
 
     'system.memory_some_pressure': {
-        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">Pressure Stall Information</a> ' +
-            'identifies and quantifies the disruptions caused by resource contentions. ' +
-            'The "some" line indicates the share of time in which at least <b>some</b> tasks are stalled on memory. ' +
-            'The "full" line indicates the share of time in which <b>all non-idle</b> tasks are stalled on memory simultaneously. ' +
-            'In this state actual CPU cycles are going to waste, and a workload that spends extended time in this state is considered to be thrashing. ' +
-            'The ratios (in %) are tracked as recent trends over 10-, 60-, and 300-second windows.'
+        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">压力信息</a> ' +
+            '识别和量化资源争用造成的中断。 ' +
+            '“一些”行表示至少<b>一些</b>任务在内存上停滞的时间份额。 ' +
+            '“全”行表示<b>所有非空闲</b>任务同时在内存上停滞的时间份额。 ' +
+            '在这种状态下，实际的CPU周期将被浪费，在这个状态下花费很长时间的工作负载被认为是鞭打。 ' +
+            '这些比率（以%为单位）被跟踪为10秒、60秒和300秒windows的近期趋势。'
     },
 
     'system.io_some_pressure': {
-        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">Pressure Stall Information</a> ' +
-            'identifies and quantifies the disruptions caused by resource contentions. ' +
-            'The "some" line indicates the share of time in which at least <b>some</b> tasks are stalled on I/O. ' +
-            'The "full" line indicates the share of time in which <b>all non-idle</b> tasks are stalled on I/O simultaneously. ' +
-            'In this state actual CPU cycles are going to waste, and a workload that spends extended time in this state is considered to be thrashing. ' +
-            'The ratios (in %) are tracked as recent trends over 10-, 60-, and 300-second windows.'
+        info: '<a href="https://www.kernel.org/doc/html/latest/accounting/psi.html" target="_blank">压力信息</a> ' +
+            '识别和量化资源争用造成的中断。' +
+            '“一些”行表示至少<b>一些</b>任务在I/O上停滞的时间份额。 ' +
+            '“全”行表示<b>所有非空闲</b>任务同时在I/O上停滞的时间份额。 ' +
+            '在这种状态下，实际的CPU周期将被浪费，在这个状态下花费很长时间的工作负载被认为是鞭打。 ' +
+            '这些比率（以%为单位）被跟踪为10秒、60秒和300秒windows的近期趋势。'
     },
 
     'system.io': {
@@ -1169,12 +1169,12 @@ netdataDashboard.context = {
 
     'system.swapio': {
         info: '<p>所有的 Swap I/O.</p>'+
-        '<b>输入</b> - pages the system has swapped in from disk to RAM. '+
-        '<b>输出</b> - pages the system has swapped out from RAM to disk.'
+        '<b>输入</b>-系统从磁盘交换到RAM的页面。 '+
+        '<b>输出</b> - 系统已从 RAM 交换到磁盘的页面。'
     },
 
     'system.pgfaults': {
-        info: '所有的 Page 错误. <b>Major page faults</b> indicates that the system is using its swap. You can find which applications use the swap at the <a href="#menu_apps">Applications Monitoring</a> section.'
+        info: '所有的页面错误。<b>主要页面错误</b>表示系统正在使用其交换。您可以在<a href="#menu_apps">应用程序监控</a>部分找到哪些应用程序使用交换。'
     },
 
     'system.entropy': {
@@ -1183,19 +1183,19 @@ netdataDashboard.context = {
     },
 
     'system.clock_sync_state': {
-        info:'<p>The system clock synchronization state. '+
-        'It is strongly recommended having the clock in sync with reliable NTP servers. Otherwise, '+
-        'it leads to unpredictable problems. '+
-        'It can take several minutes (usually up to 17) before NTP daemon selects a server to synchronize with. '+
-        '<p><b>State map</b>: 0 - not synchronized, 1 - synchronized.</p>'
+        info:'<p>系统时钟同步状态。 '+
+        '强烈建议时钟与可靠的NTP服务器同步。否则， '+
+        '这会导致不可预测的问题。 '+
+        'NTP守护进程可能需要几分钟（通常最多17分钟）才能选择要同步的服务器。 '+
+        '<p><b>状态图</b>：0-不同步，1-同步。</p>'
     },
 
     'system.clock_sync_offset': {
-        info: 'A typical NTP client regularly polls one or more NTP servers. '+
-        'The client must compute its '+
-        '<a href="https://en.wikipedia.org/wiki/Network_Time_Protocol#Clock_synchronization_algorithm" target="_blank">time offset</a> '+
-        'and round-trip delay. '+
-        'Time offset is the difference in absolute time between the two clocks.'
+        info: '典型的NTP客户端定期轮询一个或多个NTP服务器。 '+
+        '客户必须计算其 '+
+        '<a href="https://en.wikipedia.org/wiki/Network_Time_Protocol#Clock_synchronization_algorithm" target="_blank">时间偏移</a> '+
+        '和往返延迟。 '+
+        '时间偏移是两个时钟之间绝对时间的差异。'
     },
 
     'system.forks': {
@@ -1210,30 +1210,30 @@ netdataDashboard.context = {
 
     'system.interrupts': {
         info: 'CPU 中断的细节。在 <a href="#menu_cpu">CPUs</a> 区段中，依据每个 CPU 核心分析中断。 <a href="#menu_cpu_submenu_interrupts">per CPU core</a>. '+
-        'The last column in <code>/proc/interrupts</code> provides an interrupt description or the device name that registered the handler for that interrupt.'
+        '<code>/proc/interrupts</code>的最后一列提供了中断描述或注册该中断处理程序的设备名称。'
     },
 
     'system.hardirq_latency': {
-        info: 'Total time spent servicing hardware interrupts. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/hardirqs_example.txt" target="_blank">hardirqs</a> from BCC tools.'
+        info: '维修硬件中断的总时间。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/hardirqs_example.txt" target="_blank">hardirqs</a>。'
     },
 
     'system.softirqs': {
-        info: '<p>Total number of software interrupts in the system. '+
-        'At the <a href="#menu_cpu">CPUs</a> section, softirqs are analyzed <a href="#menu_cpu_submenu_softirqs">per CPU core</a>.</p>'+
-        '<p><b>HI</b> - high priority tasklets. '+
-        '<b>TIMER</b> - tasklets related to timer interrupts. '+
-        '<b>NET_TX</b>, <b>NET_RX</b> - used for network transmit and receive processing. '+
-        '<b>BLOCK</b> - handles block I/O completion events. '+
-        '<b>IRQ_POLL</b> - used by the IO subsystem to increase performance (a NAPI like approach for block devices). '+
-        '<b>TASKLET</b> - handles regular tasklets. '+
-        '<b>SCHED</b> - used by the scheduler to perform load-balancing and other scheduling tasks. '+
-        '<b>HRTIMER</b> - used for high-resolution timers. '+
-        '<b>RCU</b> - performs read-copy-update (RCU) processing.</p>'
+        info: '<p>系统中的软件中断总数。 '+
+        '在<a href="#menu_cpu">CPU</a>部分，对每个CPU内核</a href="#menu_cpu_submenu_softirqs">进行了分析。</p>'+
+        '<p><b>HI</b> - 高优先级任务组。 '+
+        '<b>TIMER</b> - 与计时器中断相关的任务组。 '+
+        '<b>NET_TX</b>，<b>NET_RX</b>-用于网络传输和接收处理。 '+
+        '<b>BLOCK</b> - 处理阻止I/O完成事件。 '+
+        '<b>IRQ_POLL</b> - IO子系统用于提高性能（块设备的一种类似NAPI的方法）。 '+
+        '<b>TASKLET</b> - 处理常规任务。 '+
+        '<b>SCHED</b> - 调度程序用于执行负载平衡和其他调度任务。 '+
+        '<b>HRTIMER</b> - 用于高分辨率计时器。 '+
+        '<b>RCU</b> - 执行读拷贝更新 (RCU) 处理。</p>'
 
     },
 
     'system.softirq_latency': {
-        info: 'Total time spent servicing software interrupts. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/softirqs_example.txt" target="_blank">softirqs</a> from BCC tools.'
+        info: '维修软件中断的总时间。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/softirqs_example.txt" target="_blank">softirqs</a>。'
     },
 
     'system.processes': {
@@ -1286,40 +1286,40 @@ netdataDashboard.context = {
     },
 
     'system.swapcalls': {
-        info: 'Monitor calls to functions <code>swap_readpage</code> and <code>swap_writepage</code>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows swap access per <a href="#menu_apps_submenu_swap">application</a>.'
+        info: '监控对函数<code>swap_readpage</code>和<code>swap_writepage</code>的调用。当<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还显示<a href="#menu_apps_submenu_swap">应用程序</a>的交换访问权限。'
     },
 
     'system.ipc_semaphores': {
-        info: 'Number of allocated System V IPC semaphores. '+
-        'The system-wide limit on the number of semaphores in all semaphore sets is specified in <code>/proc/sys/kernel/sem</code> file (2nd field).'
+        info: '分配的系统V IPC信号量。 '+
+        '<code>/proc/sys/kernel/sem</code>文件（第二个字段）规定了所有信号量集中信号量的系统范围限制。'
     },
 
     'system.ipc_semaphore_arrays': {
-        info: 'Number of used System V IPC semaphore arrays (sets). Semaphores support semaphore sets where each one is a counting semaphore. '+
-        'So when an application requests semaphores, the kernel releases them in sets. '+
-        'The system-wide limit on the maximum number of semaphore sets is specified in <code>/proc/sys/kernel/sem</code> file (4th field).'
+        info: '使用过的System V IPC信号量阵列（集）的数量。信号量支持信号量集，其中每个信号量都是计数信号量。 '+
+        '因此，当应用程序请求信号量时，内核会以集合的方式释放它们。 '+
+        '<code>/proc/sys/kernel/sem</code>文件（第4个字段）中指定了信号量集最大数量的系统范围限制。'
     },
 
     'system.shared_memory_segments': {
-        info: 'Number of allocated System V IPC memory segments. '+
-        'The system-wide maximum number of shared memory segments that can be created is specified in <code>/proc/sys/kernel/shmmni</code> file.'
+        info: '分配的System V IPC内存段数。 '+
+        '<code>/proc/sys/kernel/shmmni</code>文件中指定了可以创建的系统范围内共享内存段的最大数量。'
     },
 
     'system.shared_memory_bytes': {
-        info: 'Amount of memory currently used by System V IPC memory segments. '+
-        'The run-time limit on the maximum  shared memory segment size that can be created is specified in <code>/proc/sys/kernel/shmmax</code> file.'
+        info: 'System V IPC内存段目前使用的内存量。 '+
+        '可以创建的最大共享内存段大小的运行时限制在<code>/proc/sys/kernel/shmmax</code>文件中指定。'
     },
 
     'system.shared_memory_calls': {
-        info: 'Monitor calls to functions <code>shmget</code>, <code>shmat</code>, <code>shmdt</code>, and <code>shmctl</code>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows shared memory system call usage <a href="#menu_apps_submenu_ipc_shared_memory">per application</a>.'
+        info: '监控对函数<code>shmget</code>、<code>shmat</code>、<code>shmdt</code>和<code>shmctl</code>的调用。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还显示每个应用程序的共享内存系统调用使用情况<a href="#menu_apps_submenu_ipc_shared_memory"></a>。'
     },
 
     'system.message_queue_messages': {
-        info: 'Number of messages that are currently present in System V IPC message queues.'
+        info: '系统V IPC消息队列中当前存在的消息数量。'
     },
 
     'system.message_queue_bytes': {
-        info: 'Amount of memory currently used by messages in System V IPC message queues.'
+        info: '系统V IPC消息队列中消息当前使用的内存量。'
     },
 
     'system.uptime': {
@@ -1328,22 +1328,22 @@ netdataDashboard.context = {
 
     'system.process_thread': {
         title : 'Task creation',
-        info: 'Number of times that either <a href="https://www.ece.uic.edu/~yshi1/linux/lkse/node4.html#SECTION00421000000000000000" target="_blank">do_fork</a>, or <code>kernel_clone</code> if you are running kernel newer than 5.9.16, is called to create a new task, which is the common name used to define process and tasks inside the kernel. Netdata identifies the threads monitoring tracepoint <code>sched_process_fork</code>. This chart is provided by eBPF plugin.'
+        info: '<a href="https://www.ece.uic.edu/~yshi1/linux/lkse/node4.html#SECTION00421000000000000000" target="_blank">do_fork</a>，或者<code>kernel_clone</code>（如果您运行的内核更新于5.16）来创建新任务的次数，这是用于定义内核内进程和任务的常用名称。Netdata标识监控跟踪点<code>sched_process_fork</code>的线程。此图表由eBPF插件提供。'
     },
 
     'system.exit': {
         title : 'Exit monitoring',
-        info: 'Calls for the functions responsible for closing (<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">do_exit</a>) and releasing (<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">release_task</a>) tasks. This chart is provided by eBPF plugin.'
+        info: '呼吁负责关闭的功能（<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">do_exit</a>）和发布（<a href="https://www.informit.com/articles/article.aspx?p=370047&seqNum=4" target="_blank">release_task</a>)任务。此图表由eBPF插件提供。'
     },
 
     'system.task_error': {
         title : 'Task error',
-        info: 'Number of errors to create a new process or thread. This chart is provided by eBPF plugin.'
+        info: '创建新进程或线程的错误数量。此图表由eBPF插件提供。'
     },
 
     'system.process_status': {
         title : 'Task status',
-        info: 'Difference between the number of process created and the number of threads created per period(<code>process</code> dimension), it also shows the number of possible zombie process running on system. This chart is provided by eBPF plugin.'
+        info: '创建的进程数量和每个周期创建的线程数量（<code>process</code>维度）之间的差异，它还显示了在系统上运行的可能僵尸进程的数量。此图表由eBPF插件提供。'
     },
 
     // ------------------------------------------------------------------------
@@ -1371,11 +1371,11 @@ netdataDashboard.context = {
     },
 
     'cpu.core_throttling': {
-        info: 'The number of adjustments made to the clock speed of the CPU based on it\'s core temperature.'
+        info: '根据CPU的核心温度对CPU的时钟速度所做的调整次数。'
     },
 
     'cpu.package_throttling': {
-        info: 'The number of adjustments made to the clock speed of the CPU based on it\'s package (chip) temperature.'
+        info: '根据CPU的封装（芯片）温度对CPU的时钟速度进行的调整次数。'
     },
 
     'cpufreq.cpufreq': {
@@ -1390,22 +1390,22 @@ netdataDashboard.context = {
     // MEMORY
 
     'mem.ksm': {
-        info: '<p>Memory pages merging statistics. '+
-        'A high ratio of <b>Sharing</b> to <b>Shared</b> indicates good sharing, '+
-        'but a high ratio of <b>Unshared</b> to <b>Sharing</b> indicates wasted effort.</p>'+
-        '<p><b>Shared</b> - used shared pages. '+
-        '<b>Unshared</b> - memory no longer shared (pages are unique but repeatedly checked for merging). '+
-        '<b>Sharing</b> - memory currently shared (how many more sites are sharing the pages, i.e. how much saved). '+
-        '<b>Volatile</b> - volatile pages (changing too fast to be placed in a tree).</p>'
+        info: '<p>内存页面合并统计数据。 '+
+        '<b>共享</b>与<b>共享</b>的高比率表示良好的共享， '+
+        '但<b>未共享</b>与<b>共享</b>的高比率表明浪费了精力。</p>'+
+        '<p><b>共享</b> - 使用共享页面。 '+
+        '<b>未共享</b> - 内存不再共享（页面是唯一的，但反复检查合并）。 '+
+        '<b>共享</b>-当前共享的内存（有多少个网站正在共享页面，即保存了多少）。 '+
+        '<b>易变</b> - 易变页面（变化太快，无法放在树上）。</p>'
     },
 
     'mem.ksm_savings': {
         heads: [
             netdataDashboard.gaugeChart('Saved', '12%', 'savings', '#0099CC')
         ],
-        info: '<p>The amount of memory saved by KSM.</p>'+
-        '<p><b>Savings</b> - saved memory. '+
-        '<b>Offered</b> - memory marked as mergeable.</p>'
+        info: '<p>KSM节省的内存量。</p>'+
+        '<p><b>节省</b> - 保存内存。 '+
+        '<b>提供</b> - 标记为可合并的内存。</p>'
     },
 
     'mem.ksm_ratios': {
@@ -1426,22 +1426,22 @@ netdataDashboard.context = {
             }
         ],
         info: 'The effectiveness of KSM. '+
-        'This is the percentage of the mergeable pages that are currently merged.'
+        '这是当前合并的可合并页面的百分比。'
     },
 
     'mem.zram_usage': {
-        info: 'ZRAM total RAM usage metrics. ZRAM uses some memory to store metadata about stored memory pages, thus introducing an overhead which is proportional to disk size. It excludes same-element-filled-pages since no memory is allocated for them.'
+        info: 'ZRAM总RAM使用指标。ZRAM使用一些内存来存储有关存储内存页面的元数据，从而引入了与磁盘大小成正比的开销。它排除了相同元素填充的页面，因为没有为它们分配内存。'
     },
 
     'mem.zram_savings': {
-        info: 'Displays original and compressed memory data sizes.'
+        info: '显示原始和压缩内存数据大小。'
     },
 
     'mem.zram_ratio': {
         heads: [
             netdataDashboard.gaugeChart('Compression Ratio', '12%', 'ratio', '#0099CC')
         ],
-        info: 'Compression ratio, calculated as <code>100 * original_size / compressed_size</code>. More means better compression and more RAM savings.'
+        info: '压缩率，计算为<code>100 * original_size / compressed_size</code>。更多意味着更好的压缩和更多的RAM节省。'
     },
 
     'mem.zram_efficiency': {
@@ -1451,17 +1451,17 @@ netdataDashboard.context = {
         commonMin: true,
         commonMax: true,
         valueRange: "[0, 100]",
-        info: 'Memory usage efficiency, calculated as <code>100 * compressed_size / total_mem_used</code>.'
+        info: '内存使用效率，计算为<code>100 * compressed_size / total_mem_used</code>。'
     },
 
 
     'mem.pgfaults': {
-        info: '<p>A <a href="https://en.wikipedia.org/wiki/Page_fault" target="_blank">page fault</a> is a type of interrupt, '+
-        'called trap, raised by computer hardware when a running program accesses a memory page '+
-        'that is mapped into the virtual address space, but not actually loaded into main memory.</p>'+
-        '</p><b>Minor</b> - the page is loaded in memory at the time the fault is generated, '+
-        'but is not marked in the memory management unit as being loaded in memory. '+
-        '<b>Major</b> - generated when the system needs to load the memory page from disk or swap memory.</p>'
+        info: '<p> <a href="https://en.wikipedia.org/wiki/Page_fault" target="_blank">页面错误</a>是一种中断， '+
+        '称为陷阱，当运行中的程序访问内存页面时，由计算机硬件引发 '+
+        '映射到虚拟地址空间，但实际上没有加载到主内存中。</p>'+
+        '</p><b>次要</b>-页面在生成故障时加载到内存中， '+
+        '但在内存管理单元中未标记为正在加载内存中。 '+
+        '<b>主要</b>-当系统需要从磁盘加载内存页面或交换内存时生成。</p>'
     },
 
     'mem.committed': {
@@ -1470,30 +1470,30 @@ netdataDashboard.context = {
     },
 
     'mem.oom_kill': {
-        info: 'The number of processes killed by '+
-        '<a href="https://en.wikipedia.org/wiki/Out_of_memory" target="_blank">Out of Memory</a> Killer. '+
-        'The kernel\'s OOM killer is summoned when the system runs short of free memory and '+
-        'is unable to proceed without killing one or more processes. '+
-        'It tries to pick the process whose demise will free the most memory while '+
-        'causing the least misery for users of the system. '+
-        'This counter also includes processes within containers that have exceeded the memory limit.'
+        info: '被杀死的进程数量 '+
+        '<a href="https://en.wikipedia.org/wiki/Out_of_memory" target="_blank">内存不足</a>杀手。 '+
+        '当系统缺少可用内存时，内核的OOM杀手会被召唤，并且 '+
+        '无法在不杀死一个或多个进程的情况下进行。 '+
+        '它试图选择其消亡将释放最多记忆的过程，同时 '+
+        '给系统用户带来最少的痛苦。 '+
+        '此计数器还包括容器中超过内存限制的进程。'
     },
 
     'mem.numa': {
-        info: '<p>NUMA balancing statistics.</p>'+
-        '<p><b>Local</b> - pages successfully allocated on this node, by a process on this node. '+
-        '<b>Foreign</b> - pages initially intended for this node that were allocated to another node instead. '+
-        '<b>Interleave</b> - interleave policy pages successfully allocated to this node. '+
-        '<b>Other</b> - pages allocated on this node, by a process on another node. '+
-        '<b>PteUpdates</b> - base pages that were marked for NUMA hinting faults. '+
-        '<b>HugePteUpdates</b> - transparent huge pages that were marked for NUMA hinting faults. '+
-        'In Combination with <b>pte_updates</b> the total address space that was marked can be calculated. '+
-        '<b>HintFaults</b> - NUMA hinting faults that were trapped. '+
-        '<b>HintFaultsLocal</b> - hinting faults that were to local nodes. '+
-        'In combination with <b>HintFaults</b>, the percentage of local versus remote faults can be calculated. '+
-        'A high percentage of local hinting faults indicates that the workload is closer to being converged. '+
-        '<b>PagesMigrated</b> - pages were migrated because they were misplaced. '+
-        'As migration is a copying operation, it contributes the largest part of the overhead created by NUMA balancing.</p>'
+        info: '<p>NUMA平衡统计数据。</p>'+
+        '<p><b>本地</b>-通过此节点上的进程成功分配了页面。 '+
+        '<b>外国</b> - 最初用于分配给另一个节点的页面。 '+
+        '<b>交错</b>-交错策略页面已成功分配给此节点。 '+
+        '<b>其他</b>-通过另一个节点上的进程在这个节点上分配的页面。 '+
+        '<b>PteUpdates</b> - 标记为NUMA提示故障的基页。 '+
+        '<b>HugePteUpdates</b> - 标记为NUMA提示故障的透明大页面。 '+
+        '与<b>pte_updates</b>相结合，可以计算标记的总地址空间。 '+
+        '<b>HintFaults</b> - NUMA暗示被困的故障。 '+
+        '<b>HintFaultsLocal</b> - 提示本地节点的故障。 '+
+        '结合<b>提示故障</b>，可以计算局部故障与远程故障的百分比。 '+
+        '很高比例的局部提示故障表明工作量更接近收敛。 '+
+        '<b>PagesMigrated</b> - 页面被迁移，因为它们放错了地方。 '+
+        '由于迁移是一种复制操作，它贡献了NUMA平衡产生的开销的最大部分。</p>'
     },
 
     'mem.available': {
@@ -1505,151 +1505,151 @@ netdataDashboard.context = {
     },
 
     'mem.kernel': {
-        info: '<p>The total amount of memory being used by the kernel.</p>'+
-        '<p><b>Slab</b> - used by the kernel to cache data structures for its own use. '+
-        '<b>KernelStack</b> - allocated for each task done by the kernel. '+
-        '<b>PageTables</b> - dedicated to the lowest level of page tables (A page table is used to turn a virtual address into a physical memory address). '+
-        '<b>VmallocUsed</b> - being used as virtual address space. '+
-        '<b>Percpu</b> - allocated to the per-CPU allocator used to back per-CPU allocations (excludes the cost of metadata). '+
-        'When you create a per-CPU variable, each processor on the system gets its own copy of that variable.</p>'
+        info: '<p>内核使用的总内存量。</p>'+
+        '<p><b>Slab</b> - 内核用于缓存数据结构供自己使用。 '+
+        '<b>KernelStack</b> - 为内核完成的每个任务分配。 '+
+        '<b>PageTables</b> - 专用于最低级别的页面表（页面表用于将虚拟地址转换为物理内存地址）。 '+
+        '<b>VmallocUsed</b>-用作虚拟地址空间。 '+
+        '<b>Percpu</b> - 分配给用于支持每个CPU分配的每个CPU分配器（不包括元数据成本）。 '+
+        '当您创建每个CPU变量时，系统上的每个处理器都会获得该变量的副本。</p>'
     },
 
     'mem.slab': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/Slab_allocation" target="_blank">Slab memory</a> statistics.<p>'+
-        '<p><b>Reclaimable</b> - amount of memory which the kernel can reuse. '+
-        '<b>Unreclaimable</b> - can not be reused even when the kernel is lacking memory.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/Slab_allocation" target="_blank">平板内存</a>统计。<p>'+
+        '<p><b>可回收</b> - 内核可以重用的内存量。 '+
+        '<b>不可回收</b> - 即使内核缺乏内存，也无法重用。</p>'
     },
 
     'mem.hugepages': {
-        info: 'Dedicated (or Direct) HugePages is memory reserved for applications configured to utilize huge pages. Hugepages are <b>used</b> memory, even if there are free hugepages available.'
+        info: '专用（或直接）大型页面是为配置为使用大型页面的应用程序保留的内存。巨页<b>使用</b>内存，即使有免费的巨页可用。'
     },
 
     'mem.transparent_hugepages': {
-        info: 'Transparent HugePages (THP) is backing virtual memory with huge pages, supporting automatic promotion and demotion of page sizes. It works for all applications for anonymous memory mappings and tmpfs/shmem.'
+        info: '透明巨页（THP）用巨页支持虚拟内存，支持页面大小的自动推广和降级。它适用于匿名内存映射和tmpfs/shmem的所有应用程序。'
     },
 
     'mem.hwcorrupt': {
-        info: 'The amount of memory with physical corruption problems, identified by <a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC</a> and set aside by the kernel so it does not get used.'
+        info: '存在物理损坏问题的内存量，由<a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC</a>识别，并由内核预留，使其不被使用。'
     },
 
     'mem.ecc_ce': {
-        info: 'The number of correctable (single-bit) ECC errors. '+
-        'These errors do not affect the normal operation of the system '+
-        'because they are still being corrected. '+
-        'Periodic correctable errors may indicate that one of the memory modules is slowly failing.'
+        info: '可更正（单位）ECC错误的数量。 '+
+        '这些错误不影响系统的正常运行 '+
+        '因为他们仍在纠正。 '+
+        '周期性可更正错误可能表明其中一个内存模块正在缓慢故障。'
     },
 
     'mem.ecc_ue': {
-        info: 'The number of uncorrectable (multi-bit) ECC errors. '+
-        'An uncorrectable error is a fatal issue that will typically lead to an OS crash.'
+        info: '无法更正（多位）ECC错误的数量。 '+
+        '无法更正的错误是一个致命的问题，通常会导致操作系统崩溃。'
     },
 
     'mem.pagetype_global': {
-        info: 'The amount of memory available in blocks of certain size.'
+        info: '以一定大小的块为单位的可用内存量。'
     },
 
     'mem.cachestat_ratio': {
-        info: 'When the processor needs to read or write a location in main memory, it checks for a corresponding entry in the page cache. If the entry is there, a page cache hit has occurred and the read is from the cache. If the entry is not there, a page cache miss has occurred and the kernel allocates a new entry and copies in data from the disk. Netdata calculates the percentage of accessed files that are cached on memory. <a href="https://github.com/iovisor/bcc/blob/master/tools/cachestat.py#L126-L138" target="_blank">The ratio</a> is calculated counting the accessed cached pages (without counting dirty pages and pages added because of read misses) divided by total access without dirty pages.'
+        info: '当处理器需要读取或写入主内存中的位置时，它会检查页面缓存中的相应条目。如果条目在那里，则发生了页面缓存命中，并且读取来自缓存。如果没有条目，则会发生页面缓存丢失，内核会分配一个新的条目并从磁盘中复制数据。Netdata计算内存上缓存的访问文件的百分比。<a href="https://github.com/iovisor/bcc/blob/master/tools/cachestat.py#L126-L138" target="_blank">计算</a>的比率是计算访问的缓存页面（不计算脏页面和因读取丢失而添加的页面）除以没有脏页面的总访问量。'
     },
 
     'mem.cachestat_dirties': {
-        info: 'Number of <a href="https://en.wikipedia.org/wiki/Page_cache#Memory_conservation" target="_blank">dirty(modified) pages</a> cache. Pages in the page cache modified after being brought in are called dirty pages. Since non-dirty pages in the page cache have identical copies in <a href="https://en.wikipedia.org/wiki/Secondary_storage" target="_blank">secondary storage</a> (e.g. hard disk drive or solid-state drive), discarding and reusing their space is much quicker than paging out application memory, and is often preferred over flushing the dirty pages into secondary storage and reusing their space.'
+        info: '<a href="https://en.wikipedia.org/wiki/Page_cache#Memory_conservation" target="_blank">肮脏（修改）页面</a>缓存的数量。引入后修改的页面缓存中的页面称为脏页面。由于页面缓存中的非脏页面在<a href="https://en.wikipedia.org/wiki/Secondary_storage" target="_blank">辅助存储</a>（例如硬盘驱动器或固态驱动器）中具有相同的副本，因此丢弃和重用其空间比分页应用程序内存快得多，通常比将脏页面冲入辅助存储并重复使用其空间更可取。'
     },
 
     'mem.cachestat_hits': {
-        info: 'When the processor needs to read or write a location in main memory, it checks for a corresponding entry in the page cache. If the entry is there, a page cache hit has occurred and the read is from the cache. Hits show pages accessed that were not modified (we are excluding dirty pages), this counting also excludes the recent pages inserted for read.'
+        info: '当处理器需要读取或写入主内存中的位置时，它会检查页面缓存中的相应条目。如果条目在那里，则发生了页面缓存命中，并且读取来自缓存。点击量显示未修改的访问页面（我们排除脏页面），此计数还不包括最近插入供阅读的页面。'
     },
 
     'mem.cachestat_misses': {
-        info: 'When the processor needs to read or write a location in main memory, it checks for a corresponding entry in the page cache. If the entry is not there, a page cache miss has occurred and the cache allocates a new entry and copies in data for the main memory. Misses count page insertions to the memory not related to writing.'
+        info: '当处理器需要读取或写入主内存中的位置时，它会检查页面缓存中的相应条目。如果没有条目，则发生页面缓存丢失，缓存分配新条目并复制主内存的数据。缺少与编写无关的内存的页面插入计数。'
     },
 
     'mem.sync': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/sync.2.html" target="_blank">sync() and syncfs()</a> which flush the file system buffers to storage devices. Performance perturbations might be caused by these calls. The <code>sync()</code> calls are based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/syncsnoop.py" target="_blank">syncsnoop</a> from BCC tools.'
+        info: '系统调用<a href="https://man7.org/linux/man-pages/man2/sync.2.html" target="_blank">sync()和syncfs()</a>，这将文件系统缓冲区刷新到存储设备。这些通话可能会造成性能扰动。<code>sync()</code>调用基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/syncsnoop.py" target="_blank">syncsnoop</a>。'
     },
 
     'mem.file_sync': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/fsync.2.html" target="_blank">fsync() and fdatasync()</a> transfer all modified page caches for the files on disk devices. These calls block until the device reports that the transfer has been completed.'
+        info: '系统调用<a href="https://man7.org/linux/man-pages/man2/fsync.2.html" target="_blank">fsync()和fdatasync()</a>传输磁盘设备上文件的所有修改页面缓存。这些通话会阻止，直到设备报告转接已完成。'
     },
 
     'mem.memory_map': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/msync.2.html" target="_blank">msync()</a> which flushes changes made to the in-core copy of a file that was mapped.'
+        info: '系统调用<a href="https://man7.org/linux/man-pages/man2/msync.2.html" target="_blank">msync()</a>，该更改刷新了对映射文件的核心副本所做的更改。'
     },
 
     'mem.file_segment': {
-        info: 'System calls for <a href="https://man7.org/linux/man-pages/man2/sync_file_range.2.html" target="_blank">sync_file_range()</a> permits fine control when synchronizing the open file referred to by the file descriptor fd with disk. This system call is extremely dangerous and should not be used in portable programs.'
+        info: '<a href="https://man7.org/linux/man-pages/man2/sync_file_range.2.html" target="_blank">sync_file_range()</a>的系统调用允许在将文件描述符fd引用的打开文件与磁盘同步时进行精细控制。这种系统调用极其危险，不应用于便携式程序。'
     },
 
     'filesystem.dc_hit_ratio': {
-        info: 'Percentage of file accesses that were present in the directory cache. 100% means that every file that was accessed was present in the directory cache. If files are not present in the directory cache 1) they are not present in the file system, 2) the files were not accessed before. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>. When integration with apps is <a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">enabled</a>, Netdata also shows directory cache per <a href="#menu_apps_submenu_directory_cache__eBPF_">application</a>.'
+        info: '目录缓存中存在的文件访问百分比。100%表示访问的每个文件都存在于目录缓存中。如果目录缓存中不存在文件1）它们不存在于文件系统中，2）以前没有访问过文件。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。当与应用程序的集成<a href="https://learn.netdata.cloud/guides/troubleshoot/monitor-debug-applications-ebpf" target="_blank">启用</a>时，Netdata还根据<a href="#menu_apps_submenu_directory_cache__eBPF_">应用程序</a>显示目录缓存。'
     },
 
     'filesystem.dc_reference': {
-        info: 'Counters of file accesses. <code>Reference</code> is when there is a file access and the file is not present in the directory cache. <code>Miss</code> is when there is file access and the file is not found in the filesystem. <code>Slow</code> is when there is a file access and the file is present in the filesystem but not in the directory cache. Read more about <a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">directory cache</a>.'
+        info: '文件访问计数器。<code>引用</code>是当有文件访问且文件不存在于目录缓存中时。<code>Miss</code>是当有文件访问且文件系统中找不到文件时。<code>慢</code>是指有文件访问，文件存在于文件系统中，但不存在于目录缓存中。阅读更多关于<a href="https://www.kernel.org/doc/htmldocs/filesystems/the_directory_cache.html" target="_blank">目录缓存</a>的信息。'
     },
 
     'md.health': {
-        info: 'Number of failed devices per MD array. '+
-        'Netdata retrieves this data from the <b>[n/m]</b> field of the md status line. '+
-        'It means that ideally the array would have <b>n</b> devices however, currently, <b>m</b> devices are in use. '+
-        '<code>failed disks</code> is <b>n-m</b>.'
+        info: '每个MD阵列的故障设备数量。 '+
+        'Netdata从md状态行的<b>[n/m]</b>字段检索此数据。 '+
+        '这意味着理想情况下，数组将有<b>n</b>设备，但目前，<b>m</b>设备正在使用中。 '+
+        '<code>失败磁盘</code>是<b>n-m</b>。'
     },
     'md.disks': {
-        info: 'Number of devices in use and in the down state. '+
-        'Netdata retrieves this data from the <b>[n/m]</b> field of the md status line. '+
-        'It means that ideally the array would have <b>n</b> devices however, currently, <b>m</b> devices are in use. '+
-        '<code>inuse</code> is <b>m</b>, <code>down</code> is <b>n-m</b>.'
+        info: '处于使用和处于停机状态的设备数量。 '+
+        'Netdata从md状态行的<b>[n/m]</b>字段检索此数据。 '+
+        '这意味着理想情况下，数组将有<b>n</b>设备，但目前，<b>m</b>设备正在使用中。 '+
+        '<code>inuse</code>是<b>m</b>，<code>down</code>是<b>n-m</b>。'
     },
     'md.status': {
-        info: 'Completion progress of the ongoing operation.'
+        info: '完成正在进行的业务的进展。'
     },
     'md.expected_time_until_operation_finish': {
-        info: 'Estimated time to complete the ongoing operation. '+
-        'The time is only an approximation since the operation speed will vary according to other I/O demands.'
+        info: '完成正在进行的操作的预计时间。 '+
+        '时间只是一个近似值，因为操作速度将根据其他I/O要求而变化。'
     },
     'md.operation_speed': {
-        info: 'Speed of the ongoing operation. '+
-        'The system-wide rebuild speed limits are specified in <code>/proc/sys/dev/raid/{speed_limit_min,speed_limit_max}</code> files. '+
-        'These options are good for tweaking rebuilt process and may increase overall system load, cpu and memory usage.'
+        info: '持续运营的速度。 '+
+        '<code>/proc/sys/dev/raid/{speed_limit_min,speed_limit_max}</code>文件中指定了系统范围的重建速度限制。 '+
+        '这些选项有利于调整重建过程，并可能增加整体系统负载、cpu和内存使用率。'
     },
     'md.mismatch_cnt': {
-        info: 'When performing <b>check</b> and <b>repair</b>, and possibly when performing <b>resync</b>, md will count the number of errors that are found. '+
-        'A count of mismatches is recorded in the <code>sysfs</code> file <code>md/mismatch_cnt</code>. '+
-        'This value is the number of sectors that were re-written, or (for <b>check</b>) would have been re-written. '+
-        'It may be larger than the number of actual errors by a factor of the number of sectors in a page. '+
-        'Mismatches can not be interpreted very reliably on RAID1 or RAID10, especially when the device is used for swap. '+
-        'On a truly clean RAID5 or RAID6 array, any mismatches should indicate a hardware problem at some level - '+
-        'software issues should never cause such a mismatch. '+
-        'For details, see <a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">md(4)</a>.'
+        info: '在执行<b>检查</b>和<b>修复</b>时，以及可能在执行<b>重新同步</b>时，md将计算发现的错误数量。 '+
+        '不匹配计数记录在<code>sysfs</code>文件<code>md/mismatch_cnt</code>中。 '+
+        '此值是重写或（对于<b>check</b>）将重写的扇区数量。 '+
+        '它可能大于页面扇区数量的因子的实际错误数量。 '+
+        '在RAID1或RAID10上无法非常可靠地解释不匹配，特别是在设备用于交换时。 '+
+        '在真正干净的RAID5或RAID6阵列上，任何不匹配都应表明在某些级别上存在硬件问题- '+
+        '软件问题绝不应导致此类不匹配。 '+
+        '有关详细信息，请参阅<a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">md(4)</a>。'
     },
     'md.flush': {
-        info: 'Number of flush counts per MD array. Based on the eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/mdflush_example.txt" target="_blank">mdflush</a> from BCC tools.'
+        info: '每个MD阵列的刷新计数。基于BCC工具中的eBPF <a href="https://github.com/iovisor/bcc/blob/master/tools/mdflush_example.txt" target="_blank">mdflush</a>。'
     },
 
     // ------------------------------------------------------------------------
     // IP
 
     'ip.inerrors': {
-        info: '<p>The number of errors encountered during the reception of IP packets.</p>' +
-            '</p><b>NoRoutes</b> - packets that were dropped because there was no route to send them. ' +
-            '<b>Truncated</b> - packets which is being discarded because the datagram frame didn\'t carry enough data. ' +
-            '<b>Checksum</b> - packets that were dropped because they had wrong checksum.</p>'
+        info: '<p>接收IP数据包时遇到的错误数量。</p>' +
+            '</p><b>NoRoutes</b> - 由于没有发送路线而删除的数据包。 ' +
+            '<b>Truncated</b> - 由于数据报帧没有携带足够的数据而被丢弃的数据包。 ' +
+            '<b>校验和</b>-因校验和错误而删除的数据包。</p>'
     },
 
     'ip.mcast': {
-        info: 'Total multicast traffic in the system.'
+        info: '系统中的总多播流量。'
     },
 
     'ip.mcastpkts': {
-        info: 'Total transferred multicast packets in the system.'
+        info: '系统中传输的多播数据包总数。'
     },
 
     'ip.bcast': {
-        info: 'Total broadcast traffic in the system.'
+        info: '系统中的总广播流量。'
     },
 
     'ip.bcastpkts': {
-        info: 'Total transferred broadcast packets in the system.'
+        info: '系统中传输的广播数据包总数。'
     },
 
     'ip.ecnpkts': {
