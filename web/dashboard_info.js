@@ -762,24 +762,24 @@ netdataDashboard.submenu = {
     },
 
     'web_log.urls': {
-        info: 'Number of requests for each <code>URL pattern</code> defined in <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>. This chart counts all requests matching the URL patterns defined, independently of the web server response codes (i.e. both successful and unsuccessful).'
+        info: '<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>中定义的每个<code>URL模式</code>的请求数量。该图表计算与定义的URL模式匹配的所有请求，独立于Web服务器响应代码（即成功和失败）。'
     },
 
     'web_log.clients': {
-        info: 'Charts showing the number of unique client IPs, accessing the web server.'
+        info: '显示访问Web服务器的唯一客户端IP数量的图表。'
     },
 
     'web_log.timings': {
-        info: 'Web server response timings - the time the web server needed to prepare and respond to requests. This requires an extended log format and its meaning is web server specific. For most web servers this accounts the time from the reception of a complete request, to the dispatch of the last byte of the response. So, it includes the network delays of responses, but it does not include the network delays of requests.'
+        info: 'Web服务器响应时间-Web服务器准备和响应请求所需的时间。这需要扩展日志格式，其含义特定于Web服务器。对于大多数Web服务器来说，这计入了从收到完整请求到发送响应最后一个字节的时间。因此，它包括响应的网络延迟，但它不包括请求的网络延迟。'
     },
 
     'mem.ksm': {
         title: 'deduper (ksm)',
-        info: '<a href="https://en.wikipedia.org/wiki/Kernel_same-page_merging" target="_blank">Kernel Same-page Merging</a> '+
-        '(KSM) performance monitoring, read from several files in <code>/sys/kernel/mm/ksm/</code>. '+
-        'KSM is a memory-saving de-duplication feature in the Linux kernel. '+
-        'The KSM daemon ksmd periodically scans those areas of user memory which have been registered with it, '+
-        'looking for pages of identical content which can be replaced by a single write-protected page.'
+        info: '<a href="https://en.wikipedia.org/wiki/Kernel_same-page_merging" target="_blank">Kernel同页合并</a> '+
+        '（KSM）性能监控，从<code>/sys/kernel/mm/ksm/</code>中的几个文件中读取。 '+
+        'KSM是Linux内核中节省内存的重复数据删除功能。 '+
+        'KSM守护进程ksmd定期扫描已注册的用户内存区域， '+
+        '寻找内容相同的页面，这些页面可以替换为单个受写保护的页面。'
     },
 
     'mem.hugepages': {
