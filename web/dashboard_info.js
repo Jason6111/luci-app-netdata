@@ -383,9 +383,9 @@ netdataDashboard.menu = {
     },
 
     'portcheck': {
-        title: 'Port Check',
+        title: '端口检查',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Service availability and latency monitoring using port checks.'
+        info: '使用端口检查来监控服务可用性和延迟。'
     },
 
     'postfix': {
@@ -481,47 +481,47 @@ netdataDashboard.menu = {
     'go_expvar': {
         title: 'Go - expvars',
         icon: '<i class="fas fa-eye"></i>',
-        info: 'Statistics about running Go applications exposed by the <a href="https://golang.org/pkg/expvar/" target="_blank">expvar package</a>.'
+        info: '<a href="https://golang.org/pkg/expvar/" target="_blank">expvar软件包</a> 公开的运行Go应用程序的统计数据。'
     },
 
     'chrony': {
         icon: '<i class="fas fa-clock"></i>',
-        info: 'chronyd parameters about the system’s clock performance.'
+        info: '关于系统时钟性能的计时参数。'
     },
 
     'couchdb': {
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b><a href="https://couchdb.apache.org/" target="_blank">CouchDB</a></b>, the open-source, JSON document-based database with an HTTP API and multi-master replication.'
+        info: '<b><a href="https://couchdb.apache.org/" target="_blank">CouchDB</a></b>的性能指标，该数据库是基于JSON文档的开源数据库，具有HTTP API和多主复制。'
     },
 
     'beanstalk': {
         title: 'Beanstalkd',
         icon: '<i class="fas fa-tasks"></i>',
-        info: 'Provides statistics on the <b><a href="http://kr.github.io/beanstalkd/" target="_blank">beanstalkd</a></b> server and any tubes available on that server using data pulled from beanstalkc'
+        info: '使用从beanstalkc提取的数据提供有关<b><a href="http://kr.github.io/beanstalkd/" target="_blank">beanstalkd</a></b>服务器和该服务器上可用的任何管道的统计数据'
     },
 
     'rabbitmq': {
         title: 'RabbitMQ',
         icon: '<i class="fas fa-comments"></i>',
-        info: 'Performance data for the <b><a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a></b> open-source message broker.'
+        info: '<b><a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a></b>开源消息代理的性能数据。'
     },
 
     'ceph': {
         title: 'Ceph',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Provides statistics on the <b><a href="http://ceph.com/" target="_blank">ceph</a></b> cluster server, the open-source distributed storage system.'
+        info: '提供<b><a href="http://ceph.com/" target="_blank">ceph</a></b>集群服务器的统计数据，开源分布式存储系统。'
     },
 
     'ntpd': {
         title: 'ntpd',
         icon: '<i class="fas fa-clock"></i>',
-        info: 'Provides statistics for the internal variables of the Network Time Protocol daemon <b><a href="http://www.ntp.org/" target="_blank">ntpd</a></b> and optional including the configured peers (if enabled in the module configuration). The module presents the performance metrics as shown by <b><a href="http://doc.ntp.org/current-stable/ntpq.html">ntpq</a></b> (the standard NTP query program) using NTP mode 6 UDP packets to communicate with the NTP server.'
+        info: '提供网络时间协议守护程序<b><a href="http://www.ntp.org/" target="_blank">ntpd</a></b>的内部变量的统计信息，并可选包括配置的对等变量（如果在模块配置中启用）。本模块介绍了<b><a href="http://doc.ntp.org/current-stable/ntpq.html">ntpq</a></b>（标准NTP查询程序）所示的绩效指标，使用NTP模式6个UDP数据包与NTP服务器通信。'
     },
 
     'spigotmc': {
         title: 'Spigot MC',
         icon: '<i class="fas fa-eye"></i>',
-        info: 'Provides basic performance statistics for the <b><a href="https://www.spigotmc.org/" target="_blank">Spigot Minecraft</a></b> server.'
+        info: '为<b><a href="https://www.spigotmc.org/" target="_blank">Spigot Minecraft</a></b>服务器提供基本性能统计信息。'
     },
 
     'unbound': {
@@ -533,13 +533,13 @@ netdataDashboard.menu = {
     'boinc': {
         title: 'BOINC',
         icon: '<i class="fas fa-microchip"></i>',
-        info: 'Provides task counts for <b><a href="http://boinc.berkeley.edu/" target="_blank">BOINC</a></b> distributed computing clients.'
+        info: '为<b><a href="http://boinc.berkeley.edu/" target="_blank">BOINC</a></b>分布式计算客户端提供任务计数。'
     },
 
     'w1sensor': {
         title: '1-Wire Sensors',
         icon: '<i class="fas fa-thermometer-half"></i>',
-        info: 'Data derived from <a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">1-Wire</a> sensors.  Currently temperature sensors are automatically detected.'
+        info: '来自<a href="https://en.wikipedia.org/wiki/1-Wire" target="_blank">1-Wire</a>传感器的数据。目前会自动检测到温度传感器。'
     },
 
     'logind': {
@@ -549,21 +549,21 @@ netdataDashboard.menu = {
     },
 
     'powersupply': {
-        title: 'Power Supply',
+        title: '电源',
         icon: '<i class="fas fa-battery-half"></i>',
-        info: 'Statistics for the various system power supplies. Data collected from <a href="https://www.kernel.org/doc/Documentation/power/power_supply_class.txt" target="_blank">Linux power supply class</a>.'
+        info: '各种系统电源的统计数据。从<a href="https://www.kernel.org/doc/Documentation/power/power_supply_class.txt" target="_blank">Linux电源类</a>收集的数据。'
     },
 
     'xenstat': {
         title: 'Xen Node',
         icon: '<i class="fas fa-server"></i>',
-        info: 'General statistics for the Xen node. Data collected using <b>xenstat</b> library</a>.'
+        info: 'Xen节点的一般统计信息。使用<b>xenstat</b>库</a>收集的数据。'
     },
 
     'xendomain': {
         title: '',
         icon: '<i class="fas fa-th-large"></i>',
-        info: 'Xen domain resource utilization metrics. Netdata reads this information using <b>xenstat</b> library which gives access to the resource usage information (CPU, memory, disk I/O, network) for a virtual machine.'
+        info: 'Xen域资源利用率指标。Netdata使用<b>xenstat</b>库读取此信息，该库允许访问虚拟机的资源使用信息（CPU、内存、磁盘I/O、网络）。'
     },
 
     'wmi': {
@@ -575,43 +575,43 @@ netdataDashboard.menu = {
     'perf': {
         title: 'Perf Counters',
         icon: '<i class="fas fa-tachometer-alt"></i>',
-        info: 'Performance Monitoring Counters (PMC). Data collected using <b>perf_event_open()</b> system call which utilises Hardware Performance Monitoring Units (PMU).'
+        info: '性能监控计数器（PMC）。使用使用硬件性能监控单元（PMU）的<b>perf_event_open()</b>系统调用收集的数据。'
     },
 
     'vsphere': {
         title: 'vSphere',
         icon: '<i class="fas fa-server"></i>',
-        info: 'Performance statistics for ESXI hosts and virtual machines. Data collected from <a href="https://www.vmware.com/products/vcenter-server.html" target="_blank">VMware vCenter Server</a> using <code><a href="https://github.com/vmware/govmomi"> govmomi</a></code>  library.'
+        info: 'ESXI主机和虚拟机的性能统计。使用<code><a href="https://github.com/vmware/govmomi">govmomi</a></code>库从<a href="https://www.vmware.com/vcenter-server.html" target="_blank">VMware vCenter Server</a>收集的数据。'
     },
 
     'vcsa': {
         title: 'VCSA',
         icon: '<i class="fas fa-server"></i>',
-        info: 'vCenter Server Appliance health statistics. Data collected from <a href="https://vmware.github.io/vsphere-automation-sdk-rest/vsphere/index.html#SVC_com.vmware.appliance.health" target="_blank">Health API</a>.'
+        info: 'vCenter Server设备运行状况统计。从<a href="https://vmware.github.io/vsphere-automation-sdk-rest/vsphere/index.html#SVC_com.vmware.appliance.health" target="_blank">健康API</a>收集的数据。'
     },
 
     'zookeeper': {
         title: 'Zookeeper',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Provides health statistics for <b><a href="https://zookeeper.apache.org/" target="_blank">Zookeeper</a></b> server. Data collected through the command port using <code><a href="https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands">mntr</a></code> command.'
+        info: '提供<b><a href="https://zookeeper.apache.org/" target="_blank">Zookeeper</a></b>服务器的健康统计数据。使用<code><a href="https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands">mntr</a></code>命令通过命令端口收集的数据。'
     },
 
     'hdfs': {
         title: 'HDFS',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Provides <b><a href="https://hadoop.apache.org/docs/r3.2.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank">Hadoop Distributed File System</a></b> performance statistics. Module collects metrics over <code>Java Management Extensions</code> through the web interface of an <code>HDFS</code> daemon.'
+        info: '提供<b><a href="https://hadoop.apache.org/docs/r3.2.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank">Hadoop分布式文件系统</a></b>性能统计信息。模块通过<code>HDFS</code>守护进程的Web界面收集<code>Java管理扩展</code>上的指标。'
     },
 
     'am2320': {
         title: 'AM2320 Sensor',
         icon: '<i class="fas fa-thermometer-half"></i>',
-        info: 'Readings from the external AM2320 Sensor.'
+        info: '外部AM2320传感器的读数。'
     },
 
     'scaleio': {
         title: 'ScaleIO',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance and health statistics for various ScaleIO components. Data collected via VxFlex OS Gateway REST API.'
+        info: 'ScaleIO各个组件的性能和健康统计。通过VxFlex OS Gateway REST API收集的数据。'
     },
 
     'squidlog': {
@@ -623,13 +623,13 @@ netdataDashboard.menu = {
     'cockroachdb': {
         title: 'CockroachDB',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance and health statistics for various <code>CockroachDB</code> components.'
+        info: '各种<code>CockroachDB</code>组件的性能和健康状况统计。'
     },
 
     'ebpf': {
         title: 'eBPF',
         icon: '<i class="fas fa-heartbeat"></i>',
-        info: 'Monitor system calls, internal functions, bytes read, bytes written and errors using <code>eBPF</code>.'
+        info: '使用<code>eBPF</code>监控系统调用、内部函数、字节读取、字节写入和错误。'
     },
 
     'filesystem': {
@@ -640,56 +640,56 @@ netdataDashboard.menu = {
     'vernemq': {
         title: 'VerneMQ',
         icon: '<i class="fas fa-comments"></i>',
-        info: 'Performance data for the <b><a href="https://vernemq.com/" target="_blank">VerneMQ</a></b> open-source MQTT broker.'
+        info: '<b><a href="https://vernemq.com/" target="_blank">VerneMQ</a></b>开源MQTT经纪人的性能数据。'
     },
 
     'pulsar': {
         title: 'Pulsar',
         icon: '<i class="fas fa-comments"></i>',
-        info: 'Summary, namespaces and topics performance data for the <b><a href="http://pulsar.apache.org/" target="_blank">Apache Pulsar</a></b> pub-sub messaging system.'
+        info: '<b><a href="http://pulsar.apache.org/" target="_blank">Apache Pulsar</a></b>pub-sub消息系统的摘要、命名空间和主题性能数据。'
     },
 
     'anomalies': {
         title: 'Anomalies',
         icon: '<i class="fas fa-flask"></i>',
-        info: 'Anomaly scores relating to key system metrics. A high anomaly probability indicates strange behaviour and may trigger an anomaly prediction from the trained models. Read the <a href="https://github.com/netdata/netdata/tree/master/collectors/python.d.plugin/anomalies" target="_blank">anomalies collector docs</a> for more details.'
+        info: '与关键系统指标相关的异常分数。高异常概率表示奇怪的行为，并可能触发经过训练的模型的异常预测。有关更多详细信息，请阅读<a href="https://github.com/netdata/netdata/tree/master/collectors/python.d.plugin/anomalies" target="_blank">异常收集器文档</a>。'
     },
 
     'alarms': {
         title: 'Alarms',
         icon: '<i class="fas fa-bell"></i>',
-        info: 'Charts showing alarm status over time. More details <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/alarms/README.md" target="_blank">here</a>.'
+        info: '显示警报随时间推移状态的图表。更多详细信息<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/alarms/README.md" target="_blank">此处</a>。'
     },
 
     'statsd': { 
         title: 'StatsD',
         icon: '<i class="fas fa-chart-line"></i>',
-        info:'StatsD is an industry-standard technology stack for monitoring applications and instrumenting any piece of software to deliver custom metrics. Netdata allows the user to organize the metrics in different charts and visualize any application metric easily. Read more on <a href="https://learn.netdata.cloud/docs/agent/collectors/statsd.plugin" target="_blank">Netdata Learn</a>.'
+        info:'StatsD是一个行业标准技术堆栈，用于监控应用程序和检测任何软件以提供自定义指标。Netdata允许用户在不同图表中组织指标，并轻松可视化任何应用程序指标。在<a href="https://learn.netdata.cloud/docs/agent/collectors/statsd.plugin" target="_blank">Netdata Learn</a>上阅读更多信息。'
     },
 
     'supervisord': {
         title: 'Supervisord',
         icon: '<i class="fas fa-tasks"></i>',
-        info: 'Detailed statistics for each group of processes controlled by <b><a href="http://supervisord.org/" target="_blank">Supervisor</a></b>. ' +
-        'Netdata collects these metrics using <a href="http://supervisord.org/api.html#supervisor.rpcinterface.SupervisorNamespaceRPCInterface.getAllProcessInfo" target="_blank"><code>getAllProcessInfo</code></a> method.'
+        info: '<b><a href="http://supervisord.org/" target="_blank">主管</a></b>控制的每组流程的详细统计数据。' +
+        'Netdata使用<a href="http://supervisord.org/api.html#supervisor.rpcinterface.SupervisorNamespaceRPCInterface.getAllProcessInfo" target="_blank"><code>getAllProcessInfo</code></a>方法收集这些指标。'
     },
 
     'systemdunits': {
         title: 'systemd units',
         icon: '<i class="fas fa-cogs"></i>',
-        info: '<b>systemd</b> provides a dependency system between various entities called "units" of 11 different types. ' +
-        'Units encapsulate various objects that are relevant for system boot-up and maintenance. ' +
-        'Units may be <code>active</code> (meaning started, bound, plugged in, depending on the unit type), ' +
-        'or <code>inactive</code> (meaning stopped, unbound, unplugged), ' +
-        'as well as in the process of being activated or deactivated, i.e. between the two states (these states are called <code>activating</code>, <code>deactivating</code>). ' +
-        'A special <code>failed</code> state is available as well, which is very similar to <code>inactive</code> and is entered when the service failed in some way (process returned error code on exit, or crashed, an operation timed out, or after too many restarts). ' +
-        'For details, see <a href="https://www.freedesktop.org/software/systemd/man/systemd.html" target="_blank"> systemd(1)</a>.'
+        info: '<b>systemd</b>在11种不同类型的不同实体之间提供了一个依赖系统，称为“单位”。 ' +
+        '单元封装了与系统启动和维护相关的各种对象。 ' +
+        '单元可能是<code>活动</code>（表示启动、绑定、插入，具体取决于单元类型）， ' +
+        '或<code>不活跃</code>（意味着停止、未绑定、断开连接）， ' +
+        '以及在激活或停用的过程中，即在两种状态之间（这些状态称为<code>激活</code>，<code>停用</code>）。 ' +
+        '特殊的<code>失败</code>状态也可用，这与<code>不活跃</code>非常相似，并在服务以某种方式失败时（进程在退出时、崩溃、操作超时或重新启动过多后返回错误代码）时输入。 ' +
+        '有关详细信息，请参阅<a href="https://www.freedesktop.org/software/systemd/man/systemd.html" target="_blank"> systemd(1)</a>。'
     },
     
     'changefinder': {
         title: 'ChangeFinder',
         icon: '<i class="fas fa-flask"></i>',
-        info: 'Online changepoint detection using machine learning. More details <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/changefinder/README.md" target="_blank">here</a>.'
+        info: '使用机器学习在线更改点检测。更多详细信息<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/changefinder/README.md" target="_blank">此处</a>。'
     },
 
     'zscores': {
