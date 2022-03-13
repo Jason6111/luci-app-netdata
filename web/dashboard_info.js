@@ -695,19 +695,19 @@ netdataDashboard.menu = {
     'zscores': {
         title: 'Z-Scores',
         icon: '<i class="fas fa-exclamation"></i>',
-        info: 'Z scores scores relating to key system metrics.'
+        info: 'Z scores与关键系统指标相关的分数。'
     },
 
     'anomaly_detection': {
         title: 'Anomaly Detection',
         icon: '<i class="fas fa-brain"></i>',
-        info: 'Charts relating to anomaly detection, increased <code>anomalous</code> dimensions or a higher than usual <code>anomaly_rate</code> could be signs of some abnormal behaviour. Read our <a href="https://learn.netdata.cloud/guides/monitor/anomaly-detection" target="_blank">anomaly detection guide</a> for more details.'
+        info: '与异常检测、<code>异常</code>尺寸增加或高于通常<code>异常率</code>相关的图表可能是一些异常行为的迹象。有关更多详细信息，请阅读我们的<a href="https://learn.netdata.cloud/guides/monitor/anomaly-detection" target="_blank">异常检测指南</a>。'
     },
 
     'fail2ban': {
         title: 'Fail2ban',
         icon: '<i class="fas fa-shield-alt"></i>',
-        info: 'Netdata keeps track of the current jail status by reading the Fail2ban log file.'
+        info: 'Netdata通过读取Fail2ban日志文件来跟踪当前的监狱状态。'
     },
 };
 
@@ -721,22 +721,22 @@ netdataDashboard.menu = {
 netdataDashboard.submenu = {
     'web_log.squid_bandwidth': {
         title: '频宽',
-        info: 'Bandwidth of responses (<code>sent</code>) by squid. This chart may present unusual spikes, since the bandwidth is accounted at the time the log line is saved by the server, even if the time needed to serve it spans across a longer duration. We suggest to use QoS (e.g. <a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>) for accurate accounting of the server bandwidth.'
+        info: 'squid响应的带宽（<code>发送</code>）。此图表可能会出现异常的峰值，因为带宽是在服务器保存日志行时核算的，即使服务日志行所需的时间跨度更长。我们建议使用QoS（例如<a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>）来准确核算服务器带宽。'
     },
 
     'web_log.squid_responses': {
         title: '回应',
-        info: 'Information related to the responses sent by squid.'
+        info: '与squid发送的回复相关的信息。'
     },
 
     'web_log.squid_requests': {
         title: '请求',
-        info: 'Information related to the requests squid has received.'
+        info: 'squid收到的与请求相关的信息。'
     },
 
     'web_log.squid_hierarchy': {
         title: '等级制度',
-        info: 'Performance metrics for the squid hierarchy used to serve the requests.'
+        info: '用于服务请求的squid层次结构的绩效指标。'
     },
 
     'web_log.squid_squid_transport': {
@@ -750,7 +750,7 @@ netdataDashboard.submenu = {
 
     'web_log.squid_timings': {
         title: 'timings',
-        info: 'Duration of squid requests. Unrealistic spikes may be reported, since squid logs the total time of the requests, when they complete. Especially for HTTPS, the clients get a tunnel from the proxy and exchange requests directly with the upstream servers, so squid cannot evaluate the individual requests and reports the total time the tunnel was open.'
+        info: 'squid请求的持续时间。可能会报告不切实际的激增，因为squid会在请求完成后记录请求的总时间。特别是对于HTTPS，客户端从代理获取隧道，并直接与上游服务器交换请求，因此squid无法评估单个请求并报告隧道打开的总时间。'
     },
 
     'web_log.squid_clients': {
@@ -758,7 +758,7 @@ netdataDashboard.submenu = {
     },
 
     'web_log.bandwidth': {
-        info: 'Bandwidth of requests (<code>received</code>) and responses (<code>sent</code>). <code>received</code> requires an extended log format (without it, the web server log does not have this information). This chart may present unusual spikes, since the bandwidth is accounted at the time the log line is saved by the web server, even if the time needed to serve it spans across a longer duration. We suggest to use QoS (e.g. <a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>) for accurate accounting of the web server bandwidth.'
+        info: '请求（<code>接收</code>）和响应（<code>发送</code>）的带宽。<code>接收</code>需要扩展日志格式（没有它，Web服务器日志没有此信息）。此图表可能会出现异常的峰值，因为带宽是在Web服务器保存日志行时核算的，即使服务日志行所需的时间跨度更长。我们建议使用QoS（例如<a href="http://firehol.org/#fireqos" target="_blank">FireQOS</a>）来准确核算Web服务器带宽。'
     },
 
     'web_log.urls': {
