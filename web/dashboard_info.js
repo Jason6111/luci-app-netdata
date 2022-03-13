@@ -783,7 +783,7 @@ netdataDashboard.submenu = {
     },
 
     'mem.hugepages': {
-        info: 'Hugepages is a feature that allows the kernel to utilize the multiple page size capabilities of modern hardware architectures. The kernel creates multiple pages of virtual memory, mapped from both physical RAM and swap. There is a mechanism in the CPU architecture called "Translation Lookaside Buffers" (TLB) to manage the mapping of virtual memory pages to actual physical memory addresses. The TLB is a limited hardware resource, so utilizing a large amount of physical memory with the default page size consumes the TLB and adds processing overhead. By utilizing Huge Pages, the kernel is able to create pages of much larger sizes, each page consuming a single resource in the TLB. Huge Pages are pinned to physical RAM and cannot be swapped/paged out.'
+        info: 'Hugepages是一项功能，允许内核利用现代硬件架构的多个页面大小功能。内核创建了多页虚拟内存，从物理RAM和交换进行映射。CPU架构中有一个名为“翻译Lookaside缓冲区”（TLB）的机制，用于管理虚拟内存页面与实际物理内存地址的映射。TLB是一个有限的硬件资源，因此使用默认页面大小的大量物理内存会消耗TLB并增加处理开销。通过使用大型页面，内核能够创建更大大小的页面，每个页面消耗TLB中的单个资源。大型页面被固定在物理RAM上，无法交换/分页。'
     },
 
     'mem.numa': {
@@ -791,50 +791,50 @@ netdataDashboard.submenu = {
     },
 
     'mem.ecc': {
-        info: '<p><a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC memory</a> '+
-        'is a type of computer data storage that uses an error correction code (ECC) to detect '+
-        'and correct n-bit data corruption which occurs in memory. '+
-        'Typically, ECC memory maintains a memory system immune to single-bit errors: '+
-        'the data that is read from each word is always the same as the data that had been written to it, '+
-        'even if one of the bits actually stored has been flipped to the wrong state.</p>'+
-        '<p>Memory errors can be classified into two types: '+
-        '<b>Soft errors</b>, which randomly corrupt bits but do not leave physical damage. '+
-        'Soft errors are transient in nature and are not repeatable, can be because of electrical or '+
-        'magnetic interference. '+
-        '<b>Hard errors</b>, which corrupt bits in a repeatable manner because '+
-        'of a physical/hardware defect or an environmental problem.'
+        info: '<p><a href="https://en.wikipedia.org/wiki/ECC_memory" target="_blank">ECC内存</a>'+
+        '是一种使用错误更正代码（ECC）进行检测的计算机数据存储 '+
+        '并纠正内存中发生的n位数据损坏。 '+
+        '通常，ECC内存保持对单位错误的免疫记忆系统： '+
+        '从每个单词读取的数据始终与写入它的数据相同， '+
+        '即使实际存储的位数之一被翻转到错误的状态。</p>'+
+        '<p>内存错误可分为两类：'+
+        '<b>软错误</b>，随机损坏位数，但不留下物理损坏。 '+
+        '软错误本质上是短暂的，不可重复，可能是由于电 '+
+        '磁干扰。 '+
+        '<b>硬错误</b>，它以可重复的方式损坏位，因为 '+
+        '物理/硬件缺陷或环境问题。'
     },
 
     'mem.pagetype': {
-        info: 'Statistics of free memory available from '+
-        '<a href="https://en.wikipedia.org/wiki/Buddy_memory_allocation" target="_blank">memory buddy allocator</a>. '+
-        'The buddy allocator is the system memory allocator. '+
-        'The whole memory space is split in physical pages, which are grouped by '+
-        'NUMA node, zone, '+
-        '<a href="https://lwn.net/Articles/224254/" target="_blank">migrate type</a>, and size of the block. '+
-        'By keeping pages grouped based on their ability to move, '+
-        'the kernel can reclaim pages within a page block to satisfy a high-order allocation. '+
-        'When the kernel or an application requests some memory, the buddy allocator provides a page that matches closest the request.'
+        info: '内存统计数据可从 '+
+        '<a href="https://en.wikipedia.org/wiki/Buddy_memory_allocation" target="_blank">记忆分配器</a>。'+
+        'buddy分配器是系统内存分配器。 '+
+        '整个内存空间被分割成物理页面，这些页面按 '+
+        'NUMA节点，区域， '+
+        '<a href="https://lwn.net/Articles/224254/" target="_blank">迁移类型</a>，以及块的大小。 '+
+        '通过根据页面的移动能力对其进行分组， '+
+        '内核可以回收页面块中的页面，以满足高阶分配。 '+
+        '当内核或应用程序请求一些内存时，好友分配器会提供与请求最近的页面匹配。'
     },
 
     'ip.ecn': {
-        info: '<a href="https://en.wikipedia.org/wiki/Explicit_Congestion_Notification" target="_blank">Explicit Congestion Notification (ECN)</a> '+
-        'is an extension to the IP and to the TCP that allows end-to-end notification of network congestion without dropping packets. '+
-        'ECN is an optional feature that may be used between two ECN-enabled endpoints when '+
-        'the underlying network infrastructure also supports it.'
+        info: '<a href="https://en.wikipedia.org/wiki/Explicit_Congestion_Notification" target="_blank">显式拥堵通知（ECN）</a> '+
+        '是IP和TCP的扩展，允许在不丢失数据包的情况下端到端通知网络拥塞。 '+
+        'ECN是一项可选功能，可以在两个支持ECN的端点之间使用，当 '+
+        '基础网络基础设施也支持它。'
     },
 
     'ip.multicast': {
-        info: '<a href="https://en.wikipedia.org/wiki/Multicast" target="_blank">IP multicast</a> is a technique for '+
-        'one-to-many communication over an IP network. '+
-        'Multicast uses network infrastructure efficiently by requiring the source to send a packet only once, '+
-        'even if it needs to be delivered to a large number of receivers. '+
-        'The nodes in the network take care of replicating the packet to reach multiple receivers only when necessary.'
+        info: '<a href="https://en.wikipedia.org/wiki/Multicast" target="_blank">IP多播</a>是一种技术 '+
+        'IP 网络上的一对多通信。 '+
+        '多播高效地使用网络基础设施，要求源只发送一次数据包， '+
+        '即使它需要交付给大量接收器。 '+
+        '网络中的节点仅在必要时负责复制数据包以到达多个接收器。'
     },
     'ip.broadcast': {
-        info: 'In computer networking, '+
-        '<a href="https://en.wikipedia.org/wiki/Broadcasting_(networking)" target="_blank">broadcasting</a> refers to transmitting a packet that will be received by every device on the network. '+
-        'In practice, the scope of the broadcast is limited to a broadcast domain.'
+        info: '在计算机网络中， '+
+        '<a href="https://en.wikipedia.org/wiki/Broadcasting_(networking)" target="_blank">广播</a>是指传输网络上每台设备都将接收的数据包。 '+
+        '在实践中，广播范围仅限于广播领域。'
     },
 
     'netfilter.conntrack': {
@@ -844,51 +844,51 @@ netdataDashboard.submenu = {
 
     'netfilter.nfacct': {
         title: 'bandwidth accounting',
-        info: 'The following information is read using the <code>nfacct.plugin</code>.'
+        info: '以下信息使用<code>nfacct.plugin</code>阅读。'
     },
 
     'netfilter.synproxy': {
-        title: 'DDoS protection',
-        info: 'DDoS protection performance metrics. <a href="https://github.com/firehol/firehol/wiki/Working-with-SYNPROXY" target="_blank">SYNPROXY</a> '+
-        'is a TCP SYN packets proxy. '+
-        'It is used to protect any TCP server (like a web server) from SYN floods and similar DDoS attacks. '+
-        'SYNPROXY intercepts new TCP connections and handles the initial 3-way handshake using syncookies '+
-        'instead of conntrack to establish the connection. '+
-        'It is optimized to handle millions of packets per second utilizing all CPUs available without '+
-        'any concurrency locking between the connections. '+
-        'It can be used for any kind of TCP traffic (even encrypted), '+
-        'since it does not interfere with the content itself.'
+        title: 'DDoS保护',
+        info: 'DDoS保护性能指标。<a href="https://github.com/firehol/firehol/wiki/Working-with-SYNPROXY" target="_blank">SYNPROXY</a> '+
+        '是TCP SYN数据包代理。 '+
+        '它用于保护任何TCP服务器（如Web服务器）免受SYN洪水和类似的DDoS攻击。 '+
+        'SYNPROXY拦截新的TCP连接，并使用syncookie处理最初的3向握手 '+
+        '而不是连接来建立连接。 '+
+        '它经过优化，可以利用所有可用的CPUs处理数百万个数据包，而无需 '+
+        '连接之间的任何并发锁定。 '+
+        '它可用于任何类型的TCP流量（甚至加密）， '+
+        '因为它不会干扰内容本身。'
     },
 
     'ipfw.dynamic_rules': {
         title: 'dynamic rules',
-        info: 'Number of dynamic rules, created by correspondent stateful firewall rules.'
+        info: '由相应的有状态防火墙规则创建的动态规则数量。'
     },
 
     'system.softnet_stat': {
         title: 'softnet',
         info: function (os) {
             if (os === 'linux')
-                return '<p>Statistics for CPUs SoftIRQs related to network receive work. '+
-                'Break down per CPU core can be found at <a href="#menu_cpu_submenu_softnet_stat">CPU / softnet statistics</a>. '+
-                'More information about identifying and troubleshooting network driver related issues can be found at '+
-                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">Red Hat Enterprise Linux Network Performance Tuning Guide</a>.</p>'+
-                '<p><b>Processed</b> - packets processed. '+
-                '<b>Dropped</b> - packets dropped because the network device backlog was full. '+
-                '<b>Squeezed</b> - number of times the network device budget was consumed or the time limit was reached, '+
-                'but more work was available. '+
-                '<b>ReceivedRPS</b> - number of times this CPU has been woken up to process packets via an Inter-processor Interrupt. '+
-                '<b>FlowLimitCount</b> - number of times the flow limit has been reached (flow limiting is an optional '+
-                'Receive Packet Steering feature).</p>';
+                return '<p>与网络接收工作相关的CPU SoftIRQ的统计数据。 '+
+                '每个CPU内核的细分可以在<a href="#menu_cpu_submenu_softnet_stat">CPU/softnet统计</a>上找到。 '+
+                '有关识别网络驱动程序相关问题并进行故障诊断的更多信息，请参阅 '+
+                '<a href="https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf" target="_blank">红帽企业Linux网络性能调优指南</a>。</p>'+
+                '<p><b>已处理</b> - 处理数据包。 '+
+                '<b>已删除</b> - 由于网络设备积压已满，数据包已丢失。 '+
+                '<b>挤压</b> - 网络设备预算消耗或达到时限的次数， '+
+                '但还有更多工作要做。 '+
+                '<b>ReceivedRPS</b> - 这个CPU被唤醒通过处理器间中断处理数据包的次数。 '+
+                '<b>流量限制计数</b> - 达到流量限制的次数（流量限制是可选的 '+
+                '接收数据包转向功能）。</p>';
             else
-                return 'Statistics for CPUs SoftIRQs related to network receive work.';
+                return '与网络接收工作相关的CPU SoftIRQ的统计数据。';
         }
     },
 
     'system.clock synchronization': {
         info: '<a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">NTP</a> '+
-        'lets you automatically sync your system time with a remote server. '+
-        'This keeps your machine’s time accurate by syncing with servers that are known to have accurate times.'
+        '允许您自动将系统时间与远程服务器同步。 '+
+        '这通过与已知具有准确时间的服务器同步来保持机器时间的准确性。'
     },
 
     'cpu.softnet_stat': {
