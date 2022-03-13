@@ -161,11 +161,11 @@ netdataDashboard.menu = {
     'mdstat': {
         title: 'MD arrays',
         icon: '<i class="fas fa-hdd"></i>',
-        info: '<p>RAID devices are virtual devices created from two or more real block devices. '+
-        '<a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">Linux Software RAID</a> devices are '+
-        'implemented through the md (Multiple Devices) device driver.</p>'+
-        '<p>Netdata monitors the current status of MD arrays reading <a href="https://raid.wiki.kernel.org/index.php/Mdstat" target="_blank">/proc/mdstat</a> and '+
-        '<code>/sys/block/%s/md/mismatch_cnt</code> files.</p>'
+        info: '<p>RAID 设备是由两个或更多真实块设备创建的虚拟设备。 '+
+        '<a href="https://man7.org/linux/man-pages/man4/md.4.html" target="_blank">Linux软件RAID</a>设备是 '+
+        '通过md（多设备）设备驱动程序实现。</p>'+
+        '<p>Netdata监控MD数组的当前状态，读取<a href="https://raid.wiki.kernel.org/index.php/Mdstat" target="_blank">/proc/mdstat</a>和 '+
+        '<code>/sys/block/%s/md/mismatch_cnt</code> 档案</p>'
     },
 
     'sensors': {
@@ -177,23 +177,23 @@ netdataDashboard.menu = {
     'ipmi': {
         title: 'IPMI',
         icon: '<i class="fas fa-leaf"></i>',
-        info: 'The Intelligent Platform Management Interface (IPMI) is a set of computer interface specifications for an autonomous computer subsystem that provides management and monitoring capabilities independently of the host system\'s CPU, firmware (BIOS or UEFI) and operating system.'
+        info: '智能平台管理接口（IPMI）是一套自主计算机子系统的计算机接口规范，独立于主机系统的CPU、固件（BIOS或UEFI）和操作系统提供管理和监控功能。'
     },
 
     'samba': {
         title: 'Samba',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the Samba file share operations of this system. Samba is a implementation of Windows services, including Windows SMB protocol file shares.'
+        info: '此系统的Samba文件共享操作的绩效指标。Samba是Windows服务的实现，包括Windows SMB协议文件共享。'
     },
 
     'nfsd': {
         title: 'NFS服器器',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics of the Network File Server. '+
+        info: '网络文件服务器的绩效指标。 '+
         '<a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank">NFS</a> '+
-        'is a distributed file system protocol, allowing a user on a client computer to access files over a network, '+
-        'much like local storage is accessed. '+
-        'NFS, like many other protocols, builds on the Open Network Computing Remote Procedure Call (ONC RPC) system.'
+        '是一种分布式文件系统协议，允许客户端计算机上的用户通过网络访问文件， '+
+        '就像访问本地存储一样。 '+
+        '与许多其他协议一样，NFS基于开放网络计算远程过程调用（ONC RPC）系统。'
     },
 
     'nfs': {
