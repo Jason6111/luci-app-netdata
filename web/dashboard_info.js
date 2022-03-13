@@ -324,7 +324,7 @@ netdataDashboard.menu = {
     'monit': {
         title: 'monit',
         icon: '<i class="fas fa-database"></i>',
-        info: '<b>监控</b>中的检查状态。Monit是一个用于管理和监控Unix系统上的流程、程序、文件、目录和文件系统的实用工具。Monit进行自动维护和维修，并在错误情况下执行有意义的因果行为。'
+        info: '<b>monit</b>中的检查状态。Monit是一个用于管理和监控Unix系统上的流程、程序、文件、目录和文件系统的实用工具。Monit进行自动维护和维修，并在错误情况下执行有意义的因果行为。'
     },
 
     'mysql': {
@@ -336,50 +336,50 @@ netdataDashboard.menu = {
     'postgres': {
         title: 'Postgres',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>PostgresSQL</b>, the object-relational database (ORDBMS).'
+        info: '对象关系数据库（ORDBMS）<b>PostgresSQL</b>的性能指标。'
     },
 
     'redis': {
         title: 'Redis',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>redis</b>. Redis (REmote DIctionary Server) is a software project that implements data structure servers. It is open-source, networked, in-memory, and stores keys with optional durability.'
+        info: '<b>redis</b>的绩效指标。Redis（远程字典服务器）是一个实现数据结构服务器的软件项目。它是开源的、联网的、内存的，并存储具有可选耐用性的密钥。'
     },
 
     'rethinkdbs': {
         title: 'RethinkDB',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Performance metrics for <b>rethinkdb</b>. RethinkDB is the first open-source scalable database built for realtime applications'
+        info: '<b>RethinkDB</b>的绩效指标。RethinkDB是第一个为实时应用程序构建的开源可扩展数据库'
     },
 
     'retroshare': {
         title: 'RetroShare',
         icon: '<i class="fas fa-share-alt"></i>',
-        info: 'Performance metrics for <b>RetroShare</b>. RetroShare is open source software for encrypted filesharing, serverless email, instant messaging, online chat, and BBS, based on a friend-to-friend network built on GNU Privacy Guard (GPG).'
+        info: '<b>RetroShare</b>的绩效指标。RetroShare是基于基于GNU隐私保护（GPG）的朋友对朋友网络的加密文件共享、无服务器电子邮件、即时消息、在线聊天和BBS的开源软件。'
     },
 
     'riakkv': {
         title: 'Riak KV',
         icon: '<i class="fas fa-database"></i>',
-        info: 'Metrics for <b>Riak KV</b>, the distributed key-value store.'
+        info: '<b>Riak KV</b>的指标，分布式键值存储。'
     },
 
     'ipfs': {
         title: 'IPFS',
         icon: '<i class="fas fa-folder-open"></i>',
-        info: 'Performance metrics for the InterPlanetary File System (IPFS), a content-addressable, peer-to-peer hypermedia distribution protocol.'
+        info: 'InterPlanetary File System（IPFS）的绩效指标，IPFS是一种内容可寻址的点对点超媒体分发协议。'
     },
 
     'phpfpm': {
         title: 'PHP-FPM',
         icon: '<i class="fas fa-eye"></i>',
-        info: 'Performance metrics for <b>PHP-FPM</b>, an alternative FastCGI implementation for PHP.'
+        info: '<b>PHP-FPM</b>的绩效指标，PHP的替代FastCGI实现。'
     },
 
     'pihole': {
         title: 'Pi-hole',
         icon: '<i class="fas fa-ban"></i>',
-        info: 'Metrics for <a href="https://pi-hole.net/" target="_blank">Pi-hole</a>, a black hole for Internet advertisements.' +
-            ' The metrics returned by Pi-Hole API is all from the last 24 hours.'
+        info: '<a href="https://pi-hole.net/" target="_blank">Pi-hole</a>的指标，一个互联网广告的黑洞。' +
+            ' Pi-Hole API返回的指标都来自过去24小时。'
     },
 
     'portcheck': {
@@ -427,7 +427,7 @@ netdataDashboard.menu = {
     'web_log': {
         title: undefined,
         icon: '<i class="fas fa-file-alt"></i>',
-        info: 'Information extracted from a server log file. <code>web_log</code> plugin incrementally parses the server log file to provide, in real-time, a break down of key server performance metrics. For web servers, an extended log file format may optionally be used (for <code>nginx</code> and <code>apache</code>) offering timing information and bandwidth for both requests and responses. <code>web_log</code> plugin may also be configured to provide a break down of requests per URL pattern (check <a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>).'
+        info: '从服务器日志文件中提取的信息。<code>web_log</code>插件逐步解析服务器日志文件，以实时提供关键服务器性能指标的细分。对于Web服务器，可以选择使用扩展日志文件格式（对于<code>nginx</code>和<code>apache</code>），为请求和响应提供计时信息和带宽。<code>web_log</code>插件也可以配置为按URL模式提供请求的细分（检查<a href="https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/web_log/web_log.conf" target="_blank"><code>/etc/netdata/python.d/web_log.conf</code></a>）。'
     },
 
     'named': {
