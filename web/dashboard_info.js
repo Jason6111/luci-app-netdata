@@ -83,29 +83,29 @@ netdataDashboard.menu = {
         title: 'IPv4网路',
         icon: '<i class="fas fa-cloud"></i>',
         info: 'IPv4效能指标。' +
-            '<a href="https://en.wikipedia.org/wiki/IPv4" target="_blank">Internet Protocol version 4 (IPv4)</a> is ' +
-            'the fourth version of the Internet Protocol (IP). It is one of the core protocols of standards-based ' +
-            'internetworking methods in the Internet. IPv4 is a connectionless protocol for use on packet-switched ' +
-            'networks. It operates on a best effort delivery model, in that it does not guarantee delivery, nor does ' +
-            'it assure proper sequencing or avoidance of duplicate delivery. These aspects, including data integrity, ' +
-            'are addressed by an upper layer transport protocol, such as the Transmission Control Protocol (TCP).'
+            '<a href="https://en.wikipedia.org/wiki/IPv4" target="_blank">Internet Protocol version 4 (IPv4)</a> 是 ' +
+            '互联网协议（IP）的第四版。它是基于标准的核心协议之一 ' +
+            '互联网上的互联网工作方法。IPv4是一种用于数据包交换的无连接协议' +
+            '网络。它以最佳努力交付模式运作，因为它不保证交付，也不保证交付 ' +
+            '它确保正确的顺序或避免重复交付。这些方面，包括数据完整性，' +
+            '由上层传输协议（如传输控制协议（TCP））解决。'
     },
 
     'ipv6': {
         title: 'IPv6网路',
         icon: '<i class="fas fa-cloud"></i>',
-        info: 'IPv6效能指标。 <a href="https://en.wikipedia.org/wiki/IPv6" target="_blank">Internet Protocol version 6 (IPv6)</a> is the most recent version of the Internet Protocol (IP), the communications protocol that provides an identification and location system for computers on networks and routes traffic across the Internet. IPv6 was developed by the Internet Engineering Task Force (IETF) to deal with the long-anticipated problem of IPv4 address exhaustion. IPv6 is intended to replace IPv4.'
+        info: 'IPv6效能指标。 <a href="https://en.wikipedia.org/wiki/IPv6" target="_blank">Internet Protocol version 6 (IPv6)</a> 是互联网协议（IP）的最新版本，该通信协议为网络上的计算机和跨互联网的路由流量提供识别和定位系统。IPv6是由互联网工程特别工作组（IETF）开发的，旨在处理长期预计的IPv4地址用尽问题。IPv6旨在取代IPv4。'
     },
 
     'sctp': {
         title: 'SCTP 网路',
         icon: '<i class="fas fa-cloud"></i>',
-        info: '<p><a href="https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol" target="_blank">Stream Control Transmission Protocol (SCTP)</a> '+
-        'is a computer network protocol which operates at the transport layer and serves a role similar to the popular '+
-        'protocols TCP and UDP. SCTP provides some of the features of both UDP and TCP: it is message-oriented like UDP '+
-        'and ensures reliable, in-sequence transport of messages with congestion control like TCP. '+
-        'It differs from those protocols by providing multi-homing and redundant paths to increase resilience and reliability.</p>'+
-        '<p>Netdata collects SCTP metrics reading the <code>/proc/net/sctp/snmp</code> file.</p>'
+        info: '<p><a href="https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol" target="_blank">流控传输协议（SCTP）</a> '+
+        '是一种计算机网络协议，在传输层运行，其作用类似于流行的 '+
+        '协议TCP和UDP。SCTP提供了UDP和TCP的一些功能：它像UDP一样面向消息 '+
+        '并确保具有TCP等拥塞控制的消息的可靠、无序传输。 '+
+        '它与这些协议不同，它提供了多寻址和冗余路径，以提高弹性和可靠性。</p>'+
+        '<p>Netdata收集读取<code>/proc/net/sctp/snmp</code>文件的SCTP指标。</p>'
     },
 
     'ipvs': {
