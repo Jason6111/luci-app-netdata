@@ -16,4 +16,10 @@ git clone https://github.com/Jason6111/luci-app-netdata ./feeds/luci/application
 `/root/etc/netdata/netdata.conf`  
 allow connections from = *  
 allow dashboard from = *  
-把这两行第一个*删除即可
+把这两行第一个*删除即可  
+  
+# 还原1.33.1（留作以后用）  
+```  
+rm -rf ./feeds/packages/admin/netdata  
+git clone -b 1.33.1 https://github.com/Jason6111/luci-app-netdata ./feeds/packages/admin/netdata  
+```
