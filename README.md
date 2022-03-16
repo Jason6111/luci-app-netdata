@@ -20,7 +20,8 @@ allow dashboard from = *
 # 如发现luci进不去netdata请尝试 连接ssh进入openwrt输入以下指令
 ```  
 mkdir /usr/lib/lua/luci/view/netdata
-mv -f /usr/lib/lua/luci/view/netdata.htm /usr/lib/lua/luci/view/netdata/netdata.htm
+mv -f /usr/lib/lua/luci/view/netdata.htm /usr/lib/lua/luci/view/netdata/netdata.htm  
+
 ```  
 
 # 还原1.33.1（留作以后用）  
